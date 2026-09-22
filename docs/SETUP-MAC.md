@@ -35,16 +35,16 @@ fehlt. Bei einem Abbruch einfach noch einmal starten. Nur anschauen, ohne etwas 
 
 ## Was das Skript einrichtet
 
-| Was | Wozu |
-|---|---|
-| Homebrew, git, gh, uv | Paketverwaltung, Versionsverwaltung, GitHub-Anmeldung, Prüfskripte |
-| Visual Studio Code + Erweiterungen | Editor mit HTML-, PDF-, SVG- und Bildvorschau, Farbanzeige, Rechtschreibung Deutsch |
-| Google Chrome | Browser mit Entwicklerwerkzeugen |
-| Claude Desktop (mit Cowork) | Claude als App |
-| Claude Code (`claude`) | Claude im Terminal und in VS Code, arbeitet direkt im Projekt |
-| RTK | kürzt Terminal-Ausgaben für Claude Code, spart Kontingent |
-| Claude-Skills von Anthropic | `frontend-design`, `canvas-design`, `brand-guidelines`, `theme-factory`, `playground`, PDF/Word/PowerPoint/Excel |
-| Projekt | wird nach `~/projects/vunds-winter-school` geklont und in VS Code geöffnet |
+| Was                                | Wozu                                                                                                                       |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Homebrew, git, gh, uv              | Paketverwaltung, Versionsverwaltung, GitHub-Anmeldung, Prüfskripte                                                        |
+| Visual Studio Code + Erweiterungen | Editor mit HTML-, PDF-, SVG- und Bildvorschau, Farbanzeige, Rechtschreibung Deutsch                                        |
+| Google Chrome                      | Browser mit Entwicklerwerkzeugen                                                                                           |
+| Claude Desktop (mit Cowork)        | Claude als App                                                                                                             |
+| Claude Code (`claude`)           | Claude im Terminal und in VS Code, arbeitet direkt im Projekt                                                              |
+| RTK                                | kürzt Terminal-Ausgaben für Claude Code, spart Kontingent                                                                |
+| Claude-Skills von Anthropic        | `frontend-design`, `canvas-design`, `brand-guidelines`, `theme-factory`, `playground`, PDF/Word/PowerPoint/Excel |
+| Projekt                            | wird nach`~/projects/vunds-winter-school` geklont und in VS Code geöffnet                                               |
 
 ## Vorschau in VS Code
 
