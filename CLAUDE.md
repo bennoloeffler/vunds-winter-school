@@ -32,7 +32,10 @@ Decided (2026-09-22): the 10 drafts are **10 separate, self-contained HTML files
 - `snippets/logos.html` + `logos.css` — the partner-logo block (50 logos: all Lager.Feuer SVGs + WinterSchool-only JPGs), content-cropped and area-balanced. Copy 1:1; size only via `--logo-k`. Preview: `snippets/logos-preview.html`.
 - Round 2 drafts: 12/16 derive from 01, 13/14/15/17 from 11.
 - **Never use emojis** (not in text, not in CSS `content`). Icons are SF-Symbols-style inline SVG line icons (24 viewBox, ~1.6 stroke, round caps/joins). See FEEDBACK.md §7.
-- `index.html` shows desktop + phone hero thumbnails from `thumbs/NN-d.jpg` / `thumbs/NN-m.jpg`. After changing a draft's hero, regenerate its thumbnail (script in the session scratchpad was `thumbs.py`: headless Chrome with focus emulation, 1440×900 → 720 px and 390×844 → 234 px).
+- `index.html` only redirects to the chosen draft (currently `15-storytelling-freundlich.html`). `previews.html` is the overview with live, scrollable previews of 11–17 (Desktop/Smartphone toggle) and a link list for 01–10.
+- Every draft ends with `<script src="preview-link.js" defer></script>` — one shared file that adds a hidden link (faint icon, visible on hover/focus) to `previews.html`. New drafts must include that line; remove it before WordPress.
+- Published via GitHub Pages: repo `bennoloeffler/vunds-winter-school` (public), site https://bennoloeffler.github.io/vunds-winter-school/ — push to `main` redeploys.
+- `previews.html` (formerly index.html) uses desktop + phone hero thumbnails from `thumbs/NN-d.jpg` / `thumbs/NN-m.jpg`. After changing a draft's hero, regenerate its thumbnail (script in the session scratchpad was `thumbs.py`: headless Chrome with focus emulation, 1440×900 → 720 px and 390×844 → 234 px).
 
 ## Headless screenshots
 
