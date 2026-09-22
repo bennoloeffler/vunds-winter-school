@@ -1,0 +1,16 @@
+.ws27 .ws27-logos{--logo-k:64px;--logo-tone:.6;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:18px 24px}
+.ws27 .ws27-logos li{box-sizing:border-box;flex:0 0 calc((100% - 6 * 24px) / 7);display:flex;align-items:center;justify-content:center;aspect-ratio:5/2;padding:4px}
+/* .lg = exakter Ausschnitt des sichtbaren Logos, gleiche optische Fläche, zentriert */
+.ws27 .ws27-logos .lg{position:relative;display:block;flex:0 0 auto;width:min(88%,calc(var(--logo-k) * var(--s)));aspect-ratio:var(--ar);overflow:hidden}
+.ws27 .ws27-logos .lg img{position:absolute;left:var(--l);top:var(--t);width:var(--w);height:auto;max-width:none;transition:opacity .25s ease,filter .25s ease}
+/* SVGs sind weiß -> auf hell dunkel färben; JPGs graustufig und weißen Hintergrund wegblenden */
+.ws27 .ws27-logos .svg img{filter:brightness(0);opacity:var(--logo-tone)}
+.ws27 .ws27-logos .jpg img{filter:grayscale(1) contrast(1.1);mix-blend-mode:multiply;opacity:var(--logo-tone)}
+.ws27 .ws27-logos li:hover img{opacity:.95}
+/* Vollflächen-Logos (Trumpf-Quadrat) wirken dunkel sonst wie ein Block: heller + kleiner */
+.ws27 .ws27-logos .soft img{opacity:calc(var(--logo-tone) * .5)}
+/* Auf dunklem Hintergrund: Klasse .on-dark an die ul -> SVGs weiß, JPGs invertiert */
+.ws27 .ws27-logos.on-dark .svg img{filter:none;opacity:.8}
+.ws27 .ws27-logos.on-dark .jpg img{filter:grayscale(1) invert(1);mix-blend-mode:screen;opacity:.8}
+@media (max-width:1000px){.ws27 .ws27-logos li{flex-basis:calc((100% - 4 * 24px) / 5)}}
+@media (max-width:600px){.ws27 .ws27-logos{--logo-k:48px;gap:10px 12px}.ws27 .ws27-logos li{flex-basis:calc((100% - 2 * 12px) / 3)}}

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<!-- Entwurf 03: Editorial / Magazin — Idee: Die Seite liest sich wie eine Titelgeschichte in einem Wirtschaftsmagazin. Typografisches Cover statt Foto-Hero (übergroßes „WinterSchool", „2027" als Konturschrift, Linienraster, Ausgaben-Metazeile), danach ein 12-spaltiges Editorial-Raster mit klebendem Kapitelindex links, Initiale, Pull-Quotes in Slate mit pinkem Gedankenstrich, Agenda als Satztabelle mit Haarlinien und Tabellenziffern, Stimmen kursiv mit Kapitälchen, Abschluss als Coupon-Kasten. Papier-Weiß #F7F7F7, Text #272727, Slate #364459, Teal #006D7E, Pink #f2295b nur für Marken. — Abweichungen vom Original: (1) Die rotierenden Schlagworte des Bild-Sliders stehen als statische „In dieser Ausgabe"-Zeile im Cover (ohne JS alle sichtbar, mit JS als sanfte Wortrotation). (2) Der Inhalt ist in sieben nummerierte Kapitel gegliedert; „Warum zur V&S WinterSchool und nicht nach St. Gallen?" und „Es gibt zig Veranstaltungen …" stehen als Randspalten-Kästen in Kapitel 01, „Für wen" und die Logo-Leiste bilden Kapitel 02, „Viele Perspektiven, viele Fallen" und die acht typischen Herausforderungen bilden Kapitel 03. (3) Die Agenda ist eine durchgehende Tabelle (Tage als Zwischenüberschriften) statt drei Tabs. (4) Der Kasten „Was wir in Deutschland eigentlich brauchen" steht als Fußzeile des Covers. (5) Herausforderungen ohne Namen (nummeriert), Stimmen mit Kapitälchen-Attribution „Teilnehmer". Wortlaut sonst unverändert. -->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V&amp;S WinterSchool 2027 – Wettbewerbskraft reloaded</title>
+<meta name="description" content="V&S WinterSchool 2027, 20.–22. Januar im Seehotel Niedernberg: Intensiv-Bootcamp zu wirksamer Transformation im Mittelstand – Lean, TOC, Agile, Organisation, Führung und pragmatische KI. 35 Plätze, 1.900 € zzgl. MwSt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ---------- Scope: alles unter .ws27 ---------- */
+.ws27{
+  --paper:#F7F7F7; --ink:#272727; --slate:#364459; --teal:#006D7E; --teal-light:#179bb1; --pink:#f2295b;
+  --grey:#bbbbbb; --hair:rgba(39,39,39,.18); --hair-strong:rgba(39,39,39,.55);
+  --gutter:16px; --max:1280px; --measure:68ch;
+  font-family:"Campton","Outfit",system-ui,sans-serif;
+  font-weight:400; font-size:1.0625rem; line-height:1.6; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; overflow-x:clip;
+}
+.ws27 *,.ws27 *::before,.ws27 *::after{box-sizing:border-box}
+.ws27 img{max-width:100%;height:auto;display:block}
+.ws27 a{color:var(--teal);text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:1px}
+.ws27 a:hover{color:var(--slate)}
+.ws27 :is(a,button):focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:2px}
+.ws27 h1,.ws27 h2,.ws27 h3,.ws27 h4{color:var(--slate);font-weight:700;line-height:1.1;margin:0}
+.ws27 p{margin:0 0 1.1em}
+.ws27 ul,.ws27 ol{margin:0 0 1.1em;padding-left:1.2em}
+.ws27 .container{max-width:var(--max);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter)}
+.ws27 .prose{max-width:var(--measure)}
+.ws27 em{font-style:italic}
+.ws27 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (min-width:768px){.ws27{--gutter:40px}}
+
+/* ---------- Typografische Bausteine ---------- */
+.ws27 .eyebrow{
+  display:flex;align-items:center;gap:.7em;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin:0 0 1rem
+}
+.ws27 .eyebrow::before{content:"";display:inline-block;width:2rem;height:2px;background:var(--pink);flex:none}
+.ws27 .rule{border:0;border-top:1px solid var(--ink);margin:0}
+.ws27 .rule--hair{border-top-color:var(--hair)}
+.ws27 .rule--thick{border-top-width:3px}
+.ws27 .rule--double{border-top:3px double var(--ink)}
+.ws27 .num{font-variant-numeric:tabular-nums;font-weight:500;color:var(--teal);letter-spacing:.12em;font-size:.8rem}
+.ws27 .btn{
+  display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem;
+  padding:.9em 1.8em;border:1px solid var(--teal);transition:background .2s,color .2s
+}
+.ws27 .btn:hover{background:var(--slate);border-color:var(--slate);color:#fff}
+.ws27 .btn--ghost{background:transparent;color:var(--teal)}
+.ws27 .btn--ghost:hover{background:var(--teal);color:#fff}
+.ws27 .smallcaps{font-variant:all-small-caps;letter-spacing:.12em;font-weight:500}
+.ws27 .muted{color:rgba(39,39,39,.62)}
+.ws27 .tnum{font-variant-numeric:tabular-nums}
+
+/* ---------- Seitenleiste (schlank) ---------- */
+.ws27 .topbar{position:sticky;top:0;z-index:20;background:rgba(247,247,247,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--hair)}
+.ws27 .topbar .container{display:flex;align-items:center;gap:1rem;min-height:60px}
+.ws27 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--slate);font-weight:600;letter-spacing:.04em;font-size:.95rem}
+.ws27 .brand svg{width:34px;height:34px;flex:none}
+.ws27 .brand small{font-weight:400;color:var(--teal);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;margin-left:.35rem}
+.ws27 .topnav{margin-left:auto;display:flex;align-items:center;gap:1.4rem}
+.ws27 .topnav a{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--slate);font-weight:500}
+.ws27 .topnav a:hover{color:var(--teal)}
+.ws27 .topnav .btn{padding:.6em 1.2em;font-size:.75rem;color:#fff}
+.ws27 .navtoggle{display:none;margin-left:auto;background:none;border:1px solid var(--hair-strong);color:var(--slate);font:inherit;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.5em .8em;cursor:pointer}
+@media (max-width:820px){
+  .ws27 .navtoggle{display:inline-block}
+  .ws27 .topnav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--hair);flex-direction:column;align-items:flex-start;gap:0;padding:.5rem var(--gutter) 1rem}
+  .ws27 .topnav a{padding:.7rem 0;width:100%;border-top:1px solid var(--hair)}
+  .ws27 .topnav .btn{margin-top:.8rem;width:auto;border-top:1px solid var(--teal)}
+  .ws27 .topbar.nav-open .topnav{display:flex}
+  .ws27 .brand small{display:none}
+}
+
+/* ---------- Cover ---------- */
+.ws27 .cover{padding:clamp(2.5rem,7vw,6rem) 0 0}
+.ws27 .cover-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;padding-bottom:.6rem;border-bottom:3px double var(--ink);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--slate)}
+.ws27 .cover-head span+span{color:var(--teal)}
+.ws27 .cover-title{
+  font-size:clamp(2.7rem,11.2vw,9rem);font-weight:800;letter-spacing:-.035em;line-height:.92;color:var(--slate);margin:.35em 0 0;
+}
+.ws27 .cover-title small{display:block;font-size:.32em;font-weight:500;letter-spacing:.02em;color:var(--teal);line-height:1.1;margin-bottom:.4em}
+.ws27 .cover-row{display:grid;grid-template-columns:1fr;gap:1rem 2rem;align-items:end;margin-top:.2em}
+.ws27 .cover-year{
+  font-size:clamp(3.2rem,12vw,9rem);font-weight:800;letter-spacing:-.02em;line-height:.9;
+  color:transparent;-webkit-text-stroke:2px var(--slate);paint-order:stroke fill;font-variant-numeric:tabular-nums lining-nums
+}
+@supports not (-webkit-text-stroke:1px black){.ws27 .cover-year{color:var(--slate)}}
+.ws27 .cover-sub h2{font-size:clamp(1.5rem,3vw,2.4rem);font-weight:700;letter-spacing:-.01em;color:var(--slate)}
+.ws27 .cover-sub p.tag{font-style:italic;font-weight:300;font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--ink);margin:.25em 0 0}
+@media (min-width:900px){.ws27 .cover-row{grid-template-columns:repeat(12,1fr)}.ws27 .cover-year{grid-column:1/6}.ws27 .cover-sub{grid-column:6/13;padding-bottom:.6rem}}
+.ws27 .cover-meta{margin-top:1.6rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);padding:.75rem 0;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.85rem;letter-spacing:.06em;font-weight:500;color:var(--slate);font-variant-numeric:tabular-nums}
+.ws27 .cover-meta span::after{content:"·";color:var(--pink);margin-left:1.2rem}
+.ws27 .cover-meta span:last-child::after{content:none}
+.ws27 .cover-foot{display:grid;grid-template-columns:1fr;gap:1.5rem 2rem;padding:1.6rem 0 2.6rem;align-items:start}
+.ws27 .cover-claim .claim{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;color:var(--slate);letter-spacing:-.01em;line-height:1.15;margin:0 0 .4rem}
+.ws27 .cover-claim .claim b{color:var(--teal);font-weight:700}
+.ws27 .cover-cta{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center}
+.ws27 .cover-cta small{font-size:.85rem;color:rgba(39,39,39,.75)}
+.ws27 .cover-box{border:1px solid var(--ink);padding:1.1rem 1.3rem;position:relative}
+.ws27 .cover-box .eyebrow{margin-bottom:.5rem}
+.ws27 .cover-box .big{font-size:clamp(1.3rem,2.4vw,1.75rem);font-weight:700;color:var(--slate);line-height:1.2;margin:0}
+.ws27 .cover-box .big b{color:var(--teal)}
+@media (min-width:900px){.ws27 .cover-foot{grid-template-columns:repeat(12,1fr)}.ws27 .cover-claim{grid-column:1/8}.ws27 .cover-cta{grid-column:1/8}.ws27 .cover-box{grid-column:8/13;grid-row:1/3}}
+.ws27 .keywords{list-style:none;padding:0;margin:.6rem 0 0;display:flex;flex-wrap:wrap;gap:.2rem .5rem;font-size:.85rem;color:rgba(39,39,39,.75)}
+.ws27 .keywords li+li::before{content:"·";color:var(--pink);margin-right:.5rem}
+.ws27 .keywords-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--teal);margin:1.4rem 0 0}
+.ws27.js .keywords.rotating{display:block;min-height:1.6em}
+.ws27.js .keywords.rotating li{display:none;font-size:1.05rem;color:var(--slate);font-weight:500}
+.ws27.js .keywords.rotating li::before{content:"—";color:var(--pink);margin-right:.5rem}
+.ws27.js .keywords.rotating li.on{display:block;animation:ws27fade .5s ease}
+@keyframes ws27fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ---------- Editorial-Raster ---------- */
+.ws27 .layout{display:grid;grid-template-columns:1fr;gap:2rem;padding-top:2.5rem}
+.ws27 .index{min-width:0}
+.ws27 .chapters{min-width:0}
+@media (min-width:1024px){
+  .ws27 .layout{grid-template-columns:repeat(12,1fr)}
+  .ws27 .index{grid-column:1/4;position:sticky;top:76px;align-self:start}
+  .ws27 .chapters{grid-column:4/13}
+}
+.ws27 .index h2{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600;border-bottom:1px solid var(--ink);padding-bottom:.5rem;margin-bottom:.4rem}
+.ws27 .index ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 1.2rem}
+.ws27 .index li{border-bottom:1px solid var(--hair)}
+.ws27 .index ol a{display:flex;gap:.8rem;align-items:baseline;text-decoration:none;color:var(--slate);padding:.5rem 0;font-size:.95rem;font-weight:500}
+.ws27 .index ol a .num{min-width:1.6em}
+.ws27 .index ol a:hover{color:var(--teal)}
+.ws27 .index ol a[aria-current="true"]{color:var(--teal)}
+.ws27 .index ol a[aria-current="true"] .num{color:var(--pink)}
+@media (min-width:1024px){.ws27 .index ol{display:block}.ws27 .index li{border-bottom:1px solid var(--hair)}}
+.ws27 .index .note{font-size:.8rem;color:rgba(39,39,39,.62);margin-top:1rem;display:none}
+.ws27 .index .note a{white-space:nowrap}
+@media (min-width:1024px){.ws27 .index .note{display:block}}
+
+/* ---------- Kapitel ---------- */
+.ws27 .chapter{padding:2rem 0 3.5rem;scroll-margin-top:80px}
+.ws27 .chapter+.chapter{border-top:3px double var(--ink)}
+.ws27 .chapter-head{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:1.6rem}
+.ws27 .chapter-head .num{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;letter-spacing:0;color:var(--teal);line-height:1}
+.ws27 .chapter-head h2{font-size:clamp(1.7rem,3.4vw,2.6rem);letter-spacing:-.02em}
+.ws27 .chapter h3{font-size:1.25rem;margin:1.8rem 0 .6rem;letter-spacing:-.01em}
+.ws27 .chapter h3.kicker{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600;margin:0 0 .6rem}
+.ws27 .lead{font-size:1.2rem;line-height:1.5;color:var(--slate);font-weight:500}
+.ws27 .dropcap::first-letter{float:left;font-size:4.4em;line-height:.78;font-weight:700;color:var(--pink);padding:.06em .1em 0 0}
+
+/* Kapitel 01: Feature mit Foto-Anschnitt */
+.ws27 .feature{display:grid;grid-template-columns:1fr;gap:1.5rem 2rem;align-items:start}
+.ws27 .feature .text{min-width:0}
+.ws27 .feature .photo{margin-right:calc(-1 * var(--gutter));margin-left:calc(-1 * var(--gutter))}
+.ws27 .feature .photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ws27 .feature figcaption{font-size:.78rem;letter-spacing:.06em;color:rgba(39,39,39,.62);padding:.5rem var(--gutter) 0;font-variant:all-small-caps}
+@media (min-width:900px){
+  .ws27 .feature{grid-template-columns:repeat(12,1fr)}
+  .ws27 .feature .text{grid-column:1/7}
+  .ws27 .feature .photo{grid-column:7/13;margin-left:0;margin-right:calc(-1 * var(--gutter));position:sticky;top:90px}
+  .ws27 .feature .photo img{aspect-ratio:3/4}
+  .ws27 .feature figcaption{padding-left:0}
+}
+.ws27 .agenda-list{list-style:none;padding:0;margin:1.2rem 0 0;counter-reset:pt}
+.ws27 .agenda-list li{counter-increment:pt;border-top:1px solid var(--hair);padding:.8rem 0 .8rem 2.6rem;position:relative}
+.ws27 .agenda-list li:last-child{border-bottom:1px solid var(--hair)}
+.ws27 .agenda-list li::before{content:counter(pt,decimal-leading-zero);position:absolute;left:0;top:.95rem;font-size:.8rem;color:var(--teal);letter-spacing:.1em;font-variant-numeric:tabular-nums}
+.ws27 .agenda-list b{color:var(--slate)}
+.ws27 .agenda-list li.special::before{color:var(--pink)}
+.ws27 .sideboxes{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:2.5rem}
+@media (min-width:768px){.ws27 .sideboxes{grid-template-columns:1fr 1fr}}
+.ws27 .sidebox{border-top:3px solid var(--slate);padding-top:1rem}
+.ws27 .sidebox h3{margin-top:0;font-size:1.15rem}
+.ws27 .sidebox p{font-size:.98rem}
+
+/* Kapitel 02: Für wen + Logos */
+.ws27 .logos-head{display:flex;align-items:center;gap:1rem;margin:2.5rem 0 1rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--teal)}
+.ws27 .logos-head::after{content:"";flex:1;border-top:1px solid var(--ink)}
+.ws27 .logos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair)}
+@media (min-width:600px){.ws27 .logos{grid-template-columns:repeat(5,1fr)}}
+.ws27 .logos div{background:#fff;padding:.9rem 1rem;display:flex;align-items:center;justify-content:center;min-height:72px;min-width:0}
+.ws27 .logos img{max-height:40px;width:auto;max-width:100%;object-fit:contain;filter:grayscale(1);opacity:.78;transition:filter .2s,opacity .2s}
+.ws27 .logos div:hover img{filter:none;opacity:1}
+.ws27 .footnote{font-size:.85rem;color:rgba(39,39,39,.65);border-top:1px solid var(--hair);padding-top:.6rem;margin-top:1.4rem;max-width:var(--measure)}
+
+/* Kapitel 03: Fallen + Pull-Quotes */
+.ws27 .trap-words{display:flex;flex-wrap:wrap;gap:0 1.2rem;margin:1.2rem 0 2rem;font-size:clamp(2rem,6vw,4.2rem);font-weight:800;letter-spacing:-.03em;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--slate)}
+@supports not (-webkit-text-stroke:1px black){.ws27 .trap-words{color:var(--slate)}}
+.ws27 .trap-words span:not(:last-child)::after{content:"·";-webkit-text-stroke:0;color:var(--pink);margin-left:1.2rem;font-weight:300}
+.ws27 .wow{font-size:1.35rem;font-weight:700;color:var(--slate);margin:0 0 .5rem}
+.ws27 .quotes{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:900px){.ws27 .quotes{grid-template-columns:1fr 1fr;column-gap:3rem}}
+.ws27 .quotes li{border-top:1px solid var(--hair);padding:1.4rem 0 1.6rem}
+.ws27 .pull{margin:0;font-size:clamp(1.15rem,1.9vw,1.45rem);line-height:1.35;color:var(--slate);font-weight:500;letter-spacing:-.005em;text-indent:-1.05em;padding-left:1.05em}
+.ws27 .pull::before{content:"— ";color:var(--pink);font-weight:400}
+.ws27 .quotes .num{display:block;margin-bottom:.6rem}
+
+/* Kapitel 04: Agenda-Tabelle */
+.ws27 .agenda{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin-top:.5rem}
+.ws27 .agenda caption{text-align:left;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600;padding:0 0 .6rem}
+.ws27 .agenda th,.ws27 .agenda td{text-align:left;vertical-align:top;padding:.75rem .8rem .75rem 0;border-top:1px solid var(--hair);font-weight:400}
+.ws27 .agenda thead th{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(39,39,39,.62);border-top:0;border-bottom:1px solid var(--ink);padding-top:0;font-weight:600}
+.ws27 .agenda .day th{border-top:3px double var(--ink);padding:1.6rem 0 .6rem;font-size:1.25rem;font-weight:700;color:var(--slate);letter-spacing:-.01em}
+.ws27 .agenda .day th small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:.3rem}
+.ws27 .agenda td.time{white-space:nowrap;width:9.5rem;color:var(--slate);font-weight:500;font-size:.95rem}
+.ws27 .agenda td.title{width:30%;font-weight:600;color:var(--slate);padding-right:1.4rem}
+.ws27 .agenda td.desc{color:var(--ink);font-size:.98rem;line-height:1.55}
+.ws27 .agenda tr.break td{color:rgba(39,39,39,.62);font-weight:400;font-size:.92rem}
+.ws27 .agenda tr.break td.title{font-weight:500;color:rgba(39,39,39,.75)}
+.ws27 .agenda tr.break td.time{color:rgba(39,39,39,.62)}
+.ws27 .agenda tbody:last-child tr:last-child td{border-bottom:1px solid var(--ink)}
+@media (max-width:720px){
+  .ws27 .agenda thead{display:none}
+  .ws27 .agenda tbody,.ws27 .agenda tr,.ws27 .agenda th,.ws27 .agenda td{display:block;width:auto}
+  .ws27 .agenda td{border-top:0;padding:.15rem 0}
+  .ws27 .agenda tr{border-top:1px solid var(--hair);padding:.9rem 0}
+  .ws27 .agenda tr.day{border-top:0;padding:0}
+  .ws27 .agenda td.time{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);white-space:normal}
+  .ws27 .agenda td.title{width:auto;font-size:1.05rem}
+  .ws27 .agenda tbody:last-child tr:last-child td{border-bottom:0}
+  .ws27 .agenda tbody:last-child tr:last-child{border-bottom:1px solid var(--ink)}
+}
+.ws27 .agenda-photos{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.5rem 0 0}
+.ws27 .agenda-photos figure{margin:0}
+.ws27 .agenda-photos img{aspect-ratio:3/2;object-fit:cover;width:100%}
+.ws27 .agenda-photos figcaption{font-size:.78rem;color:rgba(39,39,39,.62);font-variant:all-small-caps;letter-spacing:.06em;padding-top:.4rem}
+.ws27 .cta-line{margin-top:2.5rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:1.2rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 2rem}
+.ws27 .cta-line p{margin:0;flex:1 1 20rem}
+.ws27 .cta-line strong{color:var(--slate)}
+
+/* Kapitel 05: Stimmen */
+.ws27 .voices{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:900px){.ws27 .voices{grid-template-columns:1fr 1fr;column-gap:3rem}}
+.ws27 .voices li{border-top:1px solid var(--hair);padding:1.4rem 0 1.5rem}
+.ws27 .voices li:first-child{grid-column:1/-1;border-top:0;padding-top:0}
+.ws27 .voices blockquote{margin:0;font-style:italic;font-weight:300;font-size:1.2rem;line-height:1.5;color:var(--ink)}
+.ws27 .voices li:first-child blockquote{font-size:clamp(1.35rem,2.4vw,1.8rem);color:var(--slate);font-weight:300}
+.ws27 .voices figcaption{margin-top:.7rem;font-variant:all-small-caps;letter-spacing:.14em;font-size:.95rem;color:var(--teal);font-weight:500}
+.ws27 .voices figcaption::before{content:"—";color:var(--pink);margin-right:.5rem}
+.ws27 .voices-photo{margin:2.5rem 0 0}
+.ws27 .voices-photo img{width:100%;aspect-ratio:21/9;object-fit:cover}
+.ws27 .voices-photo figcaption{font-size:.78rem;color:rgba(39,39,39,.62);font-variant:all-small-caps;letter-spacing:.06em;padding-top:.4rem}
+
+/* Kapitel 06: Fakten */
+.ws27 .facts{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:start}
+@media (min-width:900px){.ws27 .facts{grid-template-columns:7fr 5fr}}
+.ws27 .stats{display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;border-top:1px solid var(--ink);margin:0 0 1.5rem}
+.ws27 .stats div{padding:1rem 0;border-bottom:1px solid var(--hair)}
+.ws27 .stats .val{font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--slate);letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.ws27 .stats .val small{font-size:.4em;font-weight:500;letter-spacing:0;color:var(--teal);margin-left:.2em}
+.ws27 .stats .lbl{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(39,39,39,.62);font-weight:600;margin-top:.4rem}
+.ws27 dl.facts-list{margin:0}
+.ws27 dl.facts-list div{border-top:1px solid var(--hair);padding:.9rem 0}
+.ws27 dl.facts-list dt{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:.25rem}
+.ws27 dl.facts-list dd{margin:0}
+.ws27 .included{border:1px solid var(--ink);padding:1.3rem 1.4rem}
+.ws27 .included h3{margin:0 0 .8rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.ws27 .included ul{list-style:none;padding:0;margin:0}
+.ws27 .included li{border-top:1px solid var(--hair);padding:.6rem 0 .6rem 1.4rem;position:relative;font-size:.98rem}
+.ws27 .included li::before{content:"—";position:absolute;left:0;color:var(--pink)}
+
+/* Kapitel 07: Coupon */
+.ws27 .coupon{border:1px solid var(--ink);outline:1px solid var(--ink);outline-offset:5px;padding:clamp(1.4rem,3vw,2.6rem);margin:6px;display:grid;grid-template-columns:1fr;gap:1.5rem 2.5rem;background:#fff;position:relative}
+@media (min-width:900px){.ws27 .coupon{grid-template-columns:7fr 5fr}}
+.ws27 .coupon h3{margin:0 0 .8rem;font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.02em}
+.ws27 .coupon .contact{border-top:1px solid var(--ink);padding-top:1rem;font-size:1rem;line-height:1.7}
+.ws27 .coupon .contact strong{display:block;color:var(--slate);font-size:1.15rem}
+.ws27 .coupon .contact a{display:block;width:fit-content}
+.ws27 .coupon .btn{margin-top:1.2rem;font-size:.95rem;padding:1em 2.2em}
+.ws27 .coupon .stamp{position:absolute;top:-.7rem;right:1.5rem;background:var(--paper);padding:0 .6rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);font-weight:600}
+.ws27 .venue{display:grid;grid-template-columns:1fr;gap:1.5rem 2.5rem;margin-top:3rem}
+@media (min-width:900px){.ws27 .venue{grid-template-columns:5fr 7fr}}
+.ws27 .venue img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.ws27 .venue address{font-style:normal;line-height:1.7}
+.ws27 .venue address strong{color:var(--slate);font-size:1.15rem;display:block}
+
+/* ---------- Fuß ---------- */
+.ws27 .foot{border-top:3px double var(--ink);margin-top:2rem;padding:2rem 0 3rem;font-size:.88rem;color:rgba(39,39,39,.75)}
+.ws27 .foot .cols{display:grid;grid-template-columns:1fr;gap:1.2rem 2rem}
+@media (min-width:768px){.ws27 .foot .cols{grid-template-columns:repeat(4,1fr)}}
+.ws27 .foot h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600;margin:0 0 .5rem}
+.ws27 .foot address{font-style:normal;line-height:1.6}
+.ws27 .foot ul{list-style:none;padding:0;margin:0}
+.ws27 .foot li{padding:.15rem 0}
+.ws27 .foot .copy{border-top:1px solid var(--hair);margin-top:1.6rem;padding-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-size:.8rem;letter-spacing:.06em}
+
+/* ---------- Scroll-Reveal (nur mit JS und ohne reduced-motion) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .ws27.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .ws27.js .reveal.in{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .ws27 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media (prefers-reduced-motion:no-preference){.ws27{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="ws27" id="ws27">
+
+  <!-- Schlanke Seitenleiste -->
+  <div class="topbar" id="topbar">
+    <div class="container">
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 100 100" width="34" height="34" aria-label="V&amp;S"><path fill="#00A0A8" d="M51.0334152,58.6115479 L46.4737101,54.5208845 L44.8692875,53.0628993 C43.6872236,53.7918919 42.8850123,54.8044226 42.8850123,56.0599509 C42.8850123,57.9228501 44.8692875,59.4616708 47.402457,59.4616708 C48.5847666,59.4616708 49.8090909,59.1786241 51.0334152,58.6115479 Z M46.5159705,44.3963145 C46.5159705,45.6361179 47.8670762,47.312285 50.6535627,49.8230958 L55.42457,54.2781327 L58.0324324,50.1783784 L65.0019656,50.1783784 L59.8154791,58.4088452 L66.1909091,64.3624079 L57.4088452,64.3624079 L55.5933661,62.7019656 C53.2712531,64.2002457 50.5267813,64.9697789 47.2759214,64.9692875 C40.6471744,64.9692875 36.2985258,61.4869779 36.2982801,56.3031941 C36.2985258,52.9415233 38.3250614,50.5115479 41.1538084,49.0538084 C39.9717445,47.4336609 39.4228501,45.9353808 39.4228501,44.234398 C39.4228501,39.8199017 43.1383292,36.2154791 49.0068796,36.2154791 C54.7068796,36.2154791 58.6334152,39.9914005 58.6334152,45.3815725 L52.2157248,45.3815725 C52.0046683,43.4375921 50.9068796,41.8044226 49.2181818,41.8044226 C47.6980344,41.8044226 46.5159705,42.8169533 46.5159705,44.3963145 Z M99.9520885,29.3233415 L29.27543,0.0479115479 L13.9547912,37.0351351 L22.2945946,55.385258 L30.7297297,36.8255528 L38.817199,36.8255528 L26.0339066,64.3633907 L18.5987715,64.3633907 L10.14914,46.2226044 L0,70.72457 L70.6769042,100 L85.7041769,63.7206388 C83.8859951,64.4395577 81.7014742,64.8262899 79.2334152,64.8262899 C72.5810811,64.8262899 66.5808354,61.8184275 65.885258,54.990172 L73.2769042,54.990172 C73.7552826,57.429484 75.9727273,59.0140049 79.4511057,59.0140049 C82.0599509,59.0140049 83.6253071,58.0388206 83.6253071,56.4941032 C83.6253071,55.5191646 83.0599509,54.5027027 80.4945946,54.0555283 L75.6248157,53.080344 C69.7985258,51.9017199 67.0592138,49.422113 67.0592138,45.0326781 C67.0592138,39.504914 71.8420147,36.0095823 78.7990172,36.0095823 C83.5818182,36.0095823 90.7125307,37.7572482 91.4515971,45.195086 L84.0599509,45.195086 C83.6687961,43.1223587 82.3208845,41.4560197 79.190172,41.455774 C76.5813268,41.455774 74.8857494,42.5125307 74.8857494,44.3009828 C74.8857494,45.8862408 76.1031941,46.5771499 78.4511057,47.0243243 L82.5815725,47.9184275 C86.3115479,48.6714988 89.1194103,49.8840295 90.514742,52.1076167 L99.9520885,29.3233415 Z"/></svg>
+        <span>V&amp;S WinterSchool</span><small>Ausgabe 2027</small>
+      </a>
+      <button class="navtoggle" type="button" aria-expanded="false" aria-controls="topnav" id="navtoggle">Inhalt</button>
+      <nav class="topnav" id="topnav" aria-label="Sprungmarken">
+        <a href="#worum">Worum es geht</a>
+        <a href="#dreitage">Agenda</a>
+        <a href="#stimmen">Stimmen</a>
+        <a href="#fakten">Fakten</a>
+        <a class="btn" href="mailto:tietz@v-und-s.de?subject=Anmeldung%20V%26S%20WinterSchool%202027">Anmelden</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ===================== COVER ===================== -->
+    <header class="cover">
+      <div class="container">
+        <div class="cover-head">
+          <span>V&amp;S · Intensiv-Bootcamp</span>
+          <span>Ausgabe Nº 2027 · Wettbewerbskraft reloaded</span>
+        </div>
+        <h1 class="cover-title"><small>V&amp;S</small>WinterSchool</h1>
+        <div class="cover-row">
+          <div class="cover-year" aria-hidden="true">2027</div>
+          <div class="cover-sub">
+            <h2>Wettbewerbskraft reloaded</h2>
+            <p class="tag">Transformation im Mittelstand</p>
+          </div>
+        </div>
+        <p class="cover-meta">
+          <span class="tnum">20.–22. Januar 2027</span>
+          <span>Seehotel Niedernberg</span>
+          <span class="tnum">35 Plätze</span>
+          <span class="tnum">1.900 € zzgl. MwSt.</span>
+        </p>
+        <div class="cover-foot">
+          <div class="cover-claim">
+            <p class="claim">Zukunft. <b>Besser.</b> Machen.</p>
+            <p class="muted" style="margin:0">Das Dorf am See bei Aschaffenburg · Zwei intensive Tage plus Anreiseabend</p>
+            <p class="keywords-label">In dieser Ausgabe</p>
+            <ul class="keywords" id="keywords">
+              <li>echte Innovation in Produkt und Prozess</li>
+              <li>Vorträge mit Praxisbezug</li>
+              <li>Zusammenhänge anders verstehen</li>
+              <li>den entscheidenden Meter Vorsprung gewinnen</li>
+              <li>saugute Zusammenarbeit</li>
+              <li>Denkexperimente mit Praxisbezug</li>
+              <li>Blickwinkel aus Geschäftsführerebene</li>
+              <li>Diskussion von Praxisbeispielen</li>
+            </ul>
+          </div>
+          <div class="cover-cta">
+            <a class="btn" href="mailto:tietz@v-und-s.de?subject=Anmeldung%20V%26S%20WinterSchool%202027">Anmelden</a>
+            <a class="btn btn--ghost" href="#dreitage">Zur Agenda</a>
+            <small>Fragen? Nicole Tietz · <a href="mailto:tietz@v-und-s.de">tietz@v-und-s.de</a> · <a href="tel:+4970088637000">0700-88637000</a></small>
+          </div>
+          <aside class="cover-box">
+            <p class="eyebrow">Was wir in Deutschland eigentlich brauchen</p>
+            <p class="big"><b>50 %</b> schneller<br><b>80 %</b> weniger Prozess-Wahnsinn</p>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== RASTER: INDEX + KAPITEL ===================== -->
+    <div class="container">
+      <div class="layout">
+
+        <nav class="index" aria-label="Kapitel">
+          <h2>Inhalt</h2>
+          <ol>
+            <li><a href="#worum"><span class="num">01</span>Worum es geht</a></li>
+            <li><a href="#fuerwen"><span class="num">02</span>Für wen</a></li>
+            <li><a href="#fallen"><span class="num">03</span>Die Fallen</a></li>
+            <li><a href="#dreitage"><span class="num">04</span>Drei Tage</a></li>
+            <li><a href="#stimmen"><span class="num">05</span>Stimmen</a></li>
+            <li><a href="#fakten"><span class="num">06</span>Fakten</a></li>
+            <li><a href="#dabei"><span class="num">07</span>Dabei sein</a></li>
+          </ol>
+          <p class="note">Seehotel Niedernberg · 20.–22. Januar 2027 · Anmeldung bei Nicole Tietz, <a href="mailto:tietz@v-und-s.de">tietz@v-und-s.de</a></p>
+        </nav>
+
+        <div class="chapters">
+
+          <!-- 01 -->
+          <section class="chapter" id="worum">
+            <div class="chapter-head reveal"><span class="num">01</span><h2>Worum es geht</h2></div>
+            <div class="feature">
+              <div class="text reveal">
+                <h3 class="kicker">Wirksame Transformation im Mittelstand</h3>
+                <p class="lead dropcap prose">Weil wir das in Deutschland dringend brauchen – darum geht's in den zwei Tagen:</p>
+                <ol class="agenda-list prose">
+                  <li><b>Echte Wettbewerbsfähigkeit:</b> Management für den richtigen Fokus.</li>
+                  <li><b>Bessere Zusammenarbeit und aktivierte Potenziale der Mitarbeiter:</b> Management für weniger Prozess-Theater und mehr echte Arbeit.</li>
+                  <li><b>Wirtschaftlich wirksame Transformation bewerkstelligen:</b> Management jenseits von Methoden- und Change-Mainstream.</li>
+                  <li><b>Transformation mit Wirkung:</b> Engagement, Zusammenarbeit, Wertschöpfung, Innovation und Ertrag.</li>
+                  <li class="special"><b>Special 2027:</b> pragmatische KI für echte Produktivität.</li>
+                </ol>
+              </div>
+              <figure class="photo reveal">
+                <img src="https://v-und-s.de/wp-content/uploads/2023/01/Morgendlicher-See-scaled.jpg" alt="Nebliger Morgen über dem See am Seehotel Niedernberg" loading="eager" width="1600" height="1200">
+                <figcaption>Der See am Morgen · Niedernberg</figcaption>
+              </figure>
+            </div>
+            <div class="sideboxes">
+              <aside class="sidebox reveal">
+                <h3>Warum zur V&amp;S WinterSchool und nicht nach St. Gallen?</h3>
+                <p>Der Mittelstand tickt einfach anders. Darum haben wir an einem Format gefeilt, das als Veranstaltung im Nachgang wirklich Wirkung erzielt. Ein zielführender Mix aus Praxisbeispielen, Impulsen, Diskussionen und Denkwerkzeugen. Zusätzlich schaffen wir einen Raum, in dem man sich auf Augenhöhe mit anderen Teilnehmenden austauschen kann.</p>
+              </aside>
+              <aside class="sidebox reveal">
+                <h3>Es gibt zig Veranstaltungen zum Thema Transformation. Warum diese?</h3>
+                <p>Inzwischen wird der Begriff „Transformation" so inflationär verwendet, dass selbst wir ihn kaum noch hören können. Trotzdem ist es ein Riesenthema. Mit 25 Jahren Erfahrung als Unternehmensberatung für den Mittelstand wissen wir wirklich genau, wovon wir sprechen. Haben Erfolge gesehen, aber vor allen Dingen durch Scheitern verstanden, worum es eigentlich geht.</p>
+              </aside>
+            </div>
+          </section>
+
+          <!-- 02 -->
+          <section class="chapter" id="fuerwen">
+            <div class="chapter-head reveal"><span class="num">02</span><h2>Für wen</h2></div>
+            <div class="reveal">
+              <h3 class="kicker">Für wen ist die WinterSchool konzipiert?</h3>
+              <p class="lead prose">Ganz egal, ob Sie Abteilungsleiter, Eigentümerin oder Geschäftsführer sind – wenn Sie nach pragmatischen Mitteln für mehr Wirkung in Ihrer Organisation suchen, dann sind Sie hier genau richtig.<sup><a href="#fn-gendern" id="fnref-gendern" aria-label="Fußnote zum Gendern">*</a></sup></p>
+            </div>
+            <div class="reveal">
+              <p class="logos-head">unsere bisherigen Teilnehmer und Partner</p>
+              <div class="logos" aria-label="Logos bisheriger Teilnehmer und Partner">
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/BBG_optimiert.jpg" alt="BBG" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Bosch_optimiert.jpg" alt="Bosch" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Faschang_optimiert.jpg" alt="Faschang" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Flottweg_optimiert.jpg" alt="Flottweg" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Grimme_optimiert.jpg" alt="Grimme" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Herding_optimiert.jpg" alt="Herding" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Knoll_optimiert.jpg" alt="Knoll" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Mahr_optimiert.jpg" alt="Mahr" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Nord_Drivesystems_optimiert.jpg" alt="Nord Drivesystems" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Oerlikon_optimiert.jpg" alt="Oerlikon" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Phoenix_Contact_optimiert.jpg" alt="Phoenix Contact" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Schleifring_optimiert.jpg" alt="Schleifring" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Schueco_optimiert.jpg" alt="Schüco" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Syntegon_optimiert.jpg" alt="Syntegon" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/Woerner_optimiert.jpg" alt="Wörner" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/coswig_optimiert.jpg" alt="Coswig" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2021/12/ife_optimiert.jpg" alt="IFE" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2023/11/stopa.png" alt="Stopa" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2025/03/Dungs_logo-e1782291546246.png" alt="Dungs" loading="lazy"></div>
+                <div><img src="https://v-und-s.de/wp-content/uploads/2025/03/logo_ipco.png" alt="IPCO" loading="lazy"></div>
+              </div>
+              <p class="footnote" id="fn-gendern">* In unserem täglichen Sprachgebrauch gendern wir selbstverständlich! Im Fließtext verzichten wir darauf. Uns ist aber wichtig zu sagen, dass wir alle meinen, also wirklich alle! <a href="#fnref-gendern" aria-label="Zurück zum Text">↩</a></p>
+            </div>
+          </section>
+
+          <!-- 03 -->
+          <section class="chapter" id="fallen">
+            <div class="chapter-head reveal"><span class="num">03</span><h2>Die Fallen</h2></div>
+            <div class="reveal">
+              <h3 class="kicker">Viele Perspektiven, viele Fallen</h3>
+              <p class="prose dropcap">Wenn über Wettbewerbsfähigkeit und Transformation gesprochen wird, dann kommen oft mehrere Perspektiven ins Spiel: Lean – also Effizienz, Kosten – also BWL und Organisationsentwicklung – also Struktur, Führung und Energie.</p>
+              <p class="prose">In letzter Zeit auch Mindset, Kultur, Agile, Selbstorganisation und künstliche Intelligenz. Nicht zu vergessen: Strategie und Innovation. Garniert mit Engagement und Entscheidungen in Teams – auch wichtig.</p>
+              <p class="wow">Wow! Dort lauern viele Fallen …</p>
+              <p class="trap-words" aria-label="Agilität, TOC, Lean"><span>Agilität</span><span>TOC</span><span>Lean</span></p>
+            </div>
+            <div class="reveal">
+              <h3 class="kicker">Die typischen Herausforderungen unserer Teilnehmer</h3>
+              <ol class="quotes">
+                <li><span class="num">01</span><blockquote class="pull">„Wir haben viel Energie in die Aufnahme und Verbesserung unserer Prozesse gesteckt und konnten dadurch an vielen Stellen Kosten und Verschwendung reduzieren. Trotzdem sind wir beim Thema Produktivität und Innovation nicht besser geworden … oder vielleicht sogar schlechter …?"</blockquote></li>
+                <li><span class="num">02</span><blockquote class="pull">„Überreguliert, unterengagiert: Wir sind fast schon bürokratisch geworden, Agilität ist nur ein Buzzword."</blockquote></li>
+                <li><span class="num">03</span><blockquote class="pull">„Auf der einen Seite haben wir ein gewisses Silodenken, auf der anderen müssen wir für jede Entscheidung alle erdenklichen Interessengruppen an einen Tisch bringen. Das ist weder effektiv noch effizient!"</blockquote></li>
+                <li><span class="num">04</span><blockquote class="pull">„Anstatt uns mit echten Kundenproblemen zu beschäftigen, müssen wir uns jetzt mit der x-ten Kultur- und Mindset-Transformation rumschlagen. Wobei soll uns das helfen?"</blockquote></li>
+                <li><span class="num">05</span><blockquote class="pull">„Wir sind echt gut darin, neue Themen anzufangen. Fertigmachen und Wirkung erzielen, da haben wir noch Verbesserungspotenzial."</blockquote></li>
+                <li><span class="num">06</span><blockquote class="pull">„Ich frage mich oft, ob wir an den richtigen Themen arbeiten. Uns fehlt eine klare Vision, wohin wir wollen."</blockquote></li>
+                <li><span class="num">07</span><blockquote class="pull">„Unsere KPI sind für die Unternehmenssteuerung sehr wirksam, aber für die operativen Ebenen fehlen uns praxisgerechte Steuerungsparameter."</blockquote></li>
+                <li><span class="num">08</span><blockquote class="pull">„Wir als Führungsebene sind so stark im operativen Geschäft einbezogen – wir kommen gar nicht dazu, Mitarbeitende zu entwickeln oder die Organisation zu gestalten."</blockquote></li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- 04 -->
+          <section class="chapter" id="dreitage">
+            <div class="chapter-head reveal"><span class="num">04</span><h2>Drei Tage</h2></div>
+            <div class="reveal">
+              <table class="agenda">
+                <caption>Agenda · 20.–22. Januar 2027</caption>
+                <thead>
+                  <tr><th scope="col">Zeit</th><th scope="col">Programmpunkt</th><th scope="col">Worum es geht</th></tr>
+                </thead>
+                <tbody>
+                  <tr class="day"><th scope="rowgroup" colspan="3"><small>Tag 1 · Anreise</small>Mittwoch, 20. Januar</th></tr>
+                  <tr class="break"><td class="time">ca. 17.00</td><td class="title">Anreise</td><td class="desc">In Ruhe ankommen und erstmal akklimatisieren</td></tr>
+                  <tr class="break"><td class="time">18.00–19.30</td><td class="title">Abendessen</td><td class="desc">In gemütlicher Atmosphäre in der „Reblaus"</td></tr>
+                  <tr><td class="time">19.30–21.00</td><td class="title">Willkommen</td><td class="desc">Eröffnung und Programmüberblick – Check-in</td></tr>
+                </tbody>
+                <tbody>
+                  <tr class="day"><th scope="rowgroup" colspan="3"><small>Tag 2</small>Donnerstag, 21. Januar</th></tr>
+                  <tr class="break"><td class="time">bis 8.30</td><td class="title">Sport, Schwimmbad, Frühstück …</td><td class="desc">… feel free</td></tr>
+                  <tr><td class="time">8.30–10.00</td><td class="title">Warum ist Fluss wettbewerbsrelevant?</td><td class="desc">Typische Denkfehler, die bei der Arbeit an z. B. Innovations-Milieu, Kultur, Termintreue, Kostensenkung, Grob-Kapazitäts-Planung, Lean-Einführung oder Projektmanagement etc. gemacht werden.</td></tr>
+                  <tr class="break"><td class="time">10.00–10.30</td><td class="title">Pause</td><td class="desc">Zeit für einen Kaffee</td></tr>
+                  <tr><td class="time">10.30–12.30</td><td class="title">Die Essenz, der Unterschied und die typischen Denkfehler im Umgang mit Lean, TOC und Agile</td><td class="desc">Wir reden nicht über Methoden. Sondern über die FUNDAMENTALEN Zusammenhänge und Prinzipien, die Managementteams nutzen können, ohne Vollprofi in Kanban, Poka Yoke, SMED, SCRUM oder DBF zu sein.</td></tr>
+                  <tr class="break"><td class="time">12.30–13.30</td><td class="title">Mittagspause</td><td class="desc">Sacken lassen, stärken, den Blick über den See schweifen lassen.</td></tr>
+                  <tr><td class="time">13.30–15.00</td><td class="title">Hartnäckige Organisationsprobleme verstehen und lösen</td><td class="desc">Moderne Organisations-Theorie hilft dabei, Probleme und Ursachen zu verstehen, die weit über den Erkenntnishorizont der rein methodenfokussierten Anwendung von Lean, Agile und anderen Managementwerkzeugen hinausgehen.</td></tr>
+                  <tr class="break"><td class="time">15.00–15.30</td><td class="title">Kaffeepause</td><td class="desc">Wer mag, bekommt aber natürlich auch einen Tee.</td></tr>
+                  <tr><td class="time">15.30–18.00</td><td class="title">Kultur, Lernen und Veränderung</td><td class="desc">Organisationen haben eingespielte Muster. Die sind wichtig – wenn es aber erfolgreich werden soll, müssen Führungskräfte an diese Muster ran. Das nennen wir „am System arbeiten". Wie kann das gehen? Insbesondere, wenn es um Muster geht, die mit den typischen, dysfunktionalen Wirkungen von Hierarchie zu tun haben.</td></tr>
+                  <tr class="break"><td class="time">18.00–19.30</td><td class="title">Abendessen</td><td class="desc">Gemeinsames Essen</td></tr>
+                  <tr><td class="time">19.30–20.30</td><td class="title">Warum es oft doch schiefgeht: Hürden und die vier Illusionen</td><td class="desc">„Am System arbeiten" hört sich leichter an, als es ist. Denn wir alle werden in die Spiele der Organisationen „reingezogen". Und dann sind wir täglich im Autopilot. Es braucht also Handwerkszeug und Ideen, um das System wirksam zu irritieren, um etwas wirklich anders zu machen.</td></tr>
+                  <tr class="break"><td class="time">20.30</td><td class="title">Die V&amp;S-Bar lädt ein</td><td class="desc">Netzwerken, Austauschen an der Bar</td></tr>
+                </tbody>
+                <tbody>
+                  <tr class="day"><th scope="rowgroup" colspan="3"><small>Tag 3</small>Freitag, 22. Januar</th></tr>
+                  <tr class="break"><td class="time">bis 8.30</td><td class="title">Sport, Schwimmbad, Frühstück …</td><td class="desc">… feel free</td></tr>
+                  <tr><td class="time">8.30–10.30</td><td class="title">Wie es doch geht</td><td class="desc">Konflikte sind normale Folgen von Arbeitsteilung und zugleich wichtige Triebfedern für Entwicklung. Führung kann sie mit dem Problemlösungskreis konstruktiv nutzen. Das Transformations-Modell liefert dazu Prinzipien und einen klaren Weg für Veränderung.</td></tr>
+                  <tr class="break"><td class="time">10.30–11.00</td><td class="title">Kaffeepause</td><td class="desc">Zeit für einen Kaffee</td></tr>
+                  <tr><td class="time">11.00–12.00</td><td class="title">Intro KI</td><td class="desc">Der Überblick zu möglichen Use-Cases, KI-Risiken und Lösungsansätzen zeigt auf, wie Künstliche Intelligenz praxisnah eingesetzt werden kann und welche Herausforderungen dabei zu beachten sind. Daran schließt die Vorstellung unseres Jahresprogramms (KIM) an, das konkrete Angebote und Schwerpunkte aufzeigt. Ergänzend werden die organisatorischen und technischen Voraussetzungen erläutert, die für eine erfolgreiche Umsetzung notwendig sind.</td></tr>
+                  <tr class="break"><td class="time">12.00–13.00</td><td class="title">Mittagessen</td><td class="desc">Sacken lassen, stärken, den Blick über den See schweifen lassen.</td></tr>
+                  <tr><td class="time">13.00–15.30</td><td class="title">Praxisteil KI</td><td class="desc">Ein Sprachmodell (LLM) ermöglicht vielfältige Anwendungsbeispiele – von einfacher Datenanalyse bis hin zur Bildgenerierung. Durch Rollen-Priming kann es gezielt als Experten-Assistenz eingesetzt werden und unterstützt so auch bei der Bewältigung komplexerer Aufgaben. Unterschiedliche Prompt-Frameworks helfen dabei, die Ergebnisse zu strukturieren und zu verbessern. Gleichzeitig gilt es, die Grenzen und Risiken generativer Sprachmodelle im Blick zu behalten.</td></tr>
+                  <tr><td class="time">15.30–16.30</td><td class="title">Check-out</td><td class="desc">Reflexion und Verabschiedung</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="agenda-photos reveal">
+              <figure><img src="https://v-und-s.de/wp-content/uploads/2025/03/20240926_090007735_iOS-scaled.jpg" alt="Plenum im Holzsaal mit Lampions" loading="lazy" width="1600" height="1067"><figcaption>Im Plenum</figcaption></figure>
+              <figure><img src="https://v-und-s.de/wp-content/uploads/2024/01/Reblaus3-scaled.jpg" alt="Abendessen in der Reblaus bei Kerzenlicht" loading="lazy" width="1600" height="1067"><figcaption>Abends in der „Reblaus"</figcaption></figure>
+            </div>
+            <div class="cta-line reveal">
+              <p><strong>Platz sichern.</strong> Anmeldung und Zimmer direkt über Nicole Tietz · <a href="mailto:tietz@v-und-s.de">tietz@v-und-s.de</a> · <a href="tel:+4970088637000">0700-88637000</a></p>
+              <a class="btn" href="mailto:tietz@v-und-s.de?subject=Anmeldung%20V%26S%20WinterSchool%202027">Anmelden</a>
+            </div>
+          </section>
+
+          <!-- 05 -->
+          <section class="chapter" id="stimmen">
+            <div class="chapter-head reveal"><span class="num">05</span><h2>Stimmen</h2></div>
+            <div class="reveal">
+              <h3 class="kicker">Stimmen unserer Teilnehmenden und Partner</h3>
+              <ul class="voices">
+                <li><figure><blockquote>„Mit großen Erwartungen hingefahren – begeistert und inspiriert zurückgekommen. Tolle Mischung aus Theorie und Praxis mit ‚etwas anderen' Beratern und sehr offenen und ehrlichen Kollegen!"</blockquote><figcaption>Teilnehmer</figcaption></figure></li>
+                <li><figure><blockquote>„Gespräche mit spannenden Menschen auch aus dem produzierenden Umfeld – praxisrelevante Themen kombiniert mit neuen Denkanstößen."</blockquote><figcaption>Teilnehmer</figcaption></figure></li>
+                <li><figure><blockquote>„Praxisrelevante Inhalte und Inspirationen aus dem produzierenden Mittelstand. Besser geht es nicht … und steht daher seit vielen Jahren fest in meinem Kalender."</blockquote><figcaption>Teilnehmer</figcaption></figure></li>
+                <li><figure><blockquote>„V&amp;S hat uns durch finstere Zeiten begleitet – wir sind gestärkt aus der Krise hervorgegangen. Nicht nur finanziell, sondern auch kulturell."</blockquote><figcaption>Partner</figcaption></figure></li>
+                <li><figure><blockquote>„Gespräche auf Augenhöhe mit anderen Geschäftsführern über praxisrelevante Themen, kombiniert mit inspirierenden Rednern. Mittelstandstauglich, relevant und sehr gut – deshalb gehe ich hin."</blockquote><figcaption>Teilnehmer</figcaption></figure></li>
+              </ul>
+            </div>
+            <figure class="voices-photo reveal">
+              <img src="https://v-und-s.de/wp-content/uploads/2024/01/1110544-scaled.jpeg" alt="Verschneiter Steg im See bei Sonnenschein" loading="lazy" width="2000" height="857">
+              <figcaption>Der Steg im Winter · Seehotel Niedernberg</figcaption>
+            </figure>
+          </section>
+
+          <!-- 06 -->
+          <section class="chapter" id="fakten">
+            <div class="chapter-head reveal"><span class="num">06</span><h2>Fakten</h2></div>
+            <div class="facts">
+              <div class="reveal">
+                <h3 class="kicker">Was Sie noch wissen sollten</h3>
+                <div class="stats">
+                  <div><div class="val">35</div><div class="lbl">Plätze, nicht mehr</div></div>
+                  <div><div class="val">1.900<small>€</small></div><div class="lbl">zzgl. MwSt. pro Teilnehmenden</div></div>
+                </div>
+                <dl class="facts-list prose">
+                  <div><dt>Kleine Gruppen</dt><dd>Die V&amp;S WinterSchool setzt besonders auf Interaktivität und die Arbeit in kleinen Gruppen. Die Teilnehmerzahl ist daher auf 35 Personen begrenzt.</dd></div>
+                  <div><dt>Anmeldeschluss</dt><dd>Eine kurzfristige Anmeldung ist immer möglich, solange noch freie Plätze vorhanden sind.</dd></div>
+                  <div><dt>Teilnahmegebühr</dt><dd>Die Teilnahmegebühr beträgt 1.900 € (zzgl. MwSt) pro Teilnehmenden.</dd></div>
+                  <div><dt>Zahlung</dt><dd>Nach Eingang Ihrer Anmeldung erhalten Sie eine Anmeldebestätigung und eine Rechnung. 50 % der Teilnahmegebühr ist sofort zu leisten, die gesamte Teilnahmegebühr ist bis spätestens 14 Tage vor Veranstaltungsbeginn zu entrichten.</dd></div>
+                </dl>
+              </div>
+              <aside class="included reveal">
+                <h3>In der Teilnahmegebühr enthalten</h3>
+                <ul>
+                  <li>Teilnahme an der zweitägigen WinterSchool</li>
+                  <li>Abendessen am Anreisetag. Mittagessen und Abendessen an den Veranstaltungstagen</li>
+                  <li>Erfrischungen und Snacks in den Pausen an allen Veranstaltungstagen</li>
+                  <li>Dokumentation der WinterSchool im Nachgang</li>
+                </ul>
+              </aside>
+            </div>
+          </section>
+
+          <!-- 07 -->
+          <section class="chapter" id="dabei">
+            <div class="chapter-head reveal"><span class="num">07</span><h2>Dabei sein</h2></div>
+            <div class="coupon reveal">
+              <span class="stamp">Seien Sie dabei</span>
+              <div>
+                <h3>Platz und Zimmer sichern</h3>
+                <p class="prose">Wir haben ein Zimmerkontingent im Seehotel Niedernberg für die V&amp;S WinterSchool reserviert (169 €) – Bitte sichern Sie sich Ihre Teilnahme und Ihr Zimmer direkt über uns:</p>
+                <a class="btn" href="mailto:tietz@v-und-s.de?subject=Anmeldung%20V%26S%20WinterSchool%202027">Anmelden</a>
+              </div>
+              <div class="contact">
+                <p class="eyebrow" style="margin-bottom:.5rem">Ihre Ansprechpartnerin</p>
+                <strong>Nicole Tietz</strong>
+                <a href="mailto:tietz@v-und-s.de">tietz@v-und-s.de</a>
+                <a href="tel:+4970088637000">0700-88637000</a>
+              </div>
+            </div>
+            <div class="venue">
+              <figure class="reveal" style="margin:0">
+                <img src="https://v-und-s.de/wp-content/uploads/2024/01/1110539-scaled.jpeg" alt="Häuser des Seehotels Niedernberg am Ufer, Winter, blaue Stunde" loading="lazy" width="1600" height="1000">
+              </figure>
+              <div class="reveal">
+                <h3 class="kicker">Veranstaltungsort</h3>
+                <address>
+                  <strong>Seehotel Niedernberg</strong>
+                  Das Dorf am See bei Aschaffenburg<br>
+                  Leerweg 1, 63843 Niedernberg<br>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Seehotel+Niedernberg+Leerweg+1+63843+Niedernberg" target="_blank" rel="noopener">Karte öffnen (Google Maps) ↗</a>
+                </address>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /chapters -->
+      </div><!-- /layout -->
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <h4>Hannover</h4>
+          <address>Vollmer &amp; Scheffczyk GmbH<br>Leisewitzstraße 41<br>30175 Hannover</address>
+        </div>
+        <div>
+          <h4>Stuttgart</h4>
+          <address>Vollmer &amp; Scheffczyk GmbH<br>Torstraße 20<br>70173 Stuttgart</address>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <address><a href="tel:+4970088637000">+49 (0) 700 – 88637 000</a><br><a href="mailto:info@v-und-s.de">info@v-und-s.de</a></address>
+        </div>
+        <div>
+          <h4>Mehr</h4>
+          <ul>
+            <li><a href="https://v-und-s.de/">V&amp;S Lager.Feuer</a></li>
+            <li><a href="https://v-und-s.de/events-media/">Alle Veranstaltungen</a></li>
+            <li><a href="https://v-und-s.de/datenschutz/">Datenschutz</a></li>
+            <li><a href="https://v-und-s.de/impressum/">Impressum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy">
+        <span>© 2026 Vollmer &amp; Scheffczyk GmbH</span>
+        <span>V&amp;S WinterSchool 2027 · Wettbewerbskraft reloaded</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var root=document.getElementById('ws27');
+  if(!root)return;
+  root.classList.add('js');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Mobile-Navigation
+  var bar=document.getElementById('topbar'),tog=document.getElementById('navtoggle');
+  if(tog){
+    tog.addEventListener('click',function(){
+      var open=bar.classList.toggle('nav-open');
+      tog.setAttribute('aria-expanded',open?'true':'false');
+    });
+    bar.querySelectorAll('.topnav a').forEach(function(a){a.addEventListener('click',function(){bar.classList.remove('nav-open');tog.setAttribute('aria-expanded','false');});});
+  }
+
+  // Wortrotation im Cover (ohne JS oder bei reduced-motion: alle Wörter statisch sichtbar)
+  var kw=document.getElementById('keywords');
+  if(kw&&!reduce){
+    var items=kw.querySelectorAll('li'),i=0;
+    kw.classList.add('rotating');
+    items[0].classList.add('on');
+    setInterval(function(){
+      items[i].classList.remove('on');
+      i=(i+1)%items.length;
+      items[i].classList.add('on');
+    },2800);
+  }
+
+  // Scroll-Reveal
+  var reveals=root.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{rootMargin:'0px 0px -8% 0px',threshold:.05});
+    reveals.forEach(function(el){io.observe(el);});
+  }else{
+    reveals.forEach(function(el){el.classList.add('in');});
+  }
+
+  // Aktives Kapitel im Index
+  var links=root.querySelectorAll('.index a[href^="#"]');
+  var secs=[];
+  links.forEach(function(a){var s=document.getElementById(a.getAttribute('href').slice(1));if(s)secs.push({a:a,s:s});});
+  if('IntersectionObserver' in window&&secs.length){
+    var cur=null;
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          if(cur)cur.removeAttribute('aria-current');
+          cur=secs.filter(function(x){return x.s===e.target;})[0].a;
+          cur.setAttribute('aria-current','true');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px',threshold:0});
+    secs.forEach(function(x){io2.observe(x.s);});
+  }
+})();
+</script>
+</body>
+</html>

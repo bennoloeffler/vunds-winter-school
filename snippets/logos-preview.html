@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0;background:#fff;font-family:system-ui} .ws27{max-width:1200px;margin:40px auto;padding:0 16px} .ws27 .ws27-logos{--logo-k:64px;--logo-tone:.6;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:18px 24px}
+.ws27 .ws27-logos li{box-sizing:border-box;flex:0 0 calc((100% - 6 * 24px) / 7);display:flex;align-items:center;justify-content:center;aspect-ratio:5/2;padding:4px}
+/* .lg = exakter Ausschnitt des sichtbaren Logos, gleiche optische Fläche, zentriert */
+.ws27 .ws27-logos .lg{position:relative;display:block;flex:0 0 auto;width:min(88%,calc(var(--logo-k) * var(--s)));aspect-ratio:var(--ar);overflow:hidden}
+.ws27 .ws27-logos .lg img{position:absolute;left:var(--l);top:var(--t);width:var(--w);height:auto;max-width:none;transition:opacity .25s ease,filter .25s ease}
+/* SVGs sind weiß -> auf hell dunkel färben; JPGs graustufig und weißen Hintergrund wegblenden */
+.ws27 .ws27-logos .svg img{filter:brightness(0);opacity:var(--logo-tone)}
+.ws27 .ws27-logos .jpg img{filter:grayscale(1) contrast(1.1);mix-blend-mode:multiply;opacity:var(--logo-tone)}
+.ws27 .ws27-logos li:hover img{opacity:.95}
+/* Vollflächen-Logos (Trumpf-Quadrat) wirken dunkel sonst wie ein Block: heller + kleiner */
+.ws27 .ws27-logos .soft img{opacity:calc(var(--logo-tone) * .5)}
+/* Auf dunklem Hintergrund: Klasse .on-dark an die ul -> SVGs weiß, JPGs invertiert */
+.ws27 .ws27-logos.on-dark .svg img{filter:none;opacity:.8}
+.ws27 .ws27-logos.on-dark .jpg img{filter:grayscale(1) invert(1);mix-blend-mode:screen;opacity:.8}
+@media (max-width:1000px){.ws27 .ws27-logos li{flex-basis:calc((100% - 4 * 24px) / 5)}}
+@media (max-width:600px){.ws27 .ws27-logos{--logo-k:48px;gap:10px 12px}.ws27 .ws27-logos li{flex-basis:calc((100% - 2 * 12px) / 3)}}
+</style></head>
+<body><div class="ws27"><h2 style="text-align:center;letter-spacing:.2em;font-size:14px;color:#556">UNSERE BISHERIGEN TEILNEHMER UND PARTNER</h2><!-- LOGO-BLOCK v2 (22.09.2026): 42 Partner von der Lager.Feuer-Seite (SVG, im Original weiß) + 8 nur-WinterSchool-Partner (JPG).
+     Jedes Logo auf seinen sichtbaren Inhalt beschnitten, zentriert, gleiche optische Fläche (Breite = --logo-k × √Seitenverhältnis; schwere Formen etwas kleiner).
+     Größe NUR über --logo-k steuern. Kein transform:scale, kein object-fit, keine eigenen <img>-Größen. Kachel-Optik nur über li-Regeln anpassen. -->
+<ul class="ws27-logos" role="list" aria-label="Bisher dabei: Eigentümerinnen, Geschäftsführer, Werkleiterinnen und Impulsgeber von">
+  <li class="svg"><span class="lg" style="--ar:760/600;--s:1.125;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/piller-1.svg" alt="Piller" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/284;--s:2.056;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/skf-1.svg" alt="SKF" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/224;--s:2.315;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/herrmann-1.svg" alt="Herrmann Ultraschall" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/300;--s:2.000;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/ecoclean-1.svg" alt="Ecoclean" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/180;--s:2.582;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/felsomat-1.svg" alt="Felsomat" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1160/600;--s:1.390;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/kapp_niles-1.svg" alt="Kapp Niles" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/372;--s:1.796;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/gea-1.svg" alt="GEA" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/472;--s:1.594;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/broetje-1.svg" alt="Broetje Automation" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/568;--s:1.454;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/bbg-1.svg" alt="BBG" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/288;--s:2.041;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/becker-1.svg" alt="Becker" loading="lazy"></span></li>
+  <li class="svg soft"><span class="lg" style="--ar:572/600;--s:0.586;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/trumpf-1.svg" alt="Trumpf" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/256;--s:2.165;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/gleason-1.svg" alt="Gleason" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/336;--s:1.890;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/herding-1.svg" alt="Herding" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/404;--s:1.723;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/freund-1.svg" alt="Freund" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/540;--s:1.491;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/schleifring-1.svg" alt="Schleifring" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/296;--s:2.013;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/harro_hoefliger-1.svg" alt="Harro Höfliger" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/460;--s:1.615;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/oerlikon-1.svg" alt="Oerlikon Balzers" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/232;--s:2.274;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/kinkele-1.svg" alt="Kinkele" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1188/600;--s:1.266;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/mahr-1.svg" alt="Mahr" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:760/600;--s:1.125;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/nord_drivesystems-1.svg" alt="NORD Drivesystems" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/192;--s:2.500;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/heller-1.svg" alt="Heller" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/368;--s:1.806;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/khs-1.svg" alt="KHS" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/396;--s:1.741;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/amf-1.svg" alt="amf" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/212;--s:2.379;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/goldbeck-1.svg" alt="Goldbeck" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/324;--s:1.925;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/mimatic-1.svg" alt="mimatic" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/288;--s:2.041;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/groninger-1.svg" alt="groninger" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/312;--s:1.961;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/kuhn_edelstahl-1.svg" alt="Kuhn Edelstahl" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/468;--s:1.441;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/emka-1.svg" alt="EMKA" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/312;--s:1.961;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/vollmer-1.svg" alt="Vollmer" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/264;--s:2.132;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2024/06/flottweg-1.svg" alt="Flottweg" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:636/260;--s:1.408;--w:100.00%;--l:0.00%;--t:-0.77%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/ipco-logo-blue.svg" alt="ipco" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/320;--s:1.936;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/Aichelin.svg" alt="Aichelin" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/400;--s:1.559;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/stopa-logo.svg" alt="STOPA" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1174/201;--s:2.417;--w:102.21%;--l:-1.11%;--t:-6.47%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/Schueco_logo.svg" alt="Schüco" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:850/186;--s:2.138;--w:103.53%;--l:-1.76%;--t:-8.06%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/Syntegon_logo.svg" alt="Syntegon" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1195/218;--s:2.341;--w:100.42%;--l:-0.42%;--t:-3.21%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/Oculus.svg" alt="Oculus" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1196/137;--s:2.955;--w:100.33%;--l:-0.17%;--t:-1.46%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/Sollich_Logo.svg" alt="Sollich" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1199/372;--s:1.795;--w:100.08%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/dungs.svg" alt="Dungs" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1132/600;--s:1.168;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/KpTec.svg" alt="kp tec" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1160/381;--s:1.745;--w:103.45%;--l:-2.41%;--t:-4.72%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/Logo_Neuenhauser_Gruppe_2021.svg" alt="Neuenhauser Gruppe" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:998/599;--s:1.291;--w:100.20%;--l:-0.10%;--t:-0.17%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/Guidant-1.svg" alt="Guidant" loading="lazy"></span></li>
+  <li class="svg"><span class="lg" style="--ar:1200/116;--s:3.216;--w:100.00%;--l:0.00%;--t:0.00%"><img src="https://v-und-s.de/wp-content/uploads/2025/03/chocotech.svg" alt="Chocotech" loading="lazy"></span></li>
+  <li class="jpg"><span class="lg" style="--ar:213/66;--s:1.796;--w:140.85%;--l:-20.66%;--t:-140.91%"><img src="https://v-und-s.de/wp-content/uploads/2021/12/Bosch_optimiert.jpg" alt="Bosch" loading="lazy" width="300" height="250"></span></li>
+  <li class="jpg"><span class="lg" style="--ar:199/45;--s:2.103;--w:150.75%;--l:-27.14%;--t:-224.44%"><img src="https://v-und-s.de/wp-content/uploads/2021/12/Faschang_optimiert.jpg" alt="Faschang" loading="lazy" width="300" height="250"></span></li>
+  <li class="jpg"><span class="lg" style="--ar:220/49;--s:2.119;--w:136.36%;--l:-18.18%;--t:-206.12%"><img src="https://v-und-s.de/wp-content/uploads/2021/12/Grimme_optimiert.jpg" alt="Grimme" loading="lazy" width="300" height="250"></span></li>
+  <li class="jpg"><span class="lg" style="--ar:169/67;--s:1.588;--w:177.51%;--l:-38.46%;--t:-137.31%"><img src="https://v-und-s.de/wp-content/uploads/2021/12/Knoll_optimiert.jpg" alt="Knoll" loading="lazy" width="300" height="250"></span></li>
+  <li class="jpg"><span class="lg" style="--ar:228/60;--s:1.949;--w:131.58%;--l:-15.79%;--t:-158.33%"><img src="https://v-und-s.de/wp-content/uploads/2021/12/Phoenix_Contact_optimiert.jpg" alt="Phoenix Contact" loading="lazy" width="300" height="250"></span></li>
+  <li class="jpg"><span class="lg" style="--ar:169/36;--s:2.167;--w:177.51%;--l:-39.05%;--t:-294.44%"><img src="https://v-und-s.de/wp-content/uploads/2021/12/Woerner_optimiert.jpg" alt="Wörner" loading="lazy" width="300" height="250"></span></li>
+  <li class="jpg"><span class="lg" style="--ar:161/133;--s:1.100;--w:186.34%;--l:-45.34%;--t:-44.36%"><img src="https://v-und-s.de/wp-content/uploads/2021/12/coswig_optimiert.jpg" alt="Coswig" loading="lazy" width="300" height="250"></span></li>
+  <li class="jpg"><span class="lg" style="--ar:210/98;--s:1.464;--w:142.86%;--l:-21.43%;--t:-77.55%"><img src="https://v-und-s.de/wp-content/uploads/2021/12/ife_optimiert.jpg" alt="ife" loading="lazy" width="300" height="250"></span></li>
+</ul>
+</div></body></html>
