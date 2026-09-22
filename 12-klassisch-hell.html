@@ -314,6 +314,12 @@
   .ws27 *, .ws27 *::before, .ws27 *::after { transition: none !important; animation: none !important; }
   .ws27.js .rv { opacity: 1; transform: none; }
 }
+
+/* Einleitung direkt nach dem Hero */
+.ws27 .intro-lead{padding:clamp(3rem,2rem + 4vw,5.5rem) 0;background:#fff;text-align:center}
+.ws27 .intro-lead p{max-width:46ch;margin:0 auto 1.1rem;font-size:clamp(1.15rem,1rem + .6vw,1.5rem);line-height:1.55;font-weight:400;color:#364459}
+.ws27 .intro-lead p.q{margin-bottom:0;color:#006D7E}
+.ws27 .intro-lead p.q b{font-weight:600}
 </style>
 </head>
 <body>
@@ -367,6 +373,16 @@
       </div>
     </div>
   </header>
+
+  <!-- Einleitung (Bennos Text, identisch in allen Entwürfen ab 11) -->
+  <section class="intro-lead" aria-label="Einleitung">
+    <div class="wrap">
+      <p>Es gibt typische Probleme im Mittelstand. Und es gibt typische „Schein-Lösungen“ – leider oft echte Fallen.</p>
+      <p>Wir müssen in Deutschland endlich wieder Wettbewerbskraft entfesseln: im Management, in der Belegschaft und in der Zusammenarbeit.</p>
+      <p class="q">Wie das geht? <b>Darum geht’s bei der V&amp;S WinterSchool.</b></p>
+    </div>
+  </section>
+
 
   <!-- Karussell: Was Sie erwartet (8 Original-Folien) -->
   <section class="expect" aria-labelledby="h-expect">
