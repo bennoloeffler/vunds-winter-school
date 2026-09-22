@@ -10,15 +10,15 @@ Gendern: im Fließtext nicht; einmalige Fußnote (siehe unten) darf bleiben oder
 - Jahreszahl: **2027**
 - Titel: **V&S WinterSchool**
 - Untertitel 1: **Wettbewerbskraft reloaded**
-- Untertitel 2 (kursiv im Original): *Transformation im Mittelstand*
+- Untertitel 2 (kursiv im Original): *Transformation im Mittelstand: Wirkung statt Kosmetik*
 - Datum: **20.–22. Januar 2027**
 - Ort: **Seehotel Niedernberg** (Das Dorf am See bei Aschaffenburg)
 - Claim: **Zukunft. Besser. Machen.** — Intensiv-Bootcamp
-- Kasten „Was wir in Deutschland eigentlich brauchen": **50 % schneller · 80 % weniger Prozess-Wahnsinn**
+- Kasten „Was wir in Deutschland eigentlich brauchen": **innovativ, 50 % schneller · 80 % weniger Prozess-Wahnsinn · 30 % produktiver**
 
 ## Rotierende Schlagworte (Original: Bild-Slider über Winterfotos)
 
-- echte Innovation in Produkt und Prozess
+- echte Innovation für Premium-Preise
 - Vorträge mit Praxisbezug
 - Zusammenhänge anders verstehen
 - den entscheidenden Meter Vorsprung gewinnen
@@ -41,10 +41,10 @@ Firmen (Logos liegen auf v-und-s.de, siehe BRIEF.md): BBG, Bosch, Faschang, Flot
 Überschrift: **Wirksame Transformation im Mittelstand**
 Vorspann: Weil wir das in Deutschland dringend brauchen – darum geht's in den zwei Tagen:
 
-1. **Echte Wettbewerbsfähigkeit:** Management für den richtigen Fokus.
-2. **Bessere Zusammenarbeit und aktivierte Potenziale der Mitarbeiter:** Management für weniger Prozess-Theater und mehr echte Arbeit.
-3. **Wirtschaftlich wirksame Transformation bewerkstelligen:** Management jenseits von Methoden- und Change-Mainstream.
-4. **Transformation mit Wirkung:** Engagement, Zusammenarbeit, Wertschöpfung, Innovation und Ertrag.
+1. **Echte Wettbewerbsfähigkeit:** andere Management-Ansätze für engagierte Zusammenarbeit und weniger cover-your-ass.
+2. **Bessere Zusammenarbeit und aktivierte Potenziale der Mitarbeiter:** Weniger Prozess-Theater und mehr echte Arbeit.
+3. **Wirtschaftlich wirksame Transformation bewerkstelligen:** Organisations-Gestaltung jenseits von Methoden- und Change-Mainstream.
+4. **Transformation mit Wirkung:** Technologie, Strategie, Engagement, Zusammenarbeit, Wertschöpfung, Innovation und Ertrag. Alles andere ist fast egal.
 5. **Special 2027:** pragmatische KI für echte Produktivität.
 
 ## Für wen
@@ -56,20 +56,30 @@ Ganz egal, ob Sie Abteilungsleiter, Eigentümerin oder Geschäftsführer sind �
 
 (Zitate; im Original ohne echte Namen — KEINE „Max Mustermann"-Platzhalter übernehmen, anonym lassen oder Rolle angeben, z. B. „Geschäftsführer, Maschinenbau")
 
-1. „Wir haben viel Energie in die Aufnahme und Verbesserung unserer Prozesse gesteckt und konnten dadurch an vielen Stellen Kosten und Verschwendung reduzieren. Trotzdem sind wir beim Thema Produktivität und Innovation nicht besser geworden … oder vielleicht sogar schlechter …?"
-2. „Überreguliert, unterengagiert: Wir sind fast schon bürokratisch geworden, Agilität ist nur ein Buzzword."
-3. „Auf der einen Seite haben wir ein gewisses Silodenken, auf der anderen müssen wir für jede Entscheidung alle erdenklichen Interessengruppen an einen Tisch bringen. Das ist weder effektiv noch effizient!"
-4. „Anstatt uns mit echten Kundenproblemen zu beschäftigen, müssen wir uns jetzt mit der x-ten Kultur- und Mindset-Transformation rumschlagen. Wobei soll uns das helfen?"
-5. „Wir sind echt gut darin, neue Themen anzufangen. Fertigmachen und Wirkung erzielen, da haben wir noch Verbesserungspotenzial."
-6. „Ich frage mich oft, ob wir an den richtigen Themen arbeiten. Uns fehlt eine klare Vision, wohin wir wollen."
-7. „Unsere KPI sind für die Unternehmenssteuerung sehr wirksam, aber für die operativen Ebenen fehlen uns praxisgerechte Steuerungsparameter."
+1. „Wir haben viel Energie in die Aufnahme und Verbesserung unserer Prozesse gesteckt. Trotzdem sind wir beim Thema Produktivität und Innovation nicht besser geworden … oder vielleicht sogar deshalb…?"
+2. „Überreguliert, unterengagiert: Unser ERP macht es nicht besser. Agilität bleibt ein Wunsch."
+3. „Krasses Silodenken... Und für jede Entscheidung muss jede erdenkliche Interessengruppe an den Tisch. Das ist langsam, zermürbend und nicht mehr wettbewerbsfähig. Andere sind viel schneller als wir."
+4. „Anstatt uns mit echten Kundenproblemen zu beschäftigen, müssen wir uns jetzt mit der x-ten Kultur- und Mindset-Transformation rumschlagen. Wir würden gerne mehr arbeiten und uns weniger mit nutzlosem Schnickschnack rumschlagen."
+5. „Wir sind echt gut darin, neue Themen anzufangen, Konzepte zu machen und groß aufzublasen. Fertigmachen und Wirkung erzielen: Da ist noch Luft nach oben."
+6. „Ich frage mich oft, ob wir an den richtigen Themen arbeiten. Oder ob wir richtig an Themen arbeiten. Denn: wir bleiben stecken... immer wieder."
+7. „Seit unsere alten Könner nicht mehr da sind, funktionieren eine ganze Menge Selbstverständlichkeiten nicht mehr - trotz großer Mühe."
 8. „Wir als Führungsebene sind so stark im operativen Geschäft einbezogen – wir kommen gar nicht dazu, Mitarbeitende zu entwickeln oder die Organisation zu gestalten."
 
-## Viele Perspektiven, viele Fallen
+## Viele Heilsversprechen, viele Fallen
 
-Wenn über Wettbewerbsfähigkeit und Transformation gesprochen wird, dann kommen oft mehrere Perspektiven ins Spiel: Lean – also Effizienz, Kosten – also BWL und Organisationsentwicklung – also Struktur, Führung und Energie.
-In letzter Zeit auch Mindset, Kultur, Agile, Selbstorganisation und künstliche Intelligenz. Nicht zu vergessen: Strategie und Innovation. Garniert mit Engagement und Entscheidungen in Teams – auch wichtig.
-**Wow! Dort lauern viele Fallen …**
+Wenn über Wettbewerbsfähigkeit und Transformation gesprochen wird, dann kommen alte und neue Heilsversprechen ins Spiel: 
+- BWL - die alte Bekannte, die am Ende immer recht hat: Mehr Umsatz, weniger Kosten
+- Lean – also Fluss, Effizienz und letztlich zufriedene Kunden bei niedrigen Kosten
+- TOC, Theory of Constraints - also mehr Durchsatz und Termintreue
+- Agile - also bewegliche, schnelle, enge Zusammenarbeit, schnelle Iteration und Problemlösung
+In letzter Zeit auch 
+- Mindset, Kultur, Selbstorganisation und künstliche Intelligenz. 
+Nicht zu vergessen: 
+- Strategie und Innovation. 
+Garniert mit 
+- Engagement und Entscheidungen in Teams – auch wichtig.
+
+**Wow! Aber was machen die Firmen anders, bei denen das wirklich klappt? Denn in den Verheißungen lauern viele Fallen …**
 (Original zeigt daneben drei große Wörter: **Agilität · TOC · Lean**)
 
 ## Warum zur V&S WinterSchool und nicht nach St. Gallen?
