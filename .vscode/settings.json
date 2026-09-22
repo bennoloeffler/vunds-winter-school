@@ -1,0 +1,18 @@
+{
+  // Nicht automatisch formatieren: die Entwürfe sind handgebaute Einzeldateien –
+  // ein Formatierer würde beim Speichern die ganze Datei umbauen (riesige Diffs).
+  "editor.formatOnSave": false,
+  "editor.wordWrap": "on",
+  "files.trimTrailingWhitespace": false,
+
+  // Live Preview (Microsoft): Vorschau in VS Code, lädt beim Speichern neu
+  "livePreview.autoRefreshPreview": "On Changes to Saved Files",
+  "livePreview.openPreviewTarget": "Embedded Preview",
+
+  // Rechtschreibprüfung Deutsch + Englisch (Seite ist deutsch)
+  "cSpell.language": "de,en",
+  "cSpell.words": ["WinterSchool", "Niedernberg", "Seehotel", "Reblaus", "Mittelstand", "Vollmer", "Scheffczyk", "Heilsversprechen", "Schnickschnack"],
+
+  // Große Bild- und Hilfsordner aus der Suche heraushalten
+  "search.exclude": { "thumbs/**": true, "img/**": true, "backups/**": true }
+}

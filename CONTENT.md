@@ -14,7 +14,7 @@ Gendern: im Fließtext nicht; einmalige Fußnote (siehe unten) darf bleiben oder
 - Datum: **20.–22. Januar 2027**
 - Ort: **Seehotel Niedernberg** (Das Dorf am See bei Aschaffenburg)
 - Claim: **Zukunft. Besser. Machen.** — Intensiv-Bootcamp
-- Kasten „Was wir in Deutschland eigentlich brauchen": **innovativ, 50 % schneller · 80 % weniger Prozess-Wahnsinn · 30 % produktiver**
+- Kasten „Was wir in Deutschland eigentlich brauchen:" **Viel innovativer! Und außerdem: 50 % schneller · 80 % weniger Prozess-Wahnsinn · 30 % produktiver**
 
 ## Rotierende Schlagworte (Original: Bild-Slider über Winterfotos)
 

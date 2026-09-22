@@ -21,8 +21,8 @@ Landing-page drafts for the **V&S WinterSchool 2027** (Vollmer & Scheffczyk, man
 ## Layout
 
 - `index.html` — only redirects to the chosen draft (currently `15-storytelling-freundlich.html`). To change the entry page, edit the three URLs in it.
-- `previews.html` — overview: live, scrollable iframe previews of 11–17 (rendered at exactly 1440×900 or 390×844 and scaled; Desktop/Smartphone toggle; A/B/C buttons for 11 and 13) plus a link list for 01–10. When adding a draft, add an `<article class="pv">` there and a thumbnail.
-- `NN-<slug>.html` — one self-contained draft each. Round 1: 01–10 (+11 = 09 with statement hero). Round 2 (after feedback): 12/16 derive from 01; 13/14/15/17 from 11.
+- `previews.html` — overview: live, scrollable iframe previews of 11–19 (rendered at exactly 1440×900 or 390×844 and scaled; Desktop/Smartphone toggle; A/B/C buttons for 11 and 13) plus a link list for 01–10. When adding a draft, add an `<article class="pv">` there and a thumbnail.
+- `NN-<slug>.html` — one self-contained draft each. Round 1: 01–10 (+11 = 09 with statement hero). Round 2 (after feedback): 12/16 derive from 01; 13/14/15/17 from 11; 18 = 15 with new texts. 19 = WSNM style (old invitation shapes, `old-invitations/`, gitignored) with four hero variants A–D in one file.
 - `snippets/logos.html` + `logos.css` — partner-logo block (50 logos), copy 1:1; size only via `--logo-k`, never add sizing to `.lg`/`img`.
 - `preview-link.js` — hidden link to `previews.html` at the end of every page (skipped inside iframes).
 - `thumbs/` — `NN-d.jpg` (1440×900 → 720 px) and `NN-m.jpg` (390×844 → 234 px) placeholders for `previews.html`.
@@ -38,7 +38,7 @@ Landing-page drafts for the **V&S WinterSchool 2027** (Vollmer & Scheffczyk, man
 - Head comment right after `<!DOCTYPE html>`: `<!-- Entwurf NN: … — Idee: … — Abweichungen vom Original: … -->`.
 - Last line before `</body>`: `<script src="preview-link.js" defer></script>`.
 - The intro text after the hero is identical in 11–17 (exact wording in `FEEDBACK.md` §4).
-- 11 and 13 contain a `PREVIEW-SWITCHER` (hero A/B/C via `?hero=`); remove before WordPress.
+- 11, 13 and 19 contain a `PREVIEW-SWITCHER` (hero variants via `?hero=`; 19: A–D, hero CSS scoped by `.ws27[data-hero="x"]`, variants as `<template>`); remove before WordPress.
 
 ## Commands
 
@@ -53,6 +53,9 @@ uv run --with websocket-client --with pillow python tools/shoot.py 9401 15-story
 # Regenerate thumbnails after a hero changes (pass args as separate words)
 uv run --with websocket-client --with pillow python tools/thumbs.py 9395 thumbs 15-storytelling-freundlich.html=15 "13-storytelling-hell.html?hero=b=13b"
 
+# Cut-off check on phones: text/icons pushed past the screen edge (sections use overflow:clip, so scrollWidth looks fine)
+uv run --with websocket-client python tools/clipcheck.py 9431 19-wsnm.html   # "(deko)" bleed of arches is intended
+
 # Emoji check (must print nothing)
 python3 -c "import re,glob;[print(f) for f in glob.glob('*.html') if re.search('[\U0001F000-\U0001FAFF☀-➿]',open(f,encoding='utf-8').read())]"
 
@@ -66,3 +69,5 @@ git push                        # publishes via GitHub Pages
 - When splicing a section from one draft into another, prefix its classes (drafts style `.tag`, `.foot`, `.claim` globally) and insert before computing further offsets.
 - zsh doesn't word-split `$var` — pass argument lists as arrays or from Python.
 - Image reads are blocked by a line-count hook unless `limit: 1` is passed.
+- `overflow:clip` on sections hides horizontal overflow from `scrollWidth` — cut-off text on phones only shows up with `tools/clipcheck.py`. Grid columns that hold text need `minmax(0,1fr)`, not `1fr`.
+- Headless screenshots right after loading many large photos can catch hero animations mid-way (or stuck without focus emulation) — re-shoot before assuming a bug.

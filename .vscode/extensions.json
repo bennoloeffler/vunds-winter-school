@@ -1,0 +1,20 @@
+{
+  // Empfohlene Erweiterungen für dieses Projekt. VS Code schlägt sie beim Öffnen vor;
+  // tools/setup-mac.sh installiert sie automatisch (liest genau diese Liste).
+  "recommendations": [
+    "ms-vscode.live-server",
+    "tomoki1207.pdf",
+    "jock.svg",
+    "anthropic.claude-code",
+    "kisstkondoros.vscode-gutter-preview",
+    "naumovs.color-highlight",
+    "ecmel.vscode-html-css",
+    "pranaygp.vscode-css-peek",
+    "formulahendry.auto-rename-tag",
+    "esbenp.prettier-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-german",
+    "yzhang.markdown-all-in-one",
+    "mhutchie.git-graph"
+  ]
+}
