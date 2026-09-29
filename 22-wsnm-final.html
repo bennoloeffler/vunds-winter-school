@@ -6,9 +6,8 @@
      aber klein; Parallaxe/Maus/Ringe/Flug-Effekte aus, Diashow langsamer ohne Zoom. Der Browser merkt sich die Wahl. Der Button pumpt 1× beim Erscheinen.
      Kennzahlen: Linie mit „dann sinken die Kosten wirklich!“. Fallen: 8 Schlagworte (Lean … Projekt-Management) liegen erst
      übereinander und fächern sich beim Scrollen auf; Satz „Denn in den Verheißungen …“ entfernt.
-     Riesen-Buchstaben: n im Intro mit langen Beinen (hinter Fotoband bis unter die Teal-Fläche), w und m als blasse
-     Wasserzeichen hinter den Stimmen, s neben „Was Sie noch wissen sollten“ — alle werden beim Scrollen gezeichnet (--dp);
-     ≤1100 px nur das n. Schlagworte: erst lange übereinander, ganz auseinander erst oben im Bild.
+     Riesen-Buchstaben (32 % Deckkraft, beim Scrollen gezeichnet --dp): n im Intro mit langen Beinen (hinter dem Fotoband);
+     Abspann vor „Seien Sie dabei“: w s n m nacheinander gezeichnet, Beine von n/m laufen hinter die Anmeldung. Schlagworte: erst lange übereinander, ganz auseinander erst oben im Bild.
      Mobil steht „WinterSchool Neues Management“ direkt unter den Buchstaben (vor „Intensiv-Bootcamp“). Die <template>s B–D und ihre CSS-Blöcke sind noch drin (wirkungslos).
      BILDER liegen lokal unter img/vs/ (gleiche Pfade wie auf v-und-s.de, Fotos auf max. 1920 px verkleinert) — für WordPress
      „img/vs/“ durch „https://v-und-s.de/wp-content/uploads/“ ersetzen.
@@ -510,18 +509,11 @@
 /* ========== Unterschied ========== */
 .ws27 .diff{background:var(--grey-l)}
 .ws27 .gl path{stroke-dasharray:1 1;stroke-dashoffset:calc(1 - clamp(0, (var(--dp,1) - var(--o,0)) / var(--l,1), 1))}
-.ws27 .gl{position:absolute;height:auto;pointer-events:none;mix-blend-mode:multiply;overflow:visible}
-/* w und m als große, blasse Wasserzeichen hinter den Zitaten */
-.ws27 .vq{position:relative;isolation:isolate}
-.ws27 .vq blockquote{position:relative;z-index:1}
-.ws27 .vq .gl{z-index:0;opacity:.14;mix-blend-mode:normal}
-.ws27 .gl-w{right:-2%;top:-40px;width:560px;--amp:-40;--rot:-3}
-.ws27 .gl-m{left:-4%;bottom:-30px;width:580px;--amp:40;--rot:3}
-.ws27 .infos .gl-s{right:-150px;top:-90px;width:300px;--amp:25;--rot:0;z-index:0}
-.ws27 .infos .facts{position:relative;z-index:1}
-@media (max-width:1350px){.ws27 .infos .gl-s{right:-50px;top:-120px;width:240px}}
-@media (max-width:1100px){.ws27 .gl-w,.ws27 .gl-s,.ws27 .gl-m{display:none}}
-.ws27 .diff .n-arch{position:absolute;right:-170px;top:40px;width:320px;--amp:60;--rot:0}
+.ws27 .gl{position:absolute;height:auto;pointer-events:none;mix-blend-mode:multiply;overflow:visible;opacity:.32}
+/* Abspann: w s n m groß und blass, werden nacheinander gezeichnet; Beine von n und m laufen hinter „Seien Sie dabei“ */
+.ws27 .wsnm-end{position:relative;z-index:0;max-width:1200px;margin:0 auto;padding:70px 32px 0;height:clamp(200px,40vw,560px)}
+.ws27 .wsnm-end svg{position:static;width:100%}
+@media (max-width:700px){.ws27 .wsnm-end{padding:40px 16px 0}}
 .ws27 .diff .state{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:90px;position:relative}
 .ws27 .diff .state h2 span{display:block;color:var(--mut);font-size:.62em;font-weight:500;margin-bottom:8px;line-height:1.25}
 .ws27 .diff .state p b{color:var(--teal-d)}
@@ -541,7 +533,7 @@
 .ws27 .points li.special .ic{border-color:#fff;color:#fff}
 .ws27 .points li.special p{color:#fde8ec}
 @media (max-width:1100px){.ws27 .points ol{grid-template-columns:repeat(2,1fr)}.ws27 .points li.special{grid-column:span 2}}
-@media (max-width:800px){.ws27 .diff .state{grid-template-columns:1fr;gap:18px;margin-bottom:60px}.ws27 .diff .n-arch{width:200px;right:-110px;opacity:.5}}
+@media (max-width:800px){.ws27 .diff .state{grid-template-columns:1fr;gap:18px;margin-bottom:60px}}
 @media (max-width:520px){.ws27 .points ol{grid-template-columns:1fr}.ws27 .points li.special{grid-column:auto}}
 
 /* ========== Zukunft-Kasten: Rot + Weinrot (wie WSNM 2020–2024) ========== */
@@ -1218,7 +1210,6 @@
 
   <!-- ===== Der Unterschied ===== -->
   <section class="sec diff" id="unterschied" aria-labelledby="h-unterschied">
-    <svg class="n-arch gl long par" viewBox="0 0 340 2200" aria-hidden="true"><g fill="none" stroke="#CB123A" stroke-width="110"><path pathLength="1" style="--o:0;--l:.3" d="M60 235 A110 110 0 0 1 280 235"/><path pathLength="1" style="--o:.22;--l:.78" d="M60 230 V2200"/><path pathLength="1" style="--o:.22;--l:.78" d="M280 230 V2200"/></g></svg>
     <div class="wrap">
       <p class="eyebrow rv">Der Unterschied</p>
       <div class="state">
@@ -1368,8 +1359,6 @@
         </svg>
       </div>
       <div class="vq">
-        <svg class="gl gl-w par" viewBox="40 -40 612 600" aria-hidden="true"><g fill="none" stroke="#009BB2" stroke-width="112"><path pathLength="1" style="--o:0;--l:.55" d="M96 -40 V372 A125 125 0 0 0 346 372 V150"/><path pathLength="1" style="--o:.45;--l:.55" d="M346 372 A125 125 0 0 0 596 372 V-40"/></g></svg>
-        <svg class="gl gl-m par" viewBox="874 264 552 496" aria-hidden="true"><g fill="none" stroke="#52BBCA" stroke-width="112"><path pathLength="1" style="--o:0;--l:.55" d="M930 760 V430 A110 110 0 0 1 1150 430 V590"/><path pathLength="1" style="--o:.45;--l:.55" d="M1150 430 A110 110 0 0 1 1370 430 V760"/></g></svg>
         <blockquote class="rv fx-l">„Mit großen Erwartungen hingefahren – <b>begeistert und inspiriert zurückgekommen</b>. Tolle Mischung aus Theorie und Praxis mit ‚etwas anderen‘ Beratern und sehr offenen und ehrlichen Kollegen!“</blockquote>
         <blockquote class="rv fx-r">„Gespräche mit spannenden Menschen auch aus dem produzierenden Umfeld – <b>praxisrelevante Themen kombiniert mit neuen Denkanstößen</b>.“</blockquote>
         <blockquote class="rv fx-l">„Praxisrelevante Inhalte und Inspirationen aus dem produzierenden Mittelstand. Besser geht es nicht … und <b>steht daher seit vielen Jahren fest in meinem Kalender</b>.“</blockquote>
@@ -1385,7 +1374,6 @@
     <div class="wrap">
       <p class="eyebrow rv">Infos &amp; Preise</p>
       <h2 id="h-infos" class="rv" style="--d:.1s">Was Sie noch wissen sollten</h2>
-      <svg class="gl gl-s par" viewBox="380 0 400 540" aria-hidden="true"><path fill="none" stroke="#CB123A" stroke-width="112" pathLength="1" style="--o:0;--l:1" d="M730 56 H600 A107 107 0 0 0 600 270 A107 107 0 0 1 600 484 H452"/></svg>
       <div class="facts">
         <div class="fact rv fx-pop"><div class="num" data-count="35">35</div><b>Plätze</b><p>Die V&amp;S WinterSchool setzt besonders auf Interaktivität und die Arbeit in kleinen Gruppen. Die Teilnehmerzahl ist daher auf 35 Personen begrenzt.</p></div>
         <div class="fact rv fx-pop" style="--d:.12s"><div class="num"><span data-count="1900" data-fmt="de">1.900</span><i>€</i></div><b>Teilnahmegebühr</b><p>zzgl. MwSt pro Teilnehmenden – inklusive Verpflegung und Dokumentation.</p></div>
@@ -1470,6 +1458,18 @@
   </section>
 
   <!-- ===== Anmelden ===== -->
+  <!-- ===== Abspann: w s n m ===== -->
+  <div class="wsnm-end" aria-hidden="true">
+    <svg class="gl" viewBox="0 -60 1440 820"><g fill="none" stroke-width="112">
+      <path pathLength="1" stroke="#009BB2" style="--o:0;--l:.2" d="M96 -40 V372 A125 125 0 0 0 346 372 V150"/>
+      <path pathLength="1" stroke="#009BB2" style="--o:.12;--l:.2" d="M346 372 A125 125 0 0 0 596 372 V-40"/>
+      <path pathLength="1" stroke="#CB123A" style="--o:.28;--l:.22" d="M730 56 H600 A107 107 0 0 0 600 270 A107 107 0 0 1 600 484 H452"/>
+      <path pathLength="1" stroke="#52BBCA" style="--o:.46;--l:.3" d="M660 1500 V250 A110 110 0 0 1 880 250 V1500"/>
+      <path pathLength="1" stroke="#009BB2" style="--o:.64;--l:.22" d="M930 1500 V430 A110 110 0 0 1 1150 430 V590"/>
+      <path pathLength="1" stroke="#009BB2" style="--o:.78;--l:.22" d="M1150 430 A110 110 0 0 1 1370 430 V1500"/>
+    </g></svg>
+  </div>
+
   <section class="sec join" id="anmelden" aria-labelledby="h-dabei">
     <div class="box">
       <div class="plane from-l rv-plane" aria-hidden="true"></div>
@@ -1591,7 +1591,7 @@
     var vh=window.innerHeight;
     gls.forEach(function(g){
       if(reduced||calm){ g.style.setProperty('--dp',1); return; }
-      var r=g.getBoundingClientRect(), span=g.classList.contains('long')?vh*1.4:vh*.8;
+      var r=g.getBoundingClientRect(), span=g.classList.contains('long')?vh*1.4:vh*.45;
       var p=Math.max(0,Math.min(1,(vh*.9-r.top)/span));
       g.style.setProperty('--dp',p.toFixed(3));
     });
