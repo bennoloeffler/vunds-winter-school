@@ -36,6 +36,7 @@ Landing-page drafts for the **V&S WinterSchool 2027** (Vollmer & Scheffczyk, man
 - **Never emojis.** Icons = inline SVG line icons in SF-Symbols style (24 viewBox, stroke ~1.6, round caps/joins, `currentColor` or CSS `mask`).
 - Mood bright and friendly (see photo rating in `FEEDBACK.md`); teal→blue gradients only, never teal/slate→pink; flat buttons with calm hover.
 - Head comment right after `<!DOCTYPE html>`: `<!-- Entwurf NN: … — Idee: … — Abweichungen vom Original: … -->`.
+- Favicon: last lines in `<head>` link the V&S logo `https://v-und-s.de/wp-content/uploads/2021/11/v-und-s.svg` (`rel="icon"` + `apple-touch-icon`); drop them for WordPress (the theme sets its own).
 - Last line before `</body>`: `<script src="preview-link.js" defer></script>`.
 - The intro text after the hero is identical in 11–17 (exact wording in `FEEDBACK.md` §4).
 - 11, 13 and 19 contain a `PREVIEW-SWITCHER` (hero variants via `?hero=`; 19: A–D, hero CSS scoped by `.ws27[data-hero="x"]`, variants as `<template>`); remove before WordPress.
