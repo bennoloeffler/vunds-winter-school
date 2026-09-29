@@ -29,7 +29,7 @@ Gendern: im Fließtext nicht; einmalige Fußnote (siehe unten) darf bleiben oder
 
 ## Fußnote Gendern (optional)
 
-In unserem täglichen Sprachgebrauch gendern wir selbstverständlich! Im Fließtext verzichten wir darauf. Uns ist aber wichtig zu sagen, dass wir alle meinen, also wirklich alle!
+In unserem täglichen Sprachgebrauch gendern wir gelegentlich. Manche mehr, manche weniger. Im Fließtext verzichten wir darauf. Trotzdem meinen wir alle.
 
 ## Logo-Leiste
 
