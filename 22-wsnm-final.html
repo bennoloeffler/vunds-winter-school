@@ -681,7 +681,9 @@
 .ws27 .venue .pin span{width:62px;height:62px;border:1.6px solid var(--teal);border-radius:50%;display:grid;place-items:center;color:var(--teal-d);flex:none}
 @media (max-width:900px){
   .ws27 .join .box{grid-template-columns:1fr;min-height:0}
-  .ws27 .join .plane{inset:0 0 150px 0;clip-path:polygon(0 0,100% 0,100% calc(100% - 110px),0 100%)}   /* mobil: Teal nur über dem Text, Foto darunter sichtbar */
+  .ws27 .join .plane{inset:0 0 150px 0;clip-path:polygon(0 0,100% 0,100% calc(100% - 70px),0 100%)}
+  .ws27 .join .photo{background:#0E2335}
+  .ws27 .join .photo img{transform:none!important;top:0;height:100%}   /* mobil ohne Parallaxe: kein weißer Spalt */   /* mobil: Teal nur über dem Text, Foto darunter sichtbar */
   .ws27 .join .txt{padding:80px 16px 90px}
   .ws27 .join .photo{position:relative;inset:auto;height:260px}
 }
