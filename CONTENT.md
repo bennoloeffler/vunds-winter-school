@@ -72,15 +72,10 @@ Wenn über Wettbewerbsfähigkeit und Transformation gesprochen wird, dann kommen
 - Lean – also Fluss, Effizienz und letztlich zufriedene Kunden bei niedrigen Kosten
 - TOC, Theory of Constraints - also mehr Durchsatz und Termintreue
 - Agile - also bewegliche, schnelle, enge Zusammenarbeit, schnelle Iteration und Problemlösung
-In letzter Zeit auch 
-- Mindset, Kultur, Selbstorganisation und künstliche Intelligenz. 
-Nicht zu vergessen: 
-- Strategie und Innovation. 
-Garniert mit 
-- Engagement und Entscheidungen in Teams – auch wichtig.
+Es gibt viel zu viele Themen: Mindset, Kultur, Selbstorganisation, Strategie und Innovation. Garniert mit Engagement, Verantwortung und Entscheidungen in Teams – auch wichtig.
 
-**Wow! Aber was machen die Firmen anders, bei denen das wirklich klappt? Denn in den Verheißungen lauern viele Fallen …**
-(Original zeigt daneben drei große Wörter: **Agilität · TOC · Lean**)
+**Wow! Aber was machen die Firmen anders, bei denen das wirklich klappt?**
+(Entwurf 22 zeigt darüber die Schlagworte: **Lean · Agile · Kostensenkung · Flow · KI · Innovations-Management · ERP · Projekt-Management**)
 
 ## Warum zur V&S WinterSchool und nicht nach St. Gallen?
 
