@@ -73,6 +73,7 @@ Wenn über Wettbewerbsfähigkeit und Transformation gesprochen wird, dann kommen
 - TOC, Theory of Constraints - also mehr Durchsatz und Termintreue
 - Agile - also bewegliche, schnelle, enge Zusammenarbeit, schnelle Iteration und Problemlösung
 Es gibt viel zu viele Themen: Mindset, Kultur, Selbstorganisation, Strategie und Innovation. Garniert mit Engagement, Verantwortung und Entscheidungen in Teams – auch wichtig.
+Was ist eher Symptom und was ist Ursache? Was hilft wirklich?
 
 **Wow! Aber was machen die Firmen anders, bei denen das wirklich klappt?**
 (Entwurf 22 zeigt darüber die Schlagworte: **Lean · Agile · Kostensenkung · Flow · KI · Innovations-Management · ERP · Projekt-Management**)
