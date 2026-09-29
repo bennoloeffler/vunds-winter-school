@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Landing-page drafts for the **V&S WinterSchool 2027** (Vollmer & Scheffczyk, management consultancy). Plain HTML/CSS/JS, no build, no server; the chosen draft will later be pasted into WordPress (v-und-s.de, Elementor theme).
 
-- Live (GitHub Pages, custom domain via `CNAME` file + DNS CNAME → `bennoloeffler.github.io`, HTTPS enforced): https://vunds-winter-school.v-und-s.de/ — the old `bennoloeffler.github.io/vunds-winter-school/` 301-redirects here — repo `bennoloeffler/vunds-winter-school` (**public**; GitHub Free can't do Pages from private repos). Every push to `main` redeploys in ~1 min.
+- Live (GitHub Pages, custom domain via `CNAME` file + DNS CNAME → `bennoloeffler.github.io`, HTTPS enforced): https://vunds-winter-school.v-und-s.de/ — the old `bennoloeffler.github.io/vunds-winter-school/` 301-redirects here — repo `bennoloeffler/vunds-winter-school` (**public**; GitHub Free can't do Pages from private repos). Every push to `main` redeploys via the Actions workflow `Pages` in ~1–2 min (check: `gh run list -w Pages`).
 - Full history, rules and lessons learned: **`docs/PROJEKT-DOKU.md`**. Current hand-off: `RP.md`.
 - Language: page content and docs are German; Benno writes prompts in English or German.
 
@@ -20,7 +20,8 @@ Landing-page drafts for the **V&S WinterSchool 2027** (Vollmer & Scheffczyk, man
 
 ## Layout
 
-- `index.html` — only redirects to the chosen draft (currently `15-storytelling-freundlich.html`). To change the entry page, edit the three URLs in it.
+- `index.html` — **symlink** to the chosen draft (currently `22-wsnm-final.html`), so the site root `/` serves it without a redirect. Change: `ln -sfn NN-….html index.html`, commit, push. Works only because Pages deploys via GitHub Actions (`.github/workflows/pages.yml`, resolves symlinks) — don't switch Pages back to "Deploy from branch". The old redirect file is kept as `index.html.2026-09-29--10.00.28.claude-backup`.
+- `22-wsnm-final.html` — **the winner**: copy of 19 with hero A fixed, hero switcher and preview link removed.
 - `previews.html` — overview: live, scrollable iframe previews of 11–19 (rendered at exactly 1440×900 or 390×844 and scaled; Desktop/Smartphone toggle; A/B/C buttons for 11 and 13) plus a link list for 01–10. When adding a draft, add an `<article class="pv">` there and a thumbnail.
 - `NN-<slug>.html` — one self-contained draft each. Round 1: 01–10 (+11 = 09 with statement hero). Round 2 (after feedback): 12/16 derive from 01; 13/14/15/17 from 11; 18 = 15 with new texts. 19 = WSNM style (old invitation shapes, `old-invitations/`, gitignored) with four hero variants A–D in one file.
 - `snippets/logos.html` + `logos.css` — partner-logo block (50 logos), copy 1:1; size only via `--logo-k`, never add sizing to `.lg`/`img`.

@@ -15,7 +15,7 @@ Die verbindlichen Design-Regeln stehen ausführlich in [`FEEDBACK.md`](../FEEDBA
 
 | Datei | Zweck |
 |---|---|
-| `index.html` | Einstieg — leitet auf den gewählten Entwurf weiter (aktuell **15**) |
+| `index.html` | Einstieg — Symlink auf den gewählten Entwurf (aktuell **22-wsnm-final.html**, seit 29.09.2026; Veröffentlichung dafür per GitHub Actions) |
 | `previews.html` | Übersicht: Live-Vorschau (scrollbar, Desktop/Smartphone) der Entwürfe 11–17, Linkliste 01–10 |
 | `01-…html` bis `17-…html` | 17 Entwürfe, jeder eine eigenständige Datei |
 | `snippets/logos.*` | Partner-Logo-Block (50 Logos), in allen Entwürfen ab 12 |

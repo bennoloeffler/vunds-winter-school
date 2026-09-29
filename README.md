@@ -2,7 +2,7 @@
 
 Neugestaltung der Seite zur **V&S WinterSchool 2027** („Wettbewerbskraft reloaded — Transformation im Mittelstand", 20.–22. Januar 2027, Seehotel Niedernberg).
 
-- **Seite ansehen:** https://vunds-winter-school.v-und-s.de/ (zeigt den aktuellen Favoriten, Entwurf 15)
+- **Seite ansehen:** https://vunds-winter-school.v-und-s.de/ (zeigt den Gewinner, Entwurf 22 – WSNM final)
 - **Alle Entwürfe vergleichen:** https://vunds-winter-school.v-und-s.de/previews.html — Live-Vorschau zum Durchscrollen, umschaltbar Desktop/Smartphone
 - Auf jeder Seite führt ein fast unsichtbares Symbol ganz unten zur Übersicht.
 
@@ -10,7 +10,7 @@ Neugestaltung der Seite zur **V&S WinterSchool 2027** („Wettbewerbskraft reloa
 
 | Pfad | Was |
 |---|---|
-| `index.html` | Einstieg, leitet auf den gewählten Entwurf weiter |
+| `index.html` | Einstieg: Symlink auf den gewählten Entwurf (aktuell **22-wsnm-final.html**) |
 | `previews.html` | Übersicht aller Entwürfe (11–17 als Live-Vorschau, 01–10 als Liste) |
 | `01-…` bis `17-….html` | die Entwürfe, jeder eine eigenständige HTML-Datei |
 | `CONTENT.md` | der Inhalt der Seite (Grundlage für alle Entwürfe) |
