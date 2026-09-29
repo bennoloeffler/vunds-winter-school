@@ -11,6 +11,11 @@
      Mobil steht „WinterSchool Neues Management“ direkt unter den Buchstaben (vor „Intensiv-Bootcamp“). Die <template>s B–D und ihre CSS-Blöcke sind noch drin (wirkungslos).
      BILDER liegen lokal unter img/vs/ (gleiche Pfade wie auf v-und-s.de, Fotos auf max. 1920 px verkleinert) — für WordPress
      „img/vs/“ durch „https://v-und-s.de/wp-content/uploads/“ ersetzen.
+     LADEZEIT (29.09.): Die Diashow lädt nur das erste Foto sofort; die anderen 12 stehen in data-ws-src/data-ws-srcset
+     und werden per JS erst nach dem load-Ereignis nacheinander geladen (gezeigt wird nur, was fertig geladen ist).
+     Hero, Fotoband und Hotelfoto haben srcset mit kleineren Varianten NAME-768xH / NAME-1280xH neben dem Original
+     unter img/vs/ (selbst erzeugt, gibt es auf v-und-s.de NICHT). Für WordPress: diese Varianten mit hochladen
+     (gleicher Ordner wie das Original) — oder die srcset-/data-ws-srcset-Attribute löschen, dann gilt nur das Original.
      Ursprünglicher Kommentar von 19:
      Entwurf 19: WSNM — eine Seite, vier Hero-Varianten (zusammengeführt aus den früheren Entwürfen 19–22, deren Rest
      identisch war). Umschalten über die Vorschau-Leiste unten links oder per URL ?hero=a|b|c|d:
@@ -750,19 +755,19 @@
   <!-- ===== Hero (Mockup): Foto rechts, Text links, Buchstaben W S N M ===== -->
   <header class="hero" id="top">
     <figure class="h-bg" aria-hidden="true"><div class="h-slides par">
-      <img src="img/vs/2024/10/1130004-scaled.jpeg" alt="" style="object-position:68% 30%" class="on" fetchpriority="high">
-      <img src="img/vs/2024/10/1130645-scaled.jpeg" alt="" style="object-position:50% 35%" decoding="async">
-      <img src="img/vs/2025/03/20240926_090007735_iOS-scaled.jpg" alt="" style="object-position:50% 60%" decoding="async">
-      <img src="img/vs/2022/05/1_1090706-scaled.jpg" alt="" style="object-position:50% 30%" decoding="async">
-      <img src="img/vs/2023/05/TIC-Hendrik-scaled.jpg" alt="" style="object-position:62% 50%" decoding="async">
-      <img src="img/vs/2024/01/Plenum2-scaled.jpeg" alt="" style="object-position:50% 50%" decoding="async">
-      <img src="img/vs/2024/01/07017C3E-CC67-4BA5-AD2C-7E46695144D6-scaled.jpg" alt="" style="object-position:55% 50%" decoding="async">
-      <img src="img/vs/2024/06/1090603-scaled.jpg" alt="" style="object-position:40% 50%" decoding="async">
-      <img src="img/vs/2024/05/Impressionen_02.webp" alt="" style="object-position:50% 40%" decoding="async">
-      <img src="img/vs/2025/05/1140426-scaled.jpeg" alt="" style="object-position:50% 45%" decoding="async">
-      <img src="img/vs/2025/05/Foto-22.05.25-09-29-46-scaled.jpg" alt="" style="object-position:50% 40%" decoding="async">
-      <img src="img/vs/2024/10/1130769-scaled.jpeg" alt="" style="object-position:50% 50%" decoding="async">
-      <img src="img/vs/2024/01/IMG_3930-scaled.jpg" alt="" style="object-position:50% 50%" decoding="async">
+      <img src="img/vs/2024/10/1130004-scaled.jpeg" srcset="img/vs/2024/10/1130004-scaled-768x577.jpeg 768w, img/vs/2024/10/1130004-scaled-1280x961.jpeg 1280w, img/vs/2024/10/1130004-scaled.jpeg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:68% 30%" class="on" fetchpriority="high">
+      <img data-ws-src="img/vs/2024/10/1130645-scaled.jpeg" data-ws-srcset="img/vs/2024/10/1130645-scaled-768x577.jpeg 768w, img/vs/2024/10/1130645-scaled-1280x961.jpeg 1280w, img/vs/2024/10/1130645-scaled.jpeg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:50% 35%" decoding="async">
+      <img data-ws-src="img/vs/2025/03/20240926_090007735_iOS-scaled.jpg" data-ws-srcset="img/vs/2025/03/20240926_090007735_iOS-scaled-768x576.jpg 768w, img/vs/2025/03/20240926_090007735_iOS-scaled-1280x960.jpg 1280w, img/vs/2025/03/20240926_090007735_iOS-scaled.jpg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:50% 60%" decoding="async">
+      <img data-ws-src="img/vs/2022/05/1_1090706-scaled.jpg" data-ws-srcset="img/vs/2022/05/1_1090706-scaled-768x468.jpg 768w, img/vs/2022/05/1_1090706-scaled-1280x779.jpg 1280w, img/vs/2022/05/1_1090706-scaled.jpg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:50% 30%" decoding="async">
+      <img data-ws-src="img/vs/2023/05/TIC-Hendrik-scaled.jpg" data-ws-srcset="img/vs/2023/05/TIC-Hendrik-scaled-768x577.jpg 768w, img/vs/2023/05/TIC-Hendrik-scaled-1280x961.jpg 1280w, img/vs/2023/05/TIC-Hendrik-scaled.jpg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:62% 50%" decoding="async">
+      <img data-ws-src="img/vs/2024/01/Plenum2-scaled.jpeg" data-ws-srcset="img/vs/2024/01/Plenum2-scaled-768x432.jpeg 768w, img/vs/2024/01/Plenum2-scaled-1280x720.jpeg 1280w, img/vs/2024/01/Plenum2-scaled.jpeg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:50% 50%" decoding="async">
+      <img data-ws-src="img/vs/2024/01/07017C3E-CC67-4BA5-AD2C-7E46695144D6-scaled.jpg" data-ws-srcset="img/vs/2024/01/07017C3E-CC67-4BA5-AD2C-7E46695144D6-scaled-768x432.jpg 768w, img/vs/2024/01/07017C3E-CC67-4BA5-AD2C-7E46695144D6-scaled-1280x720.jpg 1280w, img/vs/2024/01/07017C3E-CC67-4BA5-AD2C-7E46695144D6-scaled.jpg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:55% 50%" decoding="async">
+      <img data-ws-src="img/vs/2024/06/1090603-scaled.jpg" data-ws-srcset="img/vs/2024/06/1090603-scaled-768x473.jpg 768w, img/vs/2024/06/1090603-scaled-1280x789.jpg 1280w, img/vs/2024/06/1090603-scaled.jpg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:40% 50%" decoding="async">
+      <img data-ws-src="img/vs/2024/05/Impressionen_02.webp" data-ws-srcset="img/vs/2024/05/Impressionen_02-768x512.webp 768w, img/vs/2024/05/Impressionen_02-1280x853.webp 1280w, img/vs/2024/05/Impressionen_02.webp 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:50% 40%" decoding="async">
+      <img data-ws-src="img/vs/2025/05/1140426-scaled.jpeg" data-ws-srcset="img/vs/2025/05/1140426-scaled-768x577.jpeg 768w, img/vs/2025/05/1140426-scaled-1280x961.jpeg 1280w, img/vs/2025/05/1140426-scaled.jpeg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:50% 45%" decoding="async">
+      <img data-ws-src="img/vs/2025/05/Foto-22.05.25-09-29-46-scaled.jpg" data-ws-srcset="img/vs/2025/05/Foto-22.05.25-09-29-46-scaled-768x960.jpg 768w, img/vs/2025/05/Foto-22.05.25-09-29-46-scaled-1280x1600.jpg 1280w, img/vs/2025/05/Foto-22.05.25-09-29-46-scaled.jpg 1536w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:50% 40%" decoding="async">
+      <img data-ws-src="img/vs/2024/10/1130769-scaled.jpeg" data-ws-srcset="img/vs/2024/10/1130769-scaled-768x577.jpeg 768w, img/vs/2024/10/1130769-scaled-1280x961.jpeg 1280w, img/vs/2024/10/1130769-scaled.jpeg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:50% 50%" decoding="async">
+      <img data-ws-src="img/vs/2024/01/IMG_3930-scaled.jpg" data-ws-srcset="img/vs/2024/01/IMG_3930-scaled-768x576.jpg 768w, img/vs/2024/01/IMG_3930-scaled-1280x960.jpg 1280w, img/vs/2024/01/IMG_3930-scaled.jpg 1920w" sizes="(max-width:1000px) 142vw, 100vw" alt="" style="object-position:50% 50%" decoding="async">
     </div></figure>
     <div class="h-art" aria-hidden="true">
       <svg viewBox="0 0 1440 700">
@@ -1137,11 +1142,11 @@
   <!-- ===== Fotoband: lachende, konzentrierte Menschen, schräg angeschnitten ===== -->
   <div class="band" aria-label="Eindrücke von der WinterSchool">
     <ul>
-      <li class="rv fx-l"><img class="par" src="img/vs/2024/10/1130645-scaled.jpeg" alt="Teilnehmende stehen zusammen und lachen" loading="lazy"><span class="tint t-teal"></span></li>
-      <li class="rv fx-pop" style="--d:.1s"><img class="par" src="img/vs/2022/05/1_1090706-scaled.jpg" alt="Referent lacht vor rotem Vorhang" loading="lazy" style="object-position:50% 30%"><span class="tint t-red"></span></li>
-      <li class="rv fx-pop" style="--d:.2s"><img class="par" src="img/vs/2024/01/Plenum2-scaled.jpeg" alt="Kleingruppe am Tisch im hellen Holzsaal" loading="lazy"></li>
-      <li class="rv fx-pop" style="--d:.3s"><img class="par" src="img/vs/2024/01/IMG_3930-scaled.jpg" alt="Workshop mit Karten am Tisch, Fenster zum See" loading="lazy"><span class="tint t-grey"></span></li>
-      <li class="rv fx-pop" style="--d:.4s"><img class="par" src="img/vs/2024/10/1130004-scaled.jpeg" alt="Zwei Teilnehmer lachen gemeinsam beim Feierabendbier" loading="lazy"></li>
+      <li class="rv fx-l"><img class="par" src="img/vs/2024/10/1130645-scaled.jpeg" srcset="img/vs/2024/10/1130645-scaled-768x577.jpeg 768w, img/vs/2024/10/1130645-scaled-1280x961.jpeg 1280w, img/vs/2024/10/1130645-scaled.jpeg 1920w" sizes="(max-width:800px) 100vw, 820px" alt="Teilnehmende stehen zusammen und lachen" loading="lazy" decoding="async"><span class="tint t-teal"></span></li>
+      <li class="rv fx-pop" style="--d:.1s"><img class="par" src="img/vs/2022/05/1_1090706-scaled.jpg" srcset="img/vs/2022/05/1_1090706-scaled-768x468.jpg 768w, img/vs/2022/05/1_1090706-scaled-1280x779.jpg 1280w, img/vs/2022/05/1_1090706-scaled.jpg 1920w" sizes="(max-width:800px) 60vw, 440px" alt="Referent lacht vor rotem Vorhang" loading="lazy" decoding="async" style="object-position:50% 30%"><span class="tint t-red"></span></li>
+      <li class="rv fx-pop" style="--d:.2s"><img class="par" src="img/vs/2024/01/Plenum2-scaled.jpeg" srcset="img/vs/2024/01/Plenum2-scaled-768x432.jpeg 768w, img/vs/2024/01/Plenum2-scaled-1280x720.jpeg 1280w, img/vs/2024/01/Plenum2-scaled.jpeg 1920w" sizes="(max-width:800px) 60vw, 440px" alt="Kleingruppe am Tisch im hellen Holzsaal" loading="lazy" decoding="async"></li>
+      <li class="rv fx-pop" style="--d:.3s"><img class="par" src="img/vs/2024/01/IMG_3930-scaled.jpg" srcset="img/vs/2024/01/IMG_3930-scaled-768x576.jpg 768w, img/vs/2024/01/IMG_3930-scaled-1280x960.jpg 1280w, img/vs/2024/01/IMG_3930-scaled.jpg 1920w" sizes="(max-width:800px) 60vw, 440px" alt="Workshop mit Karten am Tisch, Fenster zum See" loading="lazy" decoding="async"><span class="tint t-grey"></span></li>
+      <li class="rv fx-pop" style="--d:.4s"><img class="par" src="img/vs/2024/10/1130004-scaled.jpeg" srcset="img/vs/2024/10/1130004-scaled-768x577.jpeg 768w, img/vs/2024/10/1130004-scaled-1280x961.jpeg 1280w, img/vs/2024/10/1130004-scaled.jpeg 1920w" sizes="(max-width:800px) 60vw, 440px" alt="Zwei Teilnehmer lachen gemeinsam beim Feierabendbier" loading="lazy" decoding="async"></li>
     </ul>
   </div>
 
@@ -1487,7 +1492,7 @@
           <a class="btn light" href="mailto:tietz@v-und-s.de?subject=Anmeldung%20V%26S%20WinterSchool%202027">Anmelden <svg width="18" height="12" viewBox="0 0 20 14" aria-hidden="true"><path d="M1 7h17M12 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
-      <div class="photo"><img class="par" src="img/vs/2024/01/1110539-scaled.jpeg" alt="Seehotel Niedernberg im Winter – Häuser am Ufer zur blauen Stunde" loading="lazy"></div>
+      <div class="photo"><img class="par" src="img/vs/2024/01/1110539-scaled.jpeg" srcset="img/vs/2024/01/1110539-scaled-768x432.jpeg 768w, img/vs/2024/01/1110539-scaled-1280x720.jpeg 1280w, img/vs/2024/01/1110539-scaled.jpeg 1920w" sizes="100vw" alt="Seehotel Niedernberg im Winter – Häuser am Ufer zur blauen Stunde" loading="lazy" decoding="async"></div>
     </div>
     <div class="wrap">
       <div class="venue rv">
@@ -1643,13 +1648,33 @@
     calmBtn.addEventListener('click',function(){ setCalm(!calm); try{ localStorage.setItem('ws27-calm',calm?'1':'0'); }catch(e){} });
   }
   try{ if(!reduced && localStorage.getItem('ws27-calm')==='1') setCalm(true); }catch(e){}
-  /* Hero: 10 Fotos im schnellen Wechsel (dekorativ, alle 2,2 s) */
+  /* Hero: 13 Fotos im schnellen Wechsel (dekorativ, alle 2,2 s).
+     Nur das erste Foto lädt sofort; die übrigen stehen in data-ws-src/-srcset und werden erst nach dem
+     load-Ereignis nacheinander geladen. Gezeigt wird nur ein Foto, das fertig geladen ist — sonst bleibt
+     die Diashow bei den schon geladenen. */
   var slides=[].slice.call(root.querySelectorAll('.h-slides img'));
   if(!reduced && slides.length>1){
-    var si=0;
+    var si=0, ready=slides.map(function(img){ return !img.hasAttribute('data-ws-src'); });
+    var li=0;
+    function loadNext(){
+      while(li<slides.length && ready[li]) li++;
+      if(li>=slides.length) return;
+      var k=li++, img=slides[k];
+      function ok(){ ready[k]=true; loadNext(); }
+      img.onload=function(){ img.onload=img.onerror=null; if(img.decode) img.decode().then(ok,ok); else ok(); };
+      img.onerror=function(){ img.onload=img.onerror=null; loadNext(); };   /* kaputtes Foto: überspringen */
+      if(img.getAttribute('data-ws-srcset')) img.srcset=img.getAttribute('data-ws-srcset');
+      img.src=img.getAttribute('data-ws-src');
+      img.removeAttribute('data-ws-src'); img.removeAttribute('data-ws-srcset');
+    }
+    if(document.readyState==='complete') loadNext(); else window.addEventListener('load',loadNext);
     (function next(){
       setTimeout(function(){
-        if(!document.hidden){ slides[si].classList.remove('on'); si=(si+1)%slides.length; slides[si].classList.add('on'); }
+        if(!document.hidden){
+          var j=si;
+          do{ j=(j+1)%slides.length; }while(j!==si && !ready[j]);
+          if(j!==si){ slides[si].classList.remove('on'); si=j; slides[si].classList.add('on'); }
+        }
         next();
       }, calm?4500:2200);   /* ruhig: langsamer, ohne Zoom */
     })();
