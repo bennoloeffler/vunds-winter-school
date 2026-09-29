@@ -59,7 +59,7 @@ Ganz egal, ob Sie Abteilungsleiter, Eigentümerin oder Geschäftsführer sind �
 1. „Wir haben viel Energie in die Aufnahme und Verbesserung unserer Prozesse gesteckt. Trotzdem sind wir beim Thema Produktivität und Innovation nicht besser geworden … oder vielleicht sogar deshalb…?"
 2. „Überreguliert, unterengagiert: Unser ERP macht es nicht besser. Agilität bleibt ein Wunsch."
 3. „Krasses Silodenken... Und für jede Entscheidung muss jede erdenkliche Interessengruppe an den Tisch. Das ist langsam, zermürbend und nicht mehr wettbewerbsfähig. Andere sind viel schneller als wir."
-4. „Anstatt uns mit echten Kundenproblemen zu beschäftigen, müssen wir uns jetzt mit der x-ten Kultur-Transformation rumschlagen. Wir würden wirklich gerne mehr arbeiten. Es täte uns gut."
+4. „Anstatt uns mit echten Kundenproblemen zu beschäftigen, müssen wir uns jetzt mit der x-ten Kultur-Transformation rumschlagen. Wir würden uns gerne auf echte Arbeit konzentrieren, weil uns das Schi-Schi bisher nicht vorwärtsgebracht hat."
 5. „Wir sind echt gut darin, neue Themen anzufangen, Konzepte zu machen und groß aufzublasen. Fertigmachen und Wirkung erzielen: Da ist noch Luft nach oben."
 6. „Ich frage mich oft, ob wir an den richtigen Themen arbeiten. Oder ob wir richtig an Themen arbeiten. Denn: wir bleiben stecken... immer wieder."
 7. „Seit unsere alten Könner nicht mehr da sind, funktionieren eine ganze Menge Selbstverständlichkeiten nicht mehr - trotz großer Mühe."
