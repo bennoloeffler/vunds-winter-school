@@ -428,11 +428,15 @@
    ab 1400 px schräg, parallel zur oberen rechten Kante, darunter normal oben rechts */
 .ws27 .chal .btn.slant{position:relative;z-index:4;display:flex;width:max-content;max-width:calc(100% - 32px);margin:0 0 44px;background:#fff;color:var(--teal-d);font:inherit;font-weight:600;font-size:16px;padding:13px 22px;cursor:pointer;white-space:normal;text-align:left}
 .ws27 .chal .btn.slant:hover{background:#eef6f7}
+/* pumpt 4× sobald er ins Bild kommt (eigene scale-Eigenschaft, damit die Drehung bleibt) */
+@keyframes ws22-pump{0%,100%{scale:1;box-shadow:0 0 0 0 rgba(255,255,255,.6)}45%{scale:var(--pump,1.07);box-shadow:0 0 0 14px rgba(255,255,255,0)}}
+.ws27 .chal .btn.slant{transform-origin:left center}
+.ws27 .chal .btn.slant.pump{animation:ws22-pump .7s ease-in-out 4}
 @media (min-width:1400px){
   .ws27 .chal{padding-top:380px}
   .ws27 .chal>.wrap{position:static}   /* Button richtet sich an der Section aus, nicht an .wrap */
   .ws27 .chal .plane{clip-path:polygon(0 6%,calc(100% - 360px) 0,100% 396px,100% 100%,0 94%)}
-  .ws27 .chal .btn.slant{position:absolute;margin:0;max-width:none;white-space:nowrap;left:calc(100% - 218px);top:232px;transform:translate(-50%,-50%) rotate(47.7deg)}
+  .ws27 .chal .btn.slant{--pump:1.14;transform-origin:center;position:absolute;margin:0;max-width:none;white-space:nowrap;left:calc(100% - 218px);top:232px;transform:translate(-50%,-50%) rotate(47.7deg)}
   .ws27 .chal .btn.slant:hover{transform:translate(-50%,-50%) rotate(47.7deg)}
 }
 .ws27 .chal .grid{display:grid;grid-template-columns:380px 1fr;gap:70px;position:relative}
@@ -1556,6 +1560,10 @@
     if(on){ pars.forEach(function(el){ el.style.setProperty('--p',0); }); ['--hp','--mx','--my'].forEach(function(k){ hero.style.setProperty(k,0); }); mx=my=tx=ty=0; }
     else req();
     if(calmBtn){ calmBtn.textContent=on?'Animation wieder anschalten':'BOAH… Animation ausschalten. Sofort!'; calmBtn.setAttribute('aria-pressed',String(on)); }
+  }
+  if(calmBtn && !reduced && 'IntersectionObserver' in window){
+    var pio=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ calmBtn.classList.add('pump'); pio.disconnect(); } },{threshold:.9});
+    pio.observe(calmBtn);
   }
   if(calmBtn){
     if(reduced) calmBtn.hidden=true;   /* Systemeinstellung „weniger Bewegung“: ist ohnehin alles still */
