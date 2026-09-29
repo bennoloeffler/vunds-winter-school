@@ -217,6 +217,7 @@
   .ws27[data-hero="a"] .h-sig .h-claim2{margin:10px 0 0;font-size:18px}
   /* nur mobil: Namenszeile direkt unter die Buchstaben (vor „Intensiv-Bootcamp“), Claim bleibt unten */
   .ws27[data-hero="a"] .hero{display:flex;flex-direction:column}
+  .ws27[data-hero="a"] .h-bg{width:100%;align-self:stretch}   /* sonst Breite 0 → Diashow unsichtbar */
   .ws27[data-hero="a"] .h-sig{display:contents}
   .ws27[data-hero="a"] .h-sig .h-cap{order:1;margin:14px 16px 0;text-shadow:none}
   .ws27[data-hero="a"] .h-in{order:2}
@@ -518,9 +519,9 @@
 .ws27 .diff .state{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:90px;position:relative}
 .ws27 .diff .state h2 span{display:block;color:var(--mut);font-size:.62em;font-weight:500;margin-bottom:8px;line-height:1.25}
 .ws27 .diff .state p b{color:var(--teal-d)}
-.ws27 .years{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.ws27 .years{display:flex;align-items:flex-end;gap:14px;margin-bottom:18px}
 .ws27 .years .num{font-size:clamp(70px,8vw,120px);font-weight:700;line-height:.9;color:var(--red);letter-spacing:-.04em}
-.ws27 .years small{font-size:15px;color:var(--mut);max-width:140px;line-height:1.3}
+.ws27 .years small{font-size:15px;color:var(--mut);max-width:140px;line-height:1.3;padding-bottom:.35em}
 .ws27 .points h3{font-size:clamp(26px,2.6vw,36px);margin-bottom:10px}
 .ws27 .points .lead{color:var(--mut);margin-bottom:36px}
 .ws27 .points ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
