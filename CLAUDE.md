@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Landing-page drafts for the **V&S WinterSchool 2027** (Vollmer & Scheffczyk, management consultancy). Plain HTML/CSS/JS, no build, no server; the chosen draft will later be pasted into WordPress (v-und-s.de, Elementor theme).
 
-- Live (GitHub Pages): https://bennoloeffler.github.io/vunds-winter-school/ — repo `bennoloeffler/vunds-winter-school` (**public**; GitHub Free can't do Pages from private repos). Every push to `main` redeploys in ~1 min.
+- Live (GitHub Pages, custom domain via `CNAME` file + DNS CNAME → `bennoloeffler.github.io`, HTTPS enforced): https://vunds-winter-school.v-und-s.de/ — the old `bennoloeffler.github.io/vunds-winter-school/` 301-redirects here — repo `bennoloeffler/vunds-winter-school` (**public**; GitHub Free can't do Pages from private repos). Every push to `main` redeploys in ~1 min.
 - Full history, rules and lessons learned: **`docs/PROJEKT-DOKU.md`**. Current hand-off: `RP.md`.
 - Language: page content and docs are German; Benno writes prompts in English or German.
 

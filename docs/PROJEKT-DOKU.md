@@ -1,6 +1,6 @@
 # V&S WinterSchool 2027 — Projekt-Dokumentation
 
-Stand: 22.09.2026 · Live: https://bennoloeffler.github.io/vunds-winter-school/ · Repo: https://github.com/bennoloeffler/vunds-winter-school (öffentlich)
+Stand: 22.09.2026 · Live: https://vunds-winter-school.v-und-s.de/ · Repo: https://github.com/bennoloeffler/vunds-winter-school (öffentlich)
 
 Diese Datei hält fest, **was gebaut wurde, nach welchen Regeln und was dabei gelernt wurde.**
 Die verbindlichen Design-Regeln stehen ausführlich in [`FEEDBACK.md`](../FEEDBACK.md), der Inhalt in [`CONTENT.md`](../CONTENT.md), Marke und Technik in [`BRIEF.md`](../BRIEF.md).

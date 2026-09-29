@@ -16,7 +16,7 @@
 
 REPO_SLUG="bennoloeffler/vunds-winter-school"
 REPO_URL="https://github.com/${REPO_SLUG}.git"
-SITE_URL="https://bennoloeffler.github.io/vunds-winter-school/"
+SITE_URL="https://vunds-winter-school.v-und-s.de/"
 DEFAULT_DIR="$HOME/projects/vunds-winter-school"
 
 # Fallback, falls .vscode/extensions.json im Projekt (noch) fehlt

@@ -2,8 +2,8 @@
 
 Neugestaltung der Seite zur **V&S WinterSchool 2027** („Wettbewerbskraft reloaded — Transformation im Mittelstand", 20.–22. Januar 2027, Seehotel Niedernberg).
 
-- **Seite ansehen:** https://bennoloeffler.github.io/vunds-winter-school/ (zeigt den aktuellen Favoriten, Entwurf 15)
-- **Alle Entwürfe vergleichen:** https://bennoloeffler.github.io/vunds-winter-school/previews.html — Live-Vorschau zum Durchscrollen, umschaltbar Desktop/Smartphone
+- **Seite ansehen:** https://vunds-winter-school.v-und-s.de/ (zeigt den aktuellen Favoriten, Entwurf 15)
+- **Alle Entwürfe vergleichen:** https://vunds-winter-school.v-und-s.de/previews.html — Live-Vorschau zum Durchscrollen, umschaltbar Desktop/Smartphone
 - Auf jeder Seite führt ein fast unsichtbares Symbol ganz unten zur Übersicht.
 
 ## Inhalt des Repos

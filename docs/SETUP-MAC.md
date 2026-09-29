@@ -74,4 +74,4 @@ Oder in VS Code links das Claude-Symbol.
 
 In VS Code links **Quellcodeverwaltung**: Nachricht eintippen, **Commit**, dann **Sync**.
 Oder Claude bitten: „commit and push". Nach ca. 1 Minute ist die Änderung live:
-https://bennoloeffler.github.io/vunds-winter-school/
+https://vunds-winter-school.v-und-s.de/
