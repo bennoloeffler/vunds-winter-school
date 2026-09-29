@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <!-- Entwurf 22: FINAL — Kopie von 19 mit Hero A fest (29.09.2026). Entfernt: Hero-Umschalter (PREVIEW-SWITCHER, CSS+HTML+JS)
-     und der versteckte Link zur Übersicht (preview-link.js). Die <template>s B–D und ihre CSS-Blöcke sind noch drin (wirkungslos).
+     und der versteckte Link zur Übersicht (preview-link.js). Danach (29.09.): 3 Plenum-Fotos in der Hero-Diashow, IMG_3930 in voller Auflösung,
+     „St.&nbsp;Gallen“ ohne Umbruch, weißer Umschalter „BOAH… Animation ausschalten. Sofort!“ ⇄ „Animation wieder anschalten“ im Teal der
+     Herausforderungen (ab 1400 px schräg parallel zur Kante, darunter oben rechts): ruhiger Modus .calm — übliche Effekte bleiben,
+     aber klein; Parallaxe/Maus/Ringe/Flug-Effekte aus, Diashow langsamer ohne Zoom. Der Browser merkt sich die Wahl. Die <template>s B–D und ihre CSS-Blöcke sind noch drin (wirkungslos).
      Ursprünglicher Kommentar von 19:
      Entwurf 19: WSNM — eine Seite, vier Hero-Varianten (zusammengeführt aus den früheren Entwürfen 19–22, deren Rest
      identisch war). Umschalten über die Vorschau-Leiste unten links oder per URL ?hero=a|b|c|d:
@@ -401,6 +404,7 @@
 
 /* ========== Fotoband: Fotos mit schrägen Farbflächen ========== */
 .ws27 .band{padding:0 0 40px;overflow:clip}
+.ws27 .btn.big{font-size:20px;padding:19px 32px;border-radius:10px;box-shadow:0 6px 18px rgba(0,79,82,.18)}
 .ws27 .band ul{list-style:none;padding:0;display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:250px 250px;gap:14px;max-width:1400px;margin:0 auto;padding:0 32px}
 .ws27 .band li{position:relative;overflow:hidden}
 .ws27 .band li:nth-child(1){grid-row:span 2;clip-path:polygon(0 0,100% 0,88% 100%,0 100%)}
@@ -419,7 +423,18 @@
 
 /* ========== Herausforderungen: Teal-Fläche, Figur bleibt stehen ========== */
 .ws27 .chal{padding:160px 0 150px;color:#fff}
-.ws27 .chal .plane{position:absolute;inset:0;background:var(--teal-t);clip-path:polygon(0 6%,86% 0,100% 12%,100% 100%,0 94%)}
+.ws27 .chal .plane{position:absolute;inset:0;background:var(--teal-t);clip-path:polygon(0 50px,calc(100% - 140px) 0,100% 154px,100% 100%,0 94%)}
+/* Button „Animation ausschalten“ (für alle, denen die Seite zu viel wackelt): weiß auf Teal;
+   ab 1400 px schräg, parallel zur oberen rechten Kante, darunter normal oben rechts */
+.ws27 .chal .btn.slant{position:relative;z-index:4;display:flex;width:max-content;max-width:calc(100% - 32px);margin:0 0 44px;background:#fff;color:var(--teal-d);font:inherit;font-weight:600;font-size:16px;padding:13px 22px;cursor:pointer;white-space:normal;text-align:left}
+.ws27 .chal .btn.slant:hover{background:#eef6f7}
+@media (min-width:1400px){
+  .ws27 .chal{padding-top:380px}
+  .ws27 .chal>.wrap{position:static}   /* Button richtet sich an der Section aus, nicht an .wrap */
+  .ws27 .chal .plane{clip-path:polygon(0 6%,calc(100% - 360px) 0,100% 396px,100% 100%,0 94%)}
+  .ws27 .chal .btn.slant{position:absolute;margin:0;max-width:none;white-space:nowrap;left:calc(100% - 218px);top:232px;transform:translate(-50%,-50%) rotate(47.7deg)}
+  .ws27 .chal .btn.slant:hover{transform:translate(-50%,-50%) rotate(47.7deg)}
+}
 .ws27 .chal .grid{display:grid;grid-template-columns:380px 1fr;gap:70px;position:relative}
 .ws27 .chal aside h2{font-size:clamp(28px,2.7vw,38px)}
 .ws27 .chal aside{position:sticky;top:110px;align-self:start}
@@ -658,6 +673,18 @@
 @media (max-width:700px){.ws27 .foot .cols{grid-template-columns:1fr}}
 
 /* ========== Weniger Bewegung ========== */
+/* ===== Ruhiger Modus (.calm): gleiche Effekte, nur klein ===== */
+.ws27.js.calm .rv,.ws27.js.calm .rv.fx-l,.ws27.js.calm .rv.fx-r,.ws27.js.calm .rv.fx-pop,.ws27.js.calm .rv.fx-drop{transform:translate3d(0,10px,0);transition:opacity .6s ease,transform .6s ease;transition-delay:0s}
+.ws27.js.calm .rv.in{transform:none}
+.ws27.js.calm .plane.from-l:not(.in),.ws27.js.calm .plane.from-r:not(.in){transform:none}
+.ws27.js.calm .plane{transition:opacity .6s ease}
+.ws27.calm .par{transform:none!important}
+.ws27.calm[data-hero="a"] .h-art .lt{transform:none}
+.ws27.js.calm[data-hero="a"] .h-art .fly{animation:ws19-rise .8s ease both}
+.ws27.js.calm[data-hero="a"] .h-slides img{transform:none!important;transition:opacity 1s ease}
+.ws27.js.calm .fig.in .rings circle{animation:none}
+.ws27.js.calm .fig .mark,.ws27.js.calm .who .target circle,.ws27.js.calm .who .chips li,.ws27.js.calm .talk .bub{transform:none;transition:opacity .5s ease;transition-delay:0s}
+.ws27.js.calm .clock .hm,.ws27.js.calm .clock .hh{transform:none;transition:none}
 @media (prefers-reduced-motion:reduce){
   .ws27 *,.ws27 *::before,.ws27 *::after{animation:none!important;transition:none!important}
   .ws27 .rv,.ws27 .plane,.ws27 .par,.ws27 .h-art .lt,.ws27 .h-art .fly{opacity:1!important;transform:none!important}
@@ -705,7 +732,7 @@
       <img src="https://v-und-s.de/wp-content/uploads/2025/05/1140426-scaled.jpeg" alt="" style="object-position:50% 45%" decoding="async">
       <img src="https://v-und-s.de/wp-content/uploads/2025/05/Foto-22.05.25-09-29-46-scaled.jpg" alt="" style="object-position:50% 40%" decoding="async">
       <img src="https://v-und-s.de/wp-content/uploads/2024/10/1130769-scaled.jpeg" alt="" style="object-position:50% 50%" decoding="async">
-      <img src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-768x576.jpg" alt="" style="object-position:50% 50%" decoding="async">
+      <img src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-scaled.jpg" alt="" style="object-position:50% 50%" decoding="async">
     </div></figure>
     <div class="h-art" aria-hidden="true">
       <svg viewBox="0 0 1440 700">
@@ -781,7 +808,7 @@
       <img src="https://v-und-s.de/wp-content/uploads/2024/05/Impressionen_02.webp" alt="" style="object-position:50% 40%" decoding="async">
       <img src="https://v-und-s.de/wp-content/uploads/2025/05/1140426-scaled.jpeg" alt="" style="object-position:50% 45%" decoding="async">
       <img src="https://v-und-s.de/wp-content/uploads/2024/10/1130769-scaled.jpeg" alt="" style="object-position:50% 50%" decoding="async">
-      <img src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-768x576.jpg" alt="" style="object-position:50% 50%" decoding="async">
+      <img src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-scaled.jpg" alt="" style="object-position:50% 50%" decoding="async">
     </div></figure>
     <div class="h-art" aria-hidden="true">
       <svg viewBox="0 0 1440 700">
@@ -858,7 +885,7 @@
       <img src="https://v-und-s.de/wp-content/uploads/2024/05/Impressionen_02.webp" alt="" style="object-position:50% 40%" decoding="async">
       <img src="https://v-und-s.de/wp-content/uploads/2025/05/1140426-scaled.jpeg" alt="" style="object-position:50% 45%" decoding="async">
       <img src="https://v-und-s.de/wp-content/uploads/2024/10/1130769-scaled.jpeg" alt="" style="object-position:50% 50%" decoding="async">
-      <img src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-768x576.jpg" alt="" style="object-position:50% 50%" decoding="async">
+      <img src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-scaled.jpg" alt="" style="object-position:50% 50%" decoding="async">
     </div></figure>
     <div class="h-art" aria-hidden="true">
       <svg viewBox="0 0 1440 700">
@@ -932,7 +959,7 @@
       <img src="https://v-und-s.de/wp-content/uploads/2024/05/Impressionen_02.webp" alt="" style="object-position:50% 40%" decoding="async">
       <img src="https://v-und-s.de/wp-content/uploads/2025/05/1140426-scaled.jpeg" alt="" style="object-position:50% 45%" decoding="async">
       <img src="https://v-und-s.de/wp-content/uploads/2024/10/1130769-scaled.jpeg" alt="" style="object-position:50% 50%" decoding="async">
-      <img src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-768x576.jpg" alt="" style="object-position:50% 50%" decoding="async">
+      <img src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-scaled.jpg" alt="" style="object-position:50% 50%" decoding="async">
     </div></figure>
     <div class="h-art" aria-hidden="true">
       <svg viewBox="0 0 1440 700">
@@ -1082,7 +1109,7 @@
       <li class="rv fx-l"><img class="par" src="https://v-und-s.de/wp-content/uploads/2024/10/1130645-scaled.jpeg" alt="Teilnehmende stehen zusammen und lachen" loading="lazy"><span class="tint t-teal"></span></li>
       <li class="rv fx-pop" style="--d:.1s"><img class="par" src="https://v-und-s.de/wp-content/uploads/2022/05/1_1090706-scaled.jpg" alt="Referent lacht vor rotem Vorhang" loading="lazy" style="object-position:50% 30%"><span class="tint t-red"></span></li>
       <li class="rv fx-pop" style="--d:.2s"><img class="par" src="https://v-und-s.de/wp-content/uploads/2024/01/Plenum2-scaled.jpeg" alt="Kleingruppe am Tisch im hellen Holzsaal" loading="lazy"></li>
-      <li class="rv fx-pop" style="--d:.3s"><img class="par" src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-768x576.jpg" alt="Workshop mit Karten am Tisch, Fenster zum See" loading="lazy"><span class="tint t-grey"></span></li>
+      <li class="rv fx-pop" style="--d:.3s"><img class="par" src="https://v-und-s.de/wp-content/uploads/2024/01/IMG_3930-scaled.jpg" alt="Workshop mit Karten am Tisch, Fenster zum See" loading="lazy"><span class="tint t-grey"></span></li>
       <li class="rv fx-pop" style="--d:.4s"><img class="par" src="https://v-und-s.de/wp-content/uploads/2024/10/1130004-scaled.jpeg" alt="Zwei Teilnehmer lachen gemeinsam beim Feierabendbier" loading="lazy"></li>
     </ul>
   </div>
@@ -1091,6 +1118,7 @@
   <section class="sec chal" id="herausforderungen" aria-labelledby="h-problem">
     <div class="plane from-l rv-plane" aria-hidden="true"></div>
     <div class="wrap">
+      <button type="button" class="btn slant" aria-pressed="false">BOAH… Animation ausschalten. Sofort!</button>
       <div class="grid">
         <aside>
           <div>
@@ -1155,7 +1183,7 @@
     <div class="wrap">
       <p class="eyebrow rv">Der Unterschied</p>
       <div class="state">
-        <h2 id="h-unterschied" class="rv fx-l" style="--d:.1s"><span>Warum zur V&amp;S WinterSchool</span>und nicht nach St. Gallen?</h2>
+        <h2 id="h-unterschied" class="rv fx-l" style="--d:.1s"><span>Warum zur V&amp;S WinterSchool</span>und nicht nach St.&nbsp;Gallen?</h2>
         <p class="rv fx-r" style="--d:.2s"><b>Der Mittelstand tickt einfach anders.</b> Darum haben wir an einem Format gefeilt, das als Veranstaltung im Nachgang wirklich Wirkung erzielt. Ein zielführender Mix aus Praxisbeispielen, Impulsen, Diskussionen und Denkwerkzeugen. Zusätzlich schaffen wir einen Raum, in dem man sich auf Augenhöhe mit anderen Teilnehmenden austauschen kann.</p>
       </div>
       <div class="state">
@@ -1449,6 +1477,7 @@
   var root=document.getElementById('ws27'); if(!root) return;
   var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduced) root.classList.add('js');
+  var calm=false;   /* ruhiger Modus (Button in den Herausforderungen) */
 
   /* Scroll-Reveal: .rv, Farbflächen (.rv-plane) und Blöcke mit eigenen Animationen */
   var watch=[].slice.call(root.querySelectorAll('.rv,.rv-plane,.who,.fig,.tt,.voices .head'));
@@ -1479,6 +1508,7 @@
   var targets=links.map(function(a){ return root.querySelector(a.getAttribute('href')); });
 
   /* Bewegung: Fortschritt, Parallaxe (--p), Hero-Buchstaben (--hp, --mx, --my) */
+  var mx=0,my=0,tx=0,ty=0,raf=null;
   var hero=root.querySelector('.hero'), pars=[].slice.call(root.querySelectorAll('.par')), ticking=false;
   function frame(){
     ticking=false;
@@ -1488,8 +1518,8 @@
     bar.classList.toggle('scrolled',y>8);
     if(reduced) return;
     var hr=hero.getBoundingClientRect();
-    hero.style.setProperty('--hp',Math.max(0,Math.min(1,-hr.top/Math.max(1,hr.height))).toFixed(4));
-    pars.forEach(function(el){
+    if(!calm) hero.style.setProperty('--hp',Math.max(0,Math.min(1,-hr.top/Math.max(1,hr.height))).toFixed(4));
+    if(!calm) pars.forEach(function(el){
       var r=el.getBoundingClientRect(); if(r.bottom<-200||r.top>vh+200) return;
       var p=((r.top+r.height/2)-vh/2)/(vh/2+r.height/2);
       el.style.setProperty('--p',Math.max(-1,Math.min(1,p)).toFixed(4));
@@ -1504,27 +1534,44 @@
 
   /* Maus-Parallaxe im Hero (nur Desktop mit Maus) */
   if(!reduced && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
-    var mx=0,my=0,tx=0,ty=0,raf=null;
+    raf=null;
     hero.addEventListener('pointermove',function(e){
+      if(reduced||calm) return;
       var r=hero.getBoundingClientRect();
       tx=(e.clientX-r.left)/r.width*2-1; ty=(e.clientY-r.top)/r.height*2-1;
       if(!raf) raf=requestAnimationFrame(ease);
     });
-    hero.addEventListener('pointerleave',function(){ tx=0; ty=0; if(!raf) raf=requestAnimationFrame(ease); });
+    hero.addEventListener('pointerleave',function(){ if(reduced||calm) return; tx=0; ty=0; if(!raf) raf=requestAnimationFrame(ease); });
     function ease(){
       mx+=(tx-mx)*.08; my+=(ty-my)*.08;
       hero.style.setProperty('--mx',mx.toFixed(4)); hero.style.setProperty('--my',my.toFixed(4));
       raf=(Math.abs(tx-mx)>.001||Math.abs(ty-my)>.001)?requestAnimationFrame(ease):null;
     }
   }
+  /* Button: zwischen voller Animation und ruhigem Modus umschalten (üblich bleibt: Einblenden, Diashow, Zähler,
+     gezeichnete Buchstaben — nur klein; weg: Parallaxe, Maus, pulsierende Ringe, große Flug-Effekte). Wahl wird gemerkt. */
+  var calmBtn=root.querySelector('.btn.slant');
+  function setCalm(on){
+    calm=on; root.classList.toggle('calm',on);
+    if(on){ pars.forEach(function(el){ el.style.setProperty('--p',0); }); ['--hp','--mx','--my'].forEach(function(k){ hero.style.setProperty(k,0); }); mx=my=tx=ty=0; }
+    else req();
+    if(calmBtn){ calmBtn.textContent=on?'Animation wieder anschalten':'BOAH… Animation ausschalten. Sofort!'; calmBtn.setAttribute('aria-pressed',String(on)); }
+  }
+  if(calmBtn){
+    if(reduced) calmBtn.hidden=true;   /* Systemeinstellung „weniger Bewegung“: ist ohnehin alles still */
+    calmBtn.addEventListener('click',function(){ setCalm(!calm); try{ localStorage.setItem('ws27-calm',calm?'1':'0'); }catch(e){} });
+  }
+  try{ if(!reduced && localStorage.getItem('ws27-calm')==='1') setCalm(true); }catch(e){}
   /* Hero: 10 Fotos im schnellen Wechsel (dekorativ, alle 2,2 s) */
   var slides=[].slice.call(root.querySelectorAll('.h-slides img'));
   if(!reduced && slides.length>1){
     var si=0;
-    setInterval(function(){
-      if(document.hidden) return;
-      slides[si].classList.remove('on'); si=(si+1)%slides.length; slides[si].classList.add('on');
-    },2200);
+    (function next(){
+      setTimeout(function(){
+        if(!document.hidden){ slides[si].classList.remove('on'); si=(si+1)%slides.length; slides[si].classList.add('on'); }
+        next();
+      }, calm?4500:2200);   /* ruhig: langsamer, ohne Zoom */
+    })();
   }
 })();
 </script>
