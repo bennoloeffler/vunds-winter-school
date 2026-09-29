@@ -519,6 +519,8 @@
 .ws27 .diff .state{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:90px;position:relative}
 .ws27 .diff .state h2 span{display:block;color:var(--mut);font-size:.62em;font-weight:500;margin-bottom:8px;line-height:1.25}
 .ws27 .diff .state p b{color:var(--teal-d)}
+.ws27 .years.wide{--ys:clamp(80px,11vw,160px);margin:-20px 0 100px}
+.ws27 .years.wide::after{content:"";flex:1;height:2px;background:var(--line);align-self:center;margin-left:.2em}
 .ws27 .years{--ys:clamp(70px,8vw,120px);display:flex;align-items:flex-end;gap:.16em;margin-bottom:18px;font-size:var(--ys)}
 .ws27 .years .num{font-size:1em;font-weight:700;line-height:.9;color:var(--red);letter-spacing:-.04em}
 .ws27 .years small{font-size:.4em;font-weight:500;color:var(--mut);line-height:1.02;white-space:nowrap;padding-bottom:.22em}   /* zwei Zeilen = Höhe der „25“ */   /* zwei Zeilen = Höhe der Zahl */
@@ -1215,18 +1217,17 @@
   <!-- ===== Der Unterschied ===== -->
   <section class="sec diff" id="unterschied" aria-labelledby="h-unterschied">
     <div class="wrap">
-      <p class="eyebrow rv">Der Unterschied</p>
+      <p class="eyebrow rv" style="margin-bottom:34px">Der Unterschied</p>
       <div class="state">
         <h2 id="h-unterschied" class="rv fx-l" style="--d:.1s"><span>Warum zur V&amp;S WinterSchool</span>und nicht nach St.&nbsp;Gallen?</h2>
         <p class="rv fx-r" style="--d:.2s"><b>Der Mittelstand tickt einfach anders.</b> Darum haben wir an einem Format gefeilt, das als Veranstaltung im Nachgang wirklich Wirkung erzielt. Ein zielführender Mix aus Praxisbeispielen, Impulsen, Diskussionen und Denkwerkzeugen. Zusätzlich schaffen wir einen Raum, in dem man sich auf Augenhöhe mit anderen Teilnehmenden austauschen kann.</p>
       </div>
       <div class="state">
-        <div>
-          <div class="years rv fx-pop"><span class="num" data-count="25">25</span><small>Jahre Erfahrung<br>im Mittelstand</small></div>
-          <h2 class="rv fx-l" style="--d:.1s"><span>Es gibt zig Veranstaltungen zum Thema Transformation.</span>Warum diese?</h2>
-        </div>
+        <h2 class="rv fx-l" style="--d:.1s"><span>Es gibt zig Veranstaltungen zum Thema Transformation.</span>Warum diese?</h2>
         <p class="rv fx-r" style="--d:.2s">Inzwischen wird der Begriff „Transformation“ so inflationär verwendet, dass selbst wir ihn kaum noch hören können. Trotzdem ist es ein Riesenthema. Mit <b>25 Jahren Erfahrung als Unternehmensberatung für den Mittelstand</b> wissen wir wirklich genau, wovon wir sprechen. Haben Erfolge gesehen, aber vor allen Dingen durch Scheitern verstanden, worum es eigentlich geht.</p>
       </div>
+      <!-- 25 Jahre: eigene Zeile über die ganze Breite, Linie läuft nach rechts aus -->
+      <div class="years wide rv"><span class="num" data-count="25">25</span><small>Jahre Erfahrung<br>im Mittelstand</small></div>
 
       <div class="points">
         <h3 class="rv">Wirksame Transformation im Mittelstand</h3>
