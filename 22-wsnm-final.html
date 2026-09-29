@@ -4,6 +4,8 @@
      „St.&nbsp;Gallen“ ohne Umbruch, weißer Umschalter „BOAH… Animation ausschalten. Sofort!“ ⇄ „Animation wieder anschalten“ im Teal der
      Herausforderungen (ab 1400 px schräg parallel zur Kante, darunter oben rechts): ruhiger Modus .calm — übliche Effekte bleiben,
      aber klein; Parallaxe/Maus/Ringe/Flug-Effekte aus, Diashow langsamer ohne Zoom. Der Browser merkt sich die Wahl. Der Button pumpt 1× beim Erscheinen.
+     Kennzahlen: Linie mit „dann sinken die Kosten wirklich!“. Fallen: 8 Schlagworte (Lean … Projekt-Management) liegen erst
+     übereinander und fächern sich beim Scrollen auf; Satz „Denn in den Verheißungen …“ entfernt.
      Mobil steht „WinterSchool Neues Management“ direkt unter den Buchstaben (vor „Intensiv-Bootcamp“). Die <template>s B–D und ihre CSS-Blöcke sind noch drin (wirkungslos).
      BILDER liegen lokal unter img/vs/ (gleiche Pfade wie auf v-und-s.de, Fotos auf max. 1920 px verkleinert) — für WordPress
      „img/vs/“ durch „https://v-und-s.de/wp-content/uploads/“ ersetzen.
@@ -183,7 +185,10 @@
 .ws27[data-hero="a"] .h-need .lbl{color:#dfe8ef}
 .ws27[data-hero="a"] .h-need .inno{color:#22B8CF}
 .ws27[data-hero="a"] .h-need li{color:#fff;border-left-color:rgba(255,255,255,.55)}
-.ws27[data-hero="a"] .h-foot{border-top:1px solid rgba(255,255,255,.35);padding-top:30px;max-width:720px}
+.ws27[data-hero="a"] .h-foot{margin-top:0;padding-top:0;max-width:720px}
+/* Linie unter den Kennzahlen mit Satz in der Mitte */
+.ws27[data-hero="a"] .h-then{display:flex;align-items:center;gap:18px;max-width:720px;margin:34px 0 28px;font-size:clamp(17px,1.5vw,22px);font-weight:600;color:#22B8CF;white-space:nowrap}
+.ws27[data-hero="a"] .h-then::before,.ws27[data-hero="a"] .h-then::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.35)}
 .ws27[data-hero="a"] .h-date{color:#fff}
 .ws27[data-hero="a"] .h-go .btn{background:#1597AD;color:#fff;font-size:19px}
 .ws27[data-hero="a"] .h-go .btn:hover{background:#12869A}
@@ -482,11 +487,10 @@
 }
 
 /* ========== Fallen: große Wörter überlagern sich ========== */
-.ws27 .traps .words{position:relative;height:clamp(220px,26vw,360px);margin-bottom:40px;isolation:isolate}
-.ws27 .traps .words span{position:absolute;font-weight:700;letter-spacing:-.04em;line-height:.8;mix-blend-mode:multiply;white-space:nowrap}
-.ws27 .traps .w1{left:0;top:0;font-size:clamp(90px,15vw,230px);color:var(--teal);--amp:-40}
-.ws27 .traps .w2{left:42%;top:26%;font-size:clamp(100px,17vw,260px);color:var(--red);--amp:30;--rot:-4}
-.ws27 .traps .w3{left:auto;right:0;top:6%;font-size:clamp(70px,10vw,160px);color:rgba(29,42,58,.62);--amp:-20}
+.ws27 .traps .words{--q:1;position:relative;display:flex;flex-wrap:wrap;align-items:baseline;margin-bottom:48px;isolation:isolate;font-size:clamp(34px,6.4vw,100px)}
+.ws27 .traps .words span{position:relative;font-weight:700;letter-spacing:-.035em;line-height:.86;white-space:nowrap;mix-blend-mode:multiply;font-size:calc(var(--s) * 1em);margin:0 -.06em -.08em 0;padding-right:.22em;
+  transform:translate(calc((1 - var(--q)) * var(--dx,0px)),calc((1 - var(--q)) * var(--dy,0px))) rotate(calc((1 - var(--q)) * var(--r,0deg)))}
+.ws27 .traps .words .c1{color:var(--teal)}.ws27 .traps .words .c2{color:var(--red)}.ws27 .traps .words .c3{color:rgba(29,42,58,.62)}.ws27 .traps .words .c4{color:var(--greige)}
 .ws27 .traps .cols{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:start}
 .ws27 .traps .txt p{margin-bottom:18px}
 .ws27 .promises{list-style:none;padding:0;margin:4px 0 22px}
@@ -497,8 +501,8 @@
 .ws27 .promises b{color:var(--teal-d)}
 .ws27 .wow{font-size:clamp(28px,3.2vw,44px);line-height:1.15;font-weight:600;color:var(--red)}
 .ws27 .wow-sub{margin-top:14px;font-size:clamp(19px,1.7vw,23px);color:var(--mut)}
-@media (max-width:900px){.ws27 .traps .cols{grid-template-columns:1fr;gap:34px}.ws27 .traps .w2{left:30%}.ws27 .traps .w3{left:auto}}
-@media (max-width:600px){.ws27 .traps .w1{font-size:19vw}.ws27 .traps .w2{left:24%;top:36%;font-size:22vw}.ws27 .traps .w3{left:auto;right:0;top:4%;font-size:13vw}}
+@media (max-width:900px){.ws27 .traps .cols{grid-template-columns:1fr;gap:34px}}
+@media (max-width:600px){.ws27 .traps .words{font-size:10.5vw}}
 
 /* ========== Unterschied ========== */
 .ws27 .diff{background:var(--grey-l)}
@@ -793,6 +797,7 @@
               <li><b>30&#8239;%</b>produktiver.</li>
             </ul>
           </div>
+          <p class="h-then h-anim" style="--d:.38s">dann sinken die Kosten wirklich!</p>
           <div class="h-foot h-anim" style="--d:.42s">
             <p class="h-date">20.–22. Januar 2027<small>Seehotel Niedernberg</small></p>
             <div class="h-go">
@@ -1164,17 +1169,22 @@
   <!-- ===== Die Fallen ===== -->
   <section class="sec traps" id="fallen" aria-labelledby="h-fallen">
     <div class="wrap">
+      <!-- Schlagworte: liegen erst übereinander und fächern sich beim Scrollen auf (--q 0→1, JS unten) -->
       <div class="words" aria-hidden="true">
-        <span class="w1 par"><span class="rv fx-l" style="position:static;display:block">Agilität</span></span>
-        <span class="w2 par"><span class="rv fx-drop" style="position:static;display:block;--d:.15s">TOC</span></span>
-        <span class="w3 par"><span class="rv fx-r" style="position:static;display:block;--d:.3s">ReaLean</span></span>
+        <span class="c1" style="--s:1.3;--r:-6deg">Lean</span>
+        <span class="c2" style="--s:1.1;--r:5deg">Agile</span>
+        <span class="c3" style="--s:0.78;--r:-3deg">Kostensenkung</span>
+        <span class="c4" style="--s:1.2;--r:8deg">Flow</span>
+        <span class="c2" style="--s:1.3;--r:-9deg">KI</span>
+        <span class="c1" style="--s:0.66;--r:4deg">Innovations-Management</span>
+        <span class="c3" style="--s:1.1;--r:-5deg">ERP</span>
+        <span class="c4" style="--s:0.72;--r:6deg">Projekt-Management</span>
       </div>
       <div class="cols">
         <div>
           <p class="eyebrow rv">Die Fallen</p>
           <h2 id="h-fallen" class="rv" style="--d:.1s">Viele Heilsversprechen, viele Fallen</h2>
           <p class="wow rv fx-pop" style="--d:.2s;margin-top:40px">Wow! Aber was machen die Firmen anders, bei denen das wirklich klappt?</p>
-          <p class="wow-sub rv" style="--d:.3s">Denn in den Verheißungen lauern viele Fallen …</p>
         </div>
         <div class="txt">
           <p class="rv" style="--d:.1s">Wenn über Wettbewerbsfähigkeit und Transformation gesprochen wird, dann kommen alte und neue Heilsversprechen ins Spiel:</p>
@@ -1530,6 +1540,7 @@
     root.style.setProperty('--sp',max>0?(y/max).toFixed(4):0);
     bar.classList.toggle('scrolled',y>8);
     if(reduced) return;
+    spreadWords();
     var hr=hero.getBoundingClientRect();
     if(!calm) hero.style.setProperty('--hp',Math.max(0,Math.min(1,-hr.top/Math.max(1,hr.height))).toFixed(4));
     if(!calm) pars.forEach(function(el){
@@ -1540,10 +1551,27 @@
     var cur=-1; targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top<vh*.4) cur=i; });
     links.forEach(function(a,i){ a.classList.toggle('cur',i===cur); });
   }
+  /* Schlagworte (Fallen): Abstand jedes Worts zur Mitte messen; beim Scrollen --q 0 → 1 (übereinander → aufgefächert) */
+  var wbox=root.querySelector('.traps .words'), wwords=wbox?[].slice.call(wbox.children):[];
+  function measureWords(){
+    if(!wbox) return; wbox.style.setProperty('--q',1);
+    var cx=wbox.clientWidth/2, cy=wbox.clientHeight/2;
+    wwords.forEach(function(w){ w.style.setProperty('--dx',(cx-(w.offsetLeft+w.offsetWidth/2)).toFixed(1)+'px'); w.style.setProperty('--dy',(cy-(w.offsetTop+w.offsetHeight/2)).toFixed(1)+'px'); });
+    spreadWords();
+  }
+  function spreadWords(){
+    if(!wbox) return;
+    if(reduced||calm){ wbox.style.setProperty('--q',1); return; }
+    var vh=window.innerHeight, t=wbox.getBoundingClientRect().top;
+    var q=Math.max(0,Math.min(1,(vh*.95-t)/(vh*.5))); q=q*q*(3-2*q);
+    wbox.style.setProperty('--q',q.toFixed(3));
+  }
   function req(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } }
   window.addEventListener('scroll',req,{passive:true});
   window.addEventListener('resize',req);
   frame();
+  measureWords(); window.addEventListener('load',measureWords); window.addEventListener('resize',measureWords);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(measureWords);
 
   /* Maus-Parallaxe im Hero (nur Desktop mit Maus) */
   if(!reduced && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
@@ -1568,6 +1596,7 @@
     calm=on; root.classList.toggle('calm',on);
     if(on){ pars.forEach(function(el){ el.style.setProperty('--p',0); }); ['--hp','--mx','--my'].forEach(function(k){ hero.style.setProperty(k,0); }); mx=my=tx=ty=0; }
     else req();
+    spreadWords();
     if(calmBtn){ calmBtn.textContent=on?'Animation wieder anschalten':'BOAH… Animation ausschalten. Sofort!'; calmBtn.setAttribute('aria-pressed',String(on)); }
   }
   if(calmBtn && !reduced && 'IntersectionObserver' in window){
