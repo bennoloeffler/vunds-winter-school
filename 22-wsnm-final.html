@@ -3,7 +3,8 @@
      und der versteckte Link zur Übersicht (preview-link.js). Danach (29.09.): 3 Plenum-Fotos in der Hero-Diashow, IMG_3930 in voller Auflösung,
      „St.&nbsp;Gallen“ ohne Umbruch, weißer Umschalter „BOAH… Animation ausschalten. Sofort!“ ⇄ „Animation wieder anschalten“ im Teal der
      Herausforderungen (ab 1400 px schräg parallel zur Kante, darunter oben rechts): ruhiger Modus .calm — übliche Effekte bleiben,
-     aber klein; Parallaxe/Maus/Ringe/Flug-Effekte aus, Diashow langsamer ohne Zoom. Der Browser merkt sich die Wahl. Die <template>s B–D und ihre CSS-Blöcke sind noch drin (wirkungslos).
+     aber klein; Parallaxe/Maus/Ringe/Flug-Effekte aus, Diashow langsamer ohne Zoom. Der Browser merkt sich die Wahl. Der Button pumpt 4× beim Erscheinen.
+     Mobil steht „WinterSchool Neues Management“ direkt unter den Buchstaben (vor „Intensiv-Bootcamp“). Die <template>s B–D und ihre CSS-Blöcke sind noch drin (wirkungslos).
      Ursprünglicher Kommentar von 19:
      Entwurf 19: WSNM — eine Seite, vier Hero-Varianten (zusammengeführt aus den früheren Entwürfen 19–22, deren Rest
      identisch war). Umschalten über die Vorschau-Leiste unten links oder per URL ?hero=a|b|c|d:
@@ -205,6 +206,12 @@
   .ws27[data-hero="a"] .h-sig{position:static;width:auto;text-align:left;margin:22px 16px 0;text-shadow:none}
   .ws27[data-hero="a"] .h-cap{font-size:16px;letter-spacing:.1em}
   .ws27[data-hero="a"] .h-sig .h-claim2{margin:10px 0 0;font-size:18px}
+  /* nur mobil: Namenszeile direkt unter die Buchstaben (vor „Intensiv-Bootcamp“), Claim bleibt unten */
+  .ws27[data-hero="a"] .hero{display:flex;flex-direction:column}
+  .ws27[data-hero="a"] .h-sig{display:contents}
+  .ws27[data-hero="a"] .h-sig .h-cap{order:1;margin:14px 16px 0;text-shadow:none}
+  .ws27[data-hero="a"] .h-in{order:2}
+  .ws27[data-hero="a"] .h-sig .h-claim2{order:3;margin:22px 16px 0}
 }
 /* ---------- Hero-Variante B · Navy ---------- */
 /* ========== Hero (nach Mockup): Foto rechts, Text links, Buchstaben W S N M ========== */
@@ -426,17 +433,17 @@
 .ws27 .chal .plane{position:absolute;inset:0;background:var(--teal-t);clip-path:polygon(0 50px,calc(100% - 140px) 0,100% 154px,100% 100%,0 94%)}
 /* Button „Animation ausschalten“ (für alle, denen die Seite zu viel wackelt): weiß auf Teal;
    ab 1400 px schräg, parallel zur oberen rechten Kante, darunter normal oben rechts */
-.ws27 .chal .btn.slant{position:relative;z-index:4;display:flex;width:max-content;max-width:calc(100% - 32px);margin:0 0 44px;background:#fff;color:var(--teal-d);font:inherit;font-weight:600;font-size:16px;padding:13px 22px;cursor:pointer;white-space:normal;text-align:left}
+.ws27 .chal .btn.slant{position:relative;z-index:4;display:flex;width:max-content;max-width:calc(100% - 64px);margin:0 0 44px;background:#fff;color:var(--teal-d);font:inherit;font-weight:600;font-size:16px;padding:13px 22px;cursor:pointer;white-space:normal;text-align:left}
 .ws27 .chal .btn.slant:hover{background:#eef6f7}
 /* pumpt 4× sobald er ins Bild kommt (eigene scale-Eigenschaft, damit die Drehung bleibt) */
-@keyframes ws22-pump{0%,100%{scale:1;box-shadow:0 0 0 0 rgba(255,255,255,.6)}45%{scale:var(--pump,1.07);box-shadow:0 0 0 14px rgba(255,255,255,0)}}
+@keyframes ws22-pump{0%,100%{scale:1;box-shadow:0 0 0 0 rgba(255,255,255,.75)}45%{scale:var(--pump,1.1);box-shadow:0 0 0 22px rgba(255,255,255,0)}}
 .ws27 .chal .btn.slant{transform-origin:left center}
-.ws27 .chal .btn.slant.pump{animation:ws22-pump .7s ease-in-out 4}
+.ws27 .chal .btn.slant.pump{animation:ws22-pump 1.1s ease-in-out 4}
 @media (min-width:1400px){
   .ws27 .chal{padding-top:380px}
   .ws27 .chal>.wrap{position:static}   /* Button richtet sich an der Section aus, nicht an .wrap */
   .ws27 .chal .plane{clip-path:polygon(0 6%,calc(100% - 360px) 0,100% 396px,100% 100%,0 94%)}
-  .ws27 .chal .btn.slant{--pump:1.14;transform-origin:center;position:absolute;margin:0;max-width:none;white-space:nowrap;left:calc(100% - 218px);top:232px;transform:translate(-50%,-50%) rotate(47.7deg)}
+  .ws27 .chal .btn.slant{--pump:1.24;transform-origin:center;position:absolute;margin:0;max-width:none;white-space:nowrap;left:calc(100% - 218px);top:232px;transform:translate(-50%,-50%) rotate(47.7deg)}
   .ws27 .chal .btn.slant:hover{transform:translate(-50%,-50%) rotate(47.7deg)}
 }
 .ws27 .chal .grid{display:grid;grid-template-columns:380px 1fr;gap:70px;position:relative}
