@@ -73,3 +73,4 @@ git push                        # publishes via GitHub Pages
 - Image reads are blocked by a line-count hook unless `limit: 1` is passed.
 - `overflow:clip` on sections hides horizontal overflow from `scrollWidth` — cut-off text on phones only shows up with `tools/clipcheck.py`. Grid columns that hold text need `minmax(0,1fr)`, not `1fr`.
 - Headless screenshots right after loading many large photos can catch hero animations mid-way (or stuck without focus emulation) — re-shoot before assuming a bug.
+- …but if an area stays empty on re-shoot, measure it (`getBoundingClientRect`) instead of blaming timing: in 22 the mobile slideshow was invisible for several rounds because `.h-bg` had width 0 after the hero became `display:flex` (fix: `width:100%`).
