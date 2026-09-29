@@ -521,7 +521,7 @@
 .ws27 .infos .facts{position:relative;z-index:1}
 @media (max-width:1350px){.ws27 .infos .gl-s{right:-50px;top:-120px;width:240px}}
 @media (max-width:1100px){.ws27 .gl-w,.ws27 .gl-s,.ws27 .gl-m{display:none}}
-.ws27 .diff .n-arch{position:absolute;right:-190px;top:-30px;width:300px;--amp:60;--rot:6}
+.ws27 .diff .n-arch{position:absolute;right:-170px;top:40px;width:320px;--amp:60;--rot:0}
 .ws27 .diff .state{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:90px;position:relative}
 .ws27 .diff .state h2 span{display:block;color:var(--mut);font-size:.62em;font-weight:500;margin-bottom:8px;line-height:1.25}
 .ws27 .diff .state p b{color:var(--teal-d)}
@@ -1125,7 +1125,7 @@
 
   <!-- ===== Einleitung ===== -->
   <section class="intro" id="worum" aria-label="Worum es geht">
-    <svg class="arch gl par" viewBox="0 0 420 1500" aria-hidden="true"><g fill="none" stroke="#009BB2" stroke-width="150"><path pathLength="1" style="--o:0;--l:.3" d="M75 290 A135 135 0 0 1 345 290"/><path pathLength="1" style="--o:.22;--l:.78" d="M75 285 V1500"/><path pathLength="1" style="--o:.22;--l:.78" d="M345 285 V1500"/></g></svg>
+    <svg class="arch gl long par" viewBox="0 0 420 1500" aria-hidden="true"><g fill="none" stroke="#009BB2" stroke-width="150"><path pathLength="1" style="--o:0;--l:.3" d="M75 290 A135 135 0 0 1 345 290"/><path pathLength="1" style="--o:.22;--l:.78" d="M75 285 V1500"/><path pathLength="1" style="--o:.22;--l:.78" d="M345 285 V1500"/></g></svg>
     <div class="wrap">
       <div class="say">
         <p class="eyebrow rv">Worum es geht</p>
@@ -1218,7 +1218,7 @@
 
   <!-- ===== Der Unterschied ===== -->
   <section class="sec diff" id="unterschied" aria-labelledby="h-unterschied">
-    <svg class="n-arch par" viewBox="0 0 340 520" aria-hidden="true"><path d="M60 520 V230 A110 110 0 0 1 280 230 V520" fill="none" stroke="#CB123A" stroke-width="110" style="mix-blend-mode:multiply"/></svg>
+    <svg class="n-arch gl long par" viewBox="0 0 340 2200" aria-hidden="true"><g fill="none" stroke="#CB123A" stroke-width="110"><path pathLength="1" style="--o:0;--l:.3" d="M60 235 A110 110 0 0 1 280 235"/><path pathLength="1" style="--o:.22;--l:.78" d="M60 230 V2200"/><path pathLength="1" style="--o:.22;--l:.78" d="M280 230 V2200"/></g></svg>
     <div class="wrap">
       <p class="eyebrow rv">Der Unterschied</p>
       <div class="state">
@@ -1591,7 +1591,7 @@
     var vh=window.innerHeight;
     gls.forEach(function(g){
       if(reduced||calm){ g.style.setProperty('--dp',1); return; }
-      var r=g.getBoundingClientRect(), span=g.classList.contains('arch')?vh*1.3:vh*.8;
+      var r=g.getBoundingClientRect(), span=g.classList.contains('long')?vh*1.4:vh*.8;
       var p=Math.max(0,Math.min(1,(vh*.9-r.top)/span));
       g.style.setProperty('--dp',p.toFixed(3));
     });
