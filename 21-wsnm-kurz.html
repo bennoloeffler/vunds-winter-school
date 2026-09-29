@@ -329,8 +329,10 @@
 .ws27.js .who .target circle{transform:scale(.3);opacity:0;transition:transform 1.2s var(--spring),opacity .6s ease;transition-delay:calc(var(--i) * .12s)}
 .ws27.js .who.in .target circle{transform:none;opacity:1}
 .ws27 .who h3{font-size:clamp(24px,2.3vw,32px);margin-bottom:12px}
-.ws27 .chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.ws27 .chips li{font-size:14px;font-weight:500;padding:7px 13px;border:1.5px solid var(--teal);color:var(--teal-d);border-radius:40px;background:#fff}
+.ws27 .chips{list-style:none;padding:0;display:grid;grid-template-columns:minmax(0,1fr)}
+.ws27 .chips li{font-size:16px;font-weight:500;line-height:1.35;color:var(--ink);padding:9px 0 9px 34px;position:relative;border-bottom:1px solid var(--line)}
+.ws27 .chips li:last-child{border-bottom:0}
+.ws27 .chips li::before{content:"";position:absolute;left:0;top:8px;width:22px;height:22px;background:var(--teal);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat}
 .ws27.js .who .chips li{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .6s var(--spring);transition-delay:calc(.4s + var(--i) * .06s)}
 .ws27.js .who.in .chips li{opacity:1;transform:none}
 @media (max-width:1000px){.ws27 .who{grid-template-columns:1fr;gap:26px}.ws27 .target{width:120px;height:120px}}

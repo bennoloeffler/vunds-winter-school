@@ -71,6 +71,7 @@ Konsequenzen:
 - Elegant: klare Fläche (Teal `#006D7E` oder Weiß auf Farbe), Radius 8–10 px oder schlanke Pille, Schrift 600, keine Gradient-Füllung, **kein farbiger Glow-Schatten**.
 - Hover dezent: Farbe eine Stufe dunkler oder heller, evtl. Pfeil 3 px nach rechts, max. `translateY(-1px)`. Kein Aufblähen, kein Leuchten, keine Pink-Flächen.
 - Sekundär-Button: Outline 1.5 px oder Text-Link mit Unterstrich.
+- **Was nicht klickbar ist, darf nicht wie ein Button aussehen** (29.09.2026, zu 19): keine umrandeten Pillen/Chips für Aufzählungen. Stattdessen Liste mit Teal-Häkchen (Line-Icon) und feinen Trennlinien — so jetzt „Was Sie erwartet" in 19 und 21.
 
 ## 4. Struktur & Texte (für die 11er-Linie: 13, 14, 15 …)
 
