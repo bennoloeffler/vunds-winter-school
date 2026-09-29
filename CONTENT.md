@@ -14,7 +14,7 @@ Gendern: im Fließtext nicht; einmalige Fußnote (siehe unten) darf bleiben oder
 - Datum: **20.–22. Januar 2027**
 - Ort: **Seehotel Niedernberg** (Das Dorf am See bei Aschaffenburg)
 - Claim: **Zukunft. Besser. Machen.** — Intensiv-Bootcamp
-- Kasten „Was wir in Deutschland brauchen:" **Viel innovativer! Und außerdem: 50 % schneller · 80 % weniger Prozess-Wahnsinn · 30 % produktiver**
+- Kasten „Was wir in Deutschland brauchen:" **Viel mehr Innovation! Und außerdem: 50 % schneller · 80 % weniger Prozess-Wahnsinn · 30 % produktiver**
 
 ## Rotierende Schlagworte (Original: Bild-Slider über Winterfotos)
 
@@ -24,7 +24,7 @@ Gendern: im Fließtext nicht; einmalige Fußnote (siehe unten) darf bleiben oder
 - den entscheidenden Meter Vorsprung gewinnen
 - saugute Zusammenarbeit
 - Denkexperimente mit Praxisbezug
-- Blickwinkel aus Geschäftsführerebene
+- Blickwinkel auf Geschäftsführerebene
 - Diskussion von Praxisbeispielen
 
 ## Fußnote Gendern (optional)
@@ -33,7 +33,7 @@ In unserem täglichen Sprachgebrauch gendern wir gelegentlich. Manche mehr, manc
 
 ## Logo-Leiste
 
-Überschrift: **unsere bisherigen Teilnehmer und Partner**
+Überschrift: **Bisher dabei – unter anderen:**
 Firmen (Logos liegen auf v-und-s.de, siehe BRIEF.md): BBG, Bosch, Faschang, Flottweg, Grimme, Herding, Knoll, Mahr, Nord Drivesystems, Oerlikon, Phoenix Contact, Schleifring, Schüco, Syntegon, Wörner, Coswig, IFE, Stopa, Dungs, IPCO
 
 ## Worum es geht
@@ -42,8 +42,8 @@ Firmen (Logos liegen auf v-und-s.de, siehe BRIEF.md): BBG, Bosch, Faschang, Flot
 Vorspann: Weil wir das in Deutschland dringend brauchen – darum geht's in den zwei Tagen:
 
 1. **Echte Wettbewerbsfähigkeit:** andere Management-Ansätze für engagierte Zusammenarbeit und weniger cover-your-ass.
-2. **Bessere Zusammenarbeit und aktivierte Potenziale der Mitarbeiter:** Weniger Prozess-Theater und mehr echte Arbeit.
-3. **Wirtschaftlich wirksame Transformation bewerkstelligen:** Organisations-Gestaltung jenseits von Methoden- und Change-Mainstream.
+2. **Bessere Zusammenarbeit und aktivierte Potenziale der Mitarbeitenden:** Weniger Prozess-Theater und mehr echte Arbeit.
+3. **Wirtschaftlich wirksame Transformation bewerkstelligen:** Organisationsgestaltung jenseits von Methoden- und Change-Mainstream.
 4. **Transformation mit Wirkung:** Technologie, Strategie, Engagement, Zusammenarbeit, Wertschöpfung, Innovation und Ertrag. Alles andere ist fast egal.
 5. **Special 2027:** pragmatische KI für echte Produktivität.
 
@@ -52,7 +52,7 @@ Vorspann: Weil wir das in Deutschland dringend brauchen – darum geht's in den 
 Überschrift: **Für wen ist die WinterSchool konzipiert?**
 Ganz egal, ob Sie Abteilungsleiter, Eigentümerin oder Geschäftsführer sind – wenn Sie nach pragmatischen Mitteln für mehr Wirkung in Ihrer Organisation suchen, dann sind Sie hier genau richtig.
 
-## Die typischen Herausforderungen unserer Teilnehmer
+## Die typischen Herausforderungen unserer Teilnehmenden
 
 (Zitate; im Original ohne echte Namen — KEINE „Max Mustermann"-Platzhalter übernehmen, anonym lassen oder Rolle angeben, z. B. „Geschäftsführer, Maschinenbau")
 
@@ -80,11 +80,11 @@ Was ist eher Symptom und was ist Ursache? Was hilft wirklich?
 
 ## Warum zur V&S WinterSchool und nicht nach St. Gallen?
 
-Der Mittelstand tickt einfach anders. Darum haben wir an einem Format gefeilt, das als Veranstaltung im Nachgang wirklich Wirkung erzielt. Ein zielführender Mix aus Praxisbeispielen, Impulsen, Diskussionen und Denkwerkzeugen. Zusätzlich schaffen wir einen Raum, in dem man sich auf Augenhöhe mit anderen Teilnehmenden austauschen kann.
+Der Mittelstand tickt einfach anders. Darum haben wir an einem Veranstaltungsformat gefeilt, das auch im Nachgang wirklich Wirkung erzielt. Ein zielführender Mix aus Praxisbeispielen, Impulsen, Diskussionen und Denkwerkzeugen. Zusätzlich schaffen wir einen Raum, in dem man sich auf Augenhöhe mit anderen Teilnehmenden austauschen kann.
 
 ## Es gibt zig Veranstaltungen zum Thema Transformation. Warum diese?
 
-Inzwischen wird der Begriff „Transformation" so inflationär verwendet, dass selbst wir ihn kaum noch hören können. Trotzdem ist es ein Riesenthema. Mit 25 Jahren Erfahrung als Unternehmensberatung für den Mittelstand wissen wir wirklich genau, wovon wir sprechen. Haben Erfolge gesehen, aber vor allen Dingen durch Scheitern verstanden, worum es eigentlich geht.
+Inzwischen wird der Begriff „Transformation" so inflationär verwendet, dass selbst wir ihn kaum noch hören können. Trotzdem ist es ein Riesenthema. Mit 25 Jahren Erfahrung als Unternehmensberatung für den Mittelstand wissen wir wirklich genau, wovon wir sprechen. Wir haben viele Erfolge gesehen, aber vor allem durch unser Scheitern verstanden, worum es eigentlich geht.
 
 ## Agenda — 20.–22. Januar 2027
 
@@ -101,11 +101,11 @@ Inzwischen wird der Begriff „Transformation" so inflationär verwendet, dass s
 | Zeit | Titel | Beschreibung |
 |---|---|---|
 | bis 8.30 | Sport, Schwimmbad, Frühstück … | … feel free |
-| 8.30–10.00 | Warum ist Fluss wettbewerbsrelevant? | Typische Denkfehler, die bei der Arbeit an z. B. Innovations-Milieu, Kultur, Termintreue, Kostensenkung, Grob-Kapazitäts-Planung, Lean-Einführung oder Projektmanagement etc. gemacht werden. |
+| 8.30–10.00 | Warum ist Fluss wettbewerbsrelevant? | Typische Denkfehler, die bei der Arbeit an Themen wie Innovationsmilieu, Kultur, Termintreue, Kostensenkung, Grobkapazitätsplanung, Lean-Einführung oder Projektmanagement gemacht werden. |
 | 10.00–10.30 | Pause | Zeit für einen Kaffee |
 | 10.30–12.30 | Die Essenz, der Unterschied und die typischen Denkfehler im Umgang mit Lean, TOC und Agile | Wir reden nicht über Methoden. Sondern über die FUNDAMENTALEN Zusammenhänge und Prinzipien, die Managementteams nutzen können, ohne Vollprofi in Kanban, Poka Yoke, SMED, SCRUM oder DBF zu sein. |
 | 12.30–13.30 | Mittagspause | Sacken lassen, stärken, den Blick über den See schweifen lassen. |
-| 13.30–15.00 | Hartnäckige Organisationsprobleme verstehen und lösen | Moderne Organisations-Theorie hilft dabei, Probleme und Ursachen zu verstehen, die weit über den Erkenntnishorizont der rein methodenfokussierten Anwendung von Lean, Agile und anderen Managementwerkzeugen hinausgehen. |
+| 13.30–15.00 | Hartnäckige Organisationsprobleme verstehen und lösen | Moderne Organisationstheorie hilft dabei, Probleme und Ursachen zu verstehen, die weit über den Erkenntnishorizont der rein methodenfokussierten Anwendung von Lean, Agile und anderen Managementwerkzeugen hinausgehen. |
 | 15.00–15.30 | Kaffeepause | Wer mag, bekommt aber natürlich auch einen Tee. |
 | 15.30–18.00 | Kultur, Lernen und Veränderung | Organisationen haben eingespielte Muster. Die sind wichtig – wenn es aber erfolgreich werden soll, müssen Führungskräfte an diese Muster ran. Das nennen wir „am System arbeiten". Wie kann das gehen? Insbesondere, wenn es um Muster geht, die mit den typischen, dysfunktionalen Wirkungen von Hierarchie zu tun haben. |
 | 18.00–19.30 | Abendessen | Gemeinsames Essen |
@@ -121,7 +121,7 @@ Inzwischen wird der Begriff „Transformation" so inflationär verwendet, dass s
 | 10.30–11.00 | Kaffeepause | Zeit für einen Kaffee |
 | 11.00–12.00 | Intro KI | Der Überblick zu möglichen Use-Cases, KI-Risiken und Lösungsansätzen zeigt auf, wie Künstliche Intelligenz praxisnah eingesetzt werden kann und welche Herausforderungen dabei zu beachten sind. Daran schließt die Vorstellung unseres Jahresprogramms (KIM) an, das konkrete Angebote und Schwerpunkte aufzeigt. Ergänzend werden die organisatorischen und technischen Voraussetzungen erläutert, die für eine erfolgreiche Umsetzung notwendig sind. |
 | 12.00–13.00 | Mittagessen | Sacken lassen, stärken, den Blick über den See schweifen lassen. |
-| 13.00–15.30 | Praxisteil KI | Ein Sprachmodell (LLM) ermöglicht vielfältige Anwendungsbeispiele – von einfacher Datenanalyse bis hin zur Bildgenerierung. Durch Rollen-Priming kann es gezielt als Experten-Assistenz eingesetzt werden und unterstützt so auch bei der Bewältigung komplexerer Aufgaben. Unterschiedliche Prompt-Frameworks helfen dabei, die Ergebnisse zu strukturieren und zu verbessern. Gleichzeitig gilt es, die Grenzen und Risiken generativer Sprachmodelle im Blick zu behalten. |
+| 13.00–15.30 | Praxisteil KI | **KI-Agenten** sind in aller Munde – wir zeigen, was sie im Mittelstand heute wirklich leisten. Auf Basis eines Sprachmodells (LLM) erledigen Agenten mehrstufige Aufgaben selbstständig: recherchieren, Daten auswerten, Entwürfe schreiben, Werkzeuge bedienen. Gemeinsam probieren wir aus, wie man sie gezielt einsetzt, mit klaren Anweisungen steuert und ihre Ergebnisse prüft – und wo Grenzen und Risiken liegen. Programmierung öffnet sich für Fachbereiche. IT und Fachbereiche können plötzlich anders zusammenarbeiten. IT war jahrzehntelang eine Abteilung und meist **der** Veränderungsengpass. IT wird jetzt mehr zu einer abteilungsübergreifenden Aufgabe. Das bringt riesige Chancen und Herausforderungen mit sich. |
 | 15.30–16.30 | Check-out | Reflexion und Verabschiedung |
 
 ## Stimmen unserer Teilnehmenden und Partner
@@ -130,14 +130,14 @@ Inzwischen wird der Begriff „Transformation" so inflationär verwendet, dass s
 2. „Gespräche mit spannenden Menschen auch aus dem produzierenden Umfeld – praxisrelevante Themen kombiniert mit neuen Denkanstößen."
 3. „Praxisrelevante Inhalte und Inspirationen aus dem produzierenden Mittelstand. Besser geht es nicht … und steht daher seit vielen Jahren fest in meinem Kalender."
 4. „V&S hat uns durch finstere Zeiten begleitet – wir sind gestärkt aus der Krise hervorgegangen. Nicht nur finanziell, sondern auch kulturell."
-5. „Gespräche auf Augenhöhe mit anderen Geschäftsführern über praxisrelevante Themen, kombiniert mit inspirierenden Rednern. Mittelstandstauglich, relevant und sehr gut – deshalb gehe ich hin."
+5. „Gespräche auf Augenhöhe mit anderen Gestaltern über praxisrelevante Themen, kombiniert mit inspirierenden Rednern. Mittelstandstauglich, relevant und sehr gut – deshalb gehe ich hin."
 
 ## Was Sie noch wissen sollten — Wichtige Informationen zur Veranstaltung
 
 - Die V&S WinterSchool setzt besonders auf Interaktivität und die Arbeit in kleinen Gruppen. Die Teilnehmerzahl ist daher auf **35 Personen** begrenzt.
 - **Anmeldeschluss:** Eine kurzfristige Anmeldung ist immer möglich, solange noch freie Plätze vorhanden sind.
 - Die Teilnahmegebühr beträgt **1.900 € (zzgl. MwSt)** pro Teilnehmenden.
-- Nach Eingang Ihrer Anmeldung erhalten Sie eine Anmeldebestätigung und eine Rechnung. 50 % der Teilnahmegebühr ist sofort zu leisten, die gesamte Teilnahmegebühr ist bis spätestens 14 Tage vor Veranstaltungsbeginn zu entrichten.
+- Nach Eingang Ihrer Anmeldung erhalten Sie eine Anmeldebestätigung und eine Rechnung. 50 % der Teilnahmegebühr sind sofort zu leisten, die gesamte Teilnahmegebühr ist bis spätestens 14 Tage vor Veranstaltungsbeginn zu entrichten.
 
 In der Teilnahmegebühr enthalten:
 - Teilnahme an der zweitägigen WinterSchool
@@ -147,7 +147,7 @@ In der Teilnahmegebühr enthalten:
 
 ## Seien Sie dabei (CTA)
 
-Wir haben ein Zimmerkontingent im Seehotel Niedernberg für die V&S WinterSchool reserviert (169 €) – Bitte sichern Sie sich Ihre Teilnahme und Ihr Zimmer direkt über uns:
+Wir haben ein Zimmerkontingent im Seehotel Niedernberg für die V&S WinterSchool reserviert (169 €) – bitte sichern Sie sich Ihre Teilnahme und Ihr Zimmer direkt über uns:
 
 **Nicole Tietz** · tietz@v-und-s.de · 0700-88637000
 Button: **Anmelden** → `mailto:tietz@v-und-s.de?subject=Anmeldung%20V%26S%20WinterSchool%202027`
