@@ -510,15 +510,16 @@
 /* ========== Unterschied ========== */
 .ws27 .diff{background:var(--grey-l)}
 .ws27 .gl path{stroke-dasharray:1 1;stroke-dashoffset:calc(1 - clamp(0, (var(--dp,1) - var(--o,0)) / var(--l,1), 1))}
-.ws27 .gl{position:absolute;height:auto;pointer-events:none;mix-blend-mode:multiply}
+.ws27 .gl{position:absolute;height:auto;pointer-events:none;mix-blend-mode:multiply;overflow:visible}
 /* w und m als große, blasse Wasserzeichen hinter den Zitaten */
 .ws27 .vq{position:relative;isolation:isolate}
 .ws27 .vq blockquote{position:relative;z-index:1}
 .ws27 .vq .gl{z-index:0;opacity:.14;mix-blend-mode:normal}
 .ws27 .gl-w{right:-2%;top:-40px;width:560px;--amp:-40;--rot:-3}
 .ws27 .gl-m{left:-4%;bottom:-30px;width:580px;--amp:40;--rot:3}
-.ws27 .infos .gl-s{right:60px;top:-10px;width:150px;--amp:25;--rot:6;z-index:0}
+.ws27 .infos .gl-s{right:-150px;top:-90px;width:300px;--amp:25;--rot:0;z-index:0}
 .ws27 .infos .facts{position:relative;z-index:1}
+@media (max-width:1350px){.ws27 .infos .gl-s{right:-50px;top:-120px;width:240px}}
 @media (max-width:1100px){.ws27 .gl-w,.ws27 .gl-s,.ws27 .gl-m{display:none}}
 .ws27 .diff .n-arch{position:absolute;right:-190px;top:-30px;width:300px;--amp:60;--rot:6}
 .ws27 .diff .state{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:90px;position:relative}
@@ -1384,7 +1385,7 @@
     <div class="wrap">
       <p class="eyebrow rv">Infos &amp; Preise</p>
       <h2 id="h-infos" class="rv" style="--d:.1s">Was Sie noch wissen sollten</h2>
-      <svg class="gl gl-s par" viewBox="380 0 360 540" aria-hidden="true"><path fill="none" stroke="#CB123A" stroke-width="112" pathLength="1" style="--o:0;--l:1" d="M730 56 H600 A107 107 0 0 0 600 270 A107 107 0 0 1 600 484 H452"/></svg>
+      <svg class="gl gl-s par" viewBox="380 0 400 540" aria-hidden="true"><path fill="none" stroke="#CB123A" stroke-width="112" pathLength="1" style="--o:0;--l:1" d="M730 56 H600 A107 107 0 0 0 600 270 A107 107 0 0 1 600 484 H452"/></svg>
       <div class="facts">
         <div class="fact rv fx-pop"><div class="num" data-count="35">35</div><b>Plätze</b><p>Die V&amp;S WinterSchool setzt besonders auf Interaktivität und die Arbeit in kleinen Gruppen. Die Teilnehmerzahl ist daher auf 35 Personen begrenzt.</p></div>
         <div class="fact rv fx-pop" style="--d:.12s"><div class="num"><span data-count="1900" data-fmt="de">1.900</span><i>€</i></div><b>Teilnahmegebühr</b><p>zzgl. MwSt pro Teilnehmenden – inklusive Verpflegung und Dokumentation.</p></div>
