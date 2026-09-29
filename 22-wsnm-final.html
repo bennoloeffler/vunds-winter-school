@@ -6,6 +6,9 @@
      aber klein; Parallaxe/Maus/Ringe/Flug-Effekte aus, Diashow langsamer ohne Zoom. Der Browser merkt sich die Wahl. Der Button pumpt 1× beim Erscheinen.
      Kennzahlen: Linie mit „dann sinken die Kosten wirklich!“. Fallen: 8 Schlagworte (Lean … Projekt-Management) liegen erst
      übereinander und fächern sich beim Scrollen auf; Satz „Denn in den Verheißungen …“ entfernt.
+     Riesen-Buchstaben: n im Intro mit langen Beinen (hinter Fotoband bis unter die Teal-Fläche), w und m als blasse
+     Wasserzeichen hinter den Stimmen, s neben „Was Sie noch wissen sollten“ — alle werden beim Scrollen gezeichnet (--dp);
+     ≤1100 px nur das n. Schlagworte: erst lange übereinander, ganz auseinander erst oben im Bild.
      Mobil steht „WinterSchool Neues Management“ direkt unter den Buchstaben (vor „Intensiv-Bootcamp“). Die <template>s B–D und ihre CSS-Blöcke sind noch drin (wirkungslos).
      BILDER liegen lokal unter img/vs/ (gleiche Pfade wie auf v-und-s.de, Fotos auf max. 1920 px verkleinert) — für WordPress
      „img/vs/“ durch „https://v-und-s.de/wp-content/uploads/“ ersetzen.
@@ -407,8 +410,8 @@
 }
 
 /* ========== Einleitung mit „p“-Bogen ========== */
-.ws27 .intro{padding:130px 0 110px;position:relative;overflow:clip}
-.ws27 .intro .arch{position:absolute;left:-150px;top:40px;width:420px;height:auto;--amp:-70}
+.ws27 .intro{padding:130px 0 110px;position:relative;overflow:visible;z-index:1}
+.ws27 .intro .arch{position:absolute;left:-150px;top:40px;width:420px;height:auto;--amp:-70;z-index:-1}
 .ws27 .intro .say{max-width:820px;margin-left:auto}
 .ws27 .intro .say p{font-size:clamp(22px,2.3vw,31px);line-height:1.38;font-weight:400;margin-bottom:20px}
 .ws27 .intro .say b{color:var(--red);font-weight:600}
@@ -417,7 +420,7 @@
 @media (max-width:500px){.ws27 .intro .say{padding-left:46px}.ws27 .intro .arch{width:140px;left:-104px}}
 
 /* ========== Fotoband: Fotos mit schrägen Farbflächen ========== */
-.ws27 .band{padding:0 0 40px;overflow:clip}
+.ws27 .band{padding:0 0 40px;overflow:clip;position:relative;z-index:2}
 .ws27 .btn.big{font-size:20px;padding:19px 32px;border-radius:10px;box-shadow:0 6px 18px rgba(0,79,82,.18)}
 .ws27 .band ul{list-style:none;padding:0;display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:250px 250px;gap:14px;max-width:1400px;margin:0 auto;padding:0 32px}
 .ws27 .band li{position:relative;overflow:hidden}
@@ -506,6 +509,17 @@
 
 /* ========== Unterschied ========== */
 .ws27 .diff{background:var(--grey-l)}
+.ws27 .gl path{stroke-dasharray:1 1;stroke-dashoffset:calc(1 - clamp(0, (var(--dp,1) - var(--o,0)) / var(--l,1), 1))}
+.ws27 .gl{position:absolute;height:auto;pointer-events:none;mix-blend-mode:multiply}
+/* w und m als große, blasse Wasserzeichen hinter den Zitaten */
+.ws27 .vq{position:relative;isolation:isolate}
+.ws27 .vq blockquote{position:relative;z-index:1}
+.ws27 .vq .gl{z-index:0;opacity:.14;mix-blend-mode:normal}
+.ws27 .gl-w{right:-2%;top:-40px;width:560px;--amp:-40;--rot:-3}
+.ws27 .gl-m{left:-4%;bottom:-30px;width:580px;--amp:40;--rot:3}
+.ws27 .infos .gl-s{right:60px;top:-10px;width:150px;--amp:25;--rot:6;z-index:0}
+.ws27 .infos .facts{position:relative;z-index:1}
+@media (max-width:1100px){.ws27 .gl-w,.ws27 .gl-s,.ws27 .gl-m{display:none}}
 .ws27 .diff .n-arch{position:absolute;right:-190px;top:-30px;width:300px;--amp:60;--rot:6}
 .ws27 .diff .state{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:90px;position:relative}
 .ws27 .diff .state h2 span{display:block;color:var(--mut);font-size:.62em;font-weight:500;margin-bottom:8px;line-height:1.25}
@@ -1110,7 +1124,7 @@
 
   <!-- ===== Einleitung ===== -->
   <section class="intro" id="worum" aria-label="Worum es geht">
-    <svg class="arch par" viewBox="0 0 420 640" aria-hidden="true"><path d="M75 640 V285 A135 135 0 0 1 345 285 V640" fill="none" stroke="#009BB2" stroke-width="150"/></svg>
+    <svg class="arch gl par" viewBox="0 0 420 1500" aria-hidden="true"><g fill="none" stroke="#009BB2" stroke-width="150"><path pathLength="1" style="--o:0;--l:.3" d="M75 290 A135 135 0 0 1 345 290"/><path pathLength="1" style="--o:.22;--l:.78" d="M75 285 V1500"/><path pathLength="1" style="--o:.22;--l:.78" d="M345 285 V1500"/></g></svg>
     <div class="wrap">
       <div class="say">
         <p class="eyebrow rv">Worum es geht</p>
@@ -1353,6 +1367,8 @@
         </svg>
       </div>
       <div class="vq">
+        <svg class="gl gl-w par" viewBox="40 -40 612 600" aria-hidden="true"><g fill="none" stroke="#009BB2" stroke-width="112"><path pathLength="1" style="--o:0;--l:.55" d="M96 -40 V372 A125 125 0 0 0 346 372 V150"/><path pathLength="1" style="--o:.45;--l:.55" d="M346 372 A125 125 0 0 0 596 372 V-40"/></g></svg>
+        <svg class="gl gl-m par" viewBox="874 264 552 496" aria-hidden="true"><g fill="none" stroke="#52BBCA" stroke-width="112"><path pathLength="1" style="--o:0;--l:.55" d="M930 760 V430 A110 110 0 0 1 1150 430 V590"/><path pathLength="1" style="--o:.45;--l:.55" d="M1150 430 A110 110 0 0 1 1370 430 V760"/></g></svg>
         <blockquote class="rv fx-l">„Mit großen Erwartungen hingefahren – <b>begeistert und inspiriert zurückgekommen</b>. Tolle Mischung aus Theorie und Praxis mit ‚etwas anderen‘ Beratern und sehr offenen und ehrlichen Kollegen!“</blockquote>
         <blockquote class="rv fx-r">„Gespräche mit spannenden Menschen auch aus dem produzierenden Umfeld – <b>praxisrelevante Themen kombiniert mit neuen Denkanstößen</b>.“</blockquote>
         <blockquote class="rv fx-l">„Praxisrelevante Inhalte und Inspirationen aus dem produzierenden Mittelstand. Besser geht es nicht … und <b>steht daher seit vielen Jahren fest in meinem Kalender</b>.“</blockquote>
@@ -1368,6 +1384,7 @@
     <div class="wrap">
       <p class="eyebrow rv">Infos &amp; Preise</p>
       <h2 id="h-infos" class="rv" style="--d:.1s">Was Sie noch wissen sollten</h2>
+      <svg class="gl gl-s par" viewBox="380 0 360 540" aria-hidden="true"><path fill="none" stroke="#CB123A" stroke-width="112" pathLength="1" style="--o:0;--l:1" d="M730 56 H600 A107 107 0 0 0 600 270 A107 107 0 0 1 600 484 H452"/></svg>
       <div class="facts">
         <div class="fact rv fx-pop"><div class="num" data-count="35">35</div><b>Plätze</b><p>Die V&amp;S WinterSchool setzt besonders auf Interaktivität und die Arbeit in kleinen Gruppen. Die Teilnehmerzahl ist daher auf 35 Personen begrenzt.</p></div>
         <div class="fact rv fx-pop" style="--d:.12s"><div class="num"><span data-count="1900" data-fmt="de">1.900</span><i>€</i></div><b>Teilnahmegebühr</b><p>zzgl. MwSt pro Teilnehmenden – inklusive Verpflegung und Dokumentation.</p></div>
@@ -1541,7 +1558,7 @@
     root.style.setProperty('--sp',max>0?(y/max).toFixed(4):0);
     bar.classList.toggle('scrolled',y>8);
     if(reduced) return;
-    spreadWords();
+    spreadWords(); drawLetters();
     var hr=hero.getBoundingClientRect();
     if(!calm) hero.style.setProperty('--hp',Math.max(0,Math.min(1,-hr.top/Math.max(1,hr.height))).toFixed(4));
     if(!calm) pars.forEach(function(el){
@@ -1564,8 +1581,19 @@
     if(!wbox) return;
     if(reduced||calm){ wbox.style.setProperty('--q',1); return; }
     var vh=window.innerHeight, t=wbox.getBoundingClientRect().top;
-    var q=Math.max(0,Math.min(1,(vh*.95-t)/(vh*.5))); q=q*q*(3-2*q);
+    var q=Math.max(0,Math.min(1,(vh*.75-t)/(vh*.55))); q=q*q*(3-2*q);   /* erst lange übereinander, ganz auseinander erst oben */
     wbox.style.setProperty('--q',q.toFixed(3));
+  }
+  /* Riesen-Buchstaben (n im Intro, w s m am Rand): werden beim Scrollen gezeichnet (--dp 0 → 1) */
+  var gls=[].slice.call(root.querySelectorAll('.gl'));
+  function drawLetters(){
+    var vh=window.innerHeight;
+    gls.forEach(function(g){
+      if(reduced||calm){ g.style.setProperty('--dp',1); return; }
+      var r=g.getBoundingClientRect(), span=g.classList.contains('arch')?vh*1.3:vh*.8;
+      var p=Math.max(0,Math.min(1,(vh*.9-r.top)/span));
+      g.style.setProperty('--dp',p.toFixed(3));
+    });
   }
   function req(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } }
   window.addEventListener('scroll',req,{passive:true});
@@ -1597,7 +1625,7 @@
     calm=on; root.classList.toggle('calm',on);
     if(on){ pars.forEach(function(el){ el.style.setProperty('--p',0); }); ['--hp','--mx','--my'].forEach(function(k){ hero.style.setProperty(k,0); }); mx=my=tx=ty=0; }
     else req();
-    spreadWords();
+    spreadWords(); drawLetters();
     if(calmBtn){ calmBtn.textContent=on?'Animation wieder anschalten':'BOAH… Animation ausschalten. Sofort!'; calmBtn.setAttribute('aria-pressed',String(on)); }
   }
   if(calmBtn && !reduced && 'IntersectionObserver' in window){
