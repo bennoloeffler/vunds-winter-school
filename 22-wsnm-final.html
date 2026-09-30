@@ -78,7 +78,7 @@
 .ws27 .wrap{max-width:1200px;margin:0 auto;padding:0 32px;position:relative}
 .ws27 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-d);margin-bottom:14px}
 .ws27 :focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
-.ws27 .sec{position:relative;padding:120px 0;overflow:clip}
+.ws27 .sec{position:relative;padding:120px 0;overflow:hidden;overflow:clip}   /* hidden = Fallback für Safari < 16 */
 @media (max-width:700px){.ws27{font-size:16px}.ws27 .wrap{padding:0 16px}.ws27 .sec{padding:80px 0}}
 
 /* Buttons: flach, ruhiger Hover */
@@ -138,7 +138,7 @@
 
 /* ---------- Hero-Variante A · Navy + Namenszeile ---------- */
 /* ========== Hero (nach Mockup): Foto rechts, Text links, Buchstaben W S N M ========== */
-.ws27[data-hero="a"] .hero{position:relative;min-height:min(calc(100svh - 66px),900px);display:flex;align-items:center;overflow:clip;background:#f6f3ee;padding:70px 0 80px}
+.ws27[data-hero="a"] .hero{position:relative;min-height:min(calc(100vh - 66px),900px);min-height:min(calc(100svh - 66px),900px);display:flex;align-items:center;overflow:hidden;overflow:clip;background:#f6f3ee;padding:70px 0 80px}
 .ws27[data-hero="a"] .h-bg{position:absolute;inset:0 0 0 30%;z-index:0;margin:0;overflow:hidden}
 .ws27[data-hero="a"] .h-slides{position:absolute;left:0;top:-8%;width:100%;height:116%;--amp:40}
 .ws27[data-hero="a"] .h-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(1.06) saturate(1.06);opacity:0;transform:scale(1.08);transition:opacity .7s ease,transform 3.2s linear}
@@ -231,6 +231,7 @@
 @media (max-width:1000px){
   .ws27[data-hero="a"] .h-sig{position:static;width:auto;text-align:left;margin:22px 16px 0;text-shadow:none}
   .ws27[data-hero="a"] .h-cap{font-size:16px;letter-spacing:.1em}
+  @media (max-width:370px){.ws27[data-hero="a"] .h-cap{font-size:14px;letter-spacing:.07em}}   /* 320er Handys: eine Zeile */
   .ws27[data-hero="a"] .h-sig .h-claim2{margin:10px 0 0;font-size:18px}
   /* nur mobil: Namenszeile direkt unter die Buchstaben (vor „Intensiv-Bootcamp“), Claim bleibt unten */
   .ws27[data-hero="a"] .hero{display:flex;flex-direction:column}
@@ -437,7 +438,7 @@
 @media (max-width:500px){.ws27 .intro .say{padding-left:46px}.ws27 .intro .arch{width:140px;left:-104px}}
 
 /* ========== Fotoband: Fotos mit schrägen Farbflächen ========== */
-.ws27 .band{padding:0 0 40px;overflow:clip;position:relative;z-index:2}
+.ws27 .band{padding:0 0 40px;overflow:hidden;overflow:clip;position:relative;z-index:2}
 .ws27 .btn.big{font-size:20px;padding:19px 32px;border-radius:10px;box-shadow:0 6px 18px rgba(0,79,82,.18)}
 .ws27 .band ul{list-style:none;padding:0;display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:250px 250px;gap:14px;max-width:1400px;margin:0 auto;padding:0 32px}
 .ws27 .band li{position:relative;overflow:hidden}
@@ -488,6 +489,7 @@
 .ws27 .fig .mark{position:absolute;left:50%;top:0;width:44px;margin-left:-22px;color:#fff}
 .ws27.js .fig .mark{opacity:0;transform:translateY(16px) scale(.6);transition:opacity .6s ease .5s,transform .9s var(--spring) .5s}
 .ws27.js .fig.in .mark{opacity:1;transform:none}
+@media (max-width:370px){.ws27 .chal aside h2{font-size:23px}}   /* 320er Handys: weniger Silbentrennung */
 .ws27 .chal .quotes{display:flex;flex-direction:column;gap:34px}
 .ws27 .chal blockquote{font-size:clamp(18px,1.55vw,21px);line-height:1.55;padding-left:22px;border-left:2px solid rgba(255,255,255,.55);max-width:640px}
 .ws27 .chal blockquote:nth-child(even){align-self:flex-end;border-left-color:#fff}
@@ -682,7 +684,7 @@
 @media (max-width:600px){.ws27 .ws27-logos{--logo-k:48px;gap:10px 12px}.ws27 .ws27-logos li{flex-basis:calc((100% - 2 * 12px) / 3)}}
 
 /* ========== Anmelden ========== */
-.ws27 .join{padding:0;overflow:clip;background:#fff}   /* deckt die Beine von n/m aus dem Abspann ab */
+.ws27 .join{padding:0;overflow:hidden;overflow:clip;background:#fff}   /* deckt die Beine von n/m aus dem Abspann ab */
 .ws27 .join .box{position:relative;display:grid;grid-template-columns:1.05fr 1fr;min-height:560px}
 .ws27 .join .plane{position:absolute;inset:0 38% 0 0;background:var(--teal-t);clip-path:polygon(0 0,100% 0,84% 100%,0 100%);z-index:1}
 .ws27 .join .txt{position:relative;z-index:2;color:#fff;padding:100px 60px 100px max(32px,calc(50vw - 568px))}
@@ -1549,8 +1551,9 @@
     [].forEach.call(el.querySelectorAll('[data-count]'),count); if(el.hasAttribute('data-count')) count(el); }
   if(!reduced && 'IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ show(e.target); io.unobserve(e.target); } });
-    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+      /* 12 % sichtbar – oder bei sehr hohen Flächen (schmale Handys) ein Viertel der Bildschirmhöhe */
+      es.forEach(function(e){ if(e.isIntersecting && (e.intersectionRatio>=.12 || e.intersectionRect.height>=window.innerHeight*.25)){ show(e.target); io.unobserve(e.target); } });
+    },{threshold:[0,.05,.12],rootMargin:'0px 0px -6% 0px'});
     watch.forEach(function(el){ io.observe(el); });
   } else { watch.forEach(show); }
 
